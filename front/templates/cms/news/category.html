@@ -1,0 +1,57 @@
+{% extends 'cms/base.html' %}
+
+{% block title %}
+分类
+{% endblock title %}
+
+{% block style %}
+
+{% endblock style %}
+
+
+{% block content %}
+<div class="content-wrapper" style="min-height:813px">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <div class="box-header">
+                    <button class="btn btn-primary pull-right"  id="add-new-category">添加分类</button>
+                </div>
+                <div class="box-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>类别名称</th>
+                                <th>新闻数量</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for category in categorys %}
+                                <tr data-id="{{ category.id }}" data-name="{{ category.name }}">
+                                    <td>{{ category.id }}</td>
+                                    <td>{{ category.name }}</td>
+                                    <td>20</td>
+                                    <td><button class="btn btn-warning btn-xs btn-delete">删除</button></td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div  class="form-category" style="display:none">
+        <form action="">
+            <label class="sr-only" for="inputHelpBlock">Input with help text</label>
+            <input type="text" id="inputHelpBlock" class="form-control" aria-describedby="helpBlock">
+            <button class="btn btn-primary pull-right" id="btn-confirm">确定</button>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

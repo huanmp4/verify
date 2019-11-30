@@ -1,0 +1,149 @@
+$height:280px;
+$width:300px;
+$ghettowidth:280px;
+.login-crew{
+  text-decoration:none;
+  color:pink;
+}
+.mask-wrapper{
+  position:fixed;
+  top:0;
+  background:rgba(4,224,254,0.5);
+  width:100%;
+  height:100%;
+  overflow-y:scroll;
+  display:none;
+  .middle-wrapper{
+    position:relative;
+    top:50%;
+    margin:0 auto;
+    width:$width;
+    height:$height;
+    background:white;
+    overflow:hidden;
+    .entourage{
+      position:absolute;
+      width:$width*2;
+      height:100%;
+      .ghetto{
+        margin:10px;
+        width:$ghettowidth;
+        height:380px;
+        float:left;
+        .middle-top{
+          height:56px;
+          border-bottom:1px solid slateblue;
+          .x{
+            width:100%;
+            height:18px;
+            .iconbaseline-close-px-copy{
+              float:right;
+              cursor: pointer;
+            }
+          }
+          .y{
+            width:100%;
+            height:18px;
+            margin:10px 0;
+            .text-login{
+              text-decoration: none;
+              color:black;
+              float:left;
+              border-bottom:3px solid dimgrey;
+            }
+            .toggle-logup{
+              text-decoration: none;
+              color:deepskyblue;
+              float:right;
+            }
+          }
+        }
+        .middle-among{
+          .wrapper-among{
+            .text-blank{
+              margin-top:10px;
+              width:276px;
+              height:23px;
+            }
+            .strictly{
+              width:$ghettowidth;
+              margin-top:10px;
+            }
+            .button-in{
+              margin-top:10px;
+              height:23px;
+              width:$ghettowidth;
+            }
+          }
+        }
+      }
+      .richarea{
+        float:left;
+        width:$ghettowidth;
+        height:$height;
+        margin:10px;
+        .rich-top{
+          width:100%;
+          height:56px;
+          border-bottom: 1px solid slateblue;
+          .close {
+            width: 100%;
+            height: 18px;
+            .iconbaseline-close-px-copy {
+              float:right;
+            }
+          }
+          .logup-box{
+            width: 100%;
+            height: 18px;
+            .please-logup{
+              line-height:18px;
+              text-align:center;
+              margin:0;
+              float:left;
+              border-bottom:3px solid dimgrey;
+            }
+            .toggle-login-rich {
+              text-decoration: none;
+              float: right;
+              cursor: pointer;
+              color: deepskyblue;
+            }
+          }
+        }
+        .rich-among{
+          width:100%;
+          height:100%;
+          .input-tap2{
+            .text-blank2{
+              width:276px;
+              height:23px;
+            }
+            .btnn{
+              width:276px;
+              height:23px;
+            }
+          }
+          .immediately-logup{
+
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.rich-top div{
+  padding:10px 0;
+}
+.rich-top div:first-child{
+  padding:0;
+}
+
+.rich-among div{
+  padding-top:10px;
+}
+.rich-among .input-tap2 *{
+  margin-bottom:10px;
+}

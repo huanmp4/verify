@@ -1,0 +1,77 @@
+
+
+{% extends 'cms/base.html' %}
+{% block title %}新闻发布{% endblock title %}
+
+{% block style %}
+
+    <script src="{% static 'js/news.js' %}"></script>
+{% endblock style %}
+
+{% block content %}
+<div class="content-wrapper" style="min-height:813px">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>新闻发布</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item">
+                            <a href="">主页</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            新闻发布
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <form class="col-12">
+                    <div class="card card-success">
+                      <div class="card-header">
+                        <h3 class="card-title">主题发布</h3>
+                      </div>
+                      <div class="card-body">
+                          <label for="title-news">标题</label>
+                          <input class="form-control" type="text" placeholder=".input" id="title-news">
+                          <br>
+                          <label for="option-control">分类</label>
+                          <select class="form-control" id="option-control">
+                          <option value="1">侃谈人生</option>
+                          </select>
+                          <br>
+                          <label for="picture">图片</label>
+                          <div class="input-group">
+                            <input type="text" class="form-control" id="picture">
+                            <span class="form-group-append">
+                                <label for="thumbnail-btn" class="btn btn-default btn-file">上传图片
+                                <input type="file" hidden="hidden" id="thumbnail-btn"></label>
+                            </span>
+                           </div>
+                          <br>
+                          <div class="form-group">
+                                <label for="textarea-news">文章内容</label>
+                                <textarea name="#" id="textarea-news" class="form-control" rows="3" placeholder="点击这里输入"></textarea>
+                          </div>
+                          <br>
+                          <div class="col-2 fa-pull-right">
+                              <button class="btn btn-block btn-primary" id="release-news-button">提交</button>
+                          </div>
+                      </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <a href="#" id="back-to-top" class="btn btn-primary back-to-top" role="button" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+</div>
+{% endblock content %}
