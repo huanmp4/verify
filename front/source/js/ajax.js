@@ -24,6 +24,32 @@ var yourajax = {
         this.ajax(args);
     },
     'ajax': function (args) {
+        var success_src = args['success'];
+        args['success'] = function(result){
+            if (result['code'] === 200){
+                success_src(result)
+            }
+            else{
+                var messageObject = result['message'];
+                if ( typeof messageObject === 'string' || messageObject.constructor === String){
+                    window.messageBox.showError(messageObject);
+                }else{
+                    // {"password":['密码最大长度不能超过20为！','xxx'],"telephone":['xx','x']}
+                    for(var key in messageObject){
+                        var messages = messageObject[key];
+                        var message = messages[0];
+                        window.messageBox.showError(message);
+                    }
+                }
+                if (success_src){
+                    success_src(result)
+                }
+            }
+        };
+        args['fail'] = function(error){
+            console.log('内部错误，error信息:',error);
+            window.messageBox.showError('服务器内部错误！请联系管理员');
+        };
         $.ajax(args);
     },
     '_ajaxSetup': function () {

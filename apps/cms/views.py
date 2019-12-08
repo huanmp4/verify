@@ -6,7 +6,9 @@ from ..news.models import News
 from utils import restful
 from .forms import CategoryForm
 from apps.news.models import Category
-
+import os
+from django.conf import settings
+from qiniu import Auth as qiniuAuth
 # Create your views here.
 def home(request):
     return render(request,'cms/home.html')
@@ -35,7 +37,7 @@ def ReleaseNews(request):
 #标签
 def category(request):
     if request.method == 'GET':
-        categorys = Category.objects.all()
+        categorys = Category.objects.all().order_by("-id")
         content = {'categorys':categorys}
         return render(request,'cms/news/category.html',context=content)
     if request.method == 'POST':
@@ -51,7 +53,48 @@ def category(request):
 
 def category_thumbnail(request):
     file = request.FILES.get('file')
-    with open(file.name,'wb') as f:
+
+    with open((os.path.join(settings.CLIENTIMAGE_ROOT,file.name)),'wb') as f:
         for chunk in file.chunks():
             f.write(chunk)
+    print(os.path.join(settings.CLIENTIMAGE_ROOT+file.name))
     return restful.ok()
+
+def category_modify(request):
+    form = CategoryForm(request.POST)
+    if form.is_valid():
+        id = form.cleaned_data.get('id')
+        print('category_id',id)
+        name = form.cleaned_data.get('name')
+        print('category_name',name)
+        try:
+            Category.objects.filter(pk=id).update(name=name)
+            return restful.ok()
+        except:
+            return restful.params_error('该分类不存在')
+
+    else:
+        return restful.params_error(message=form.get_error())
+
+
+def category_delete(request):
+    id = request.POST.get('id')
+    print('id',id)
+    if id:
+        try:
+            dele = Category.objects.filter(id=id).delete()
+            print('dele',dele)
+            return restful.ok()
+        except:
+            return  restful.params_error(message='数据库无法查到这个ID，请刷新')
+    else:
+        return restful.params_error(message='没有这个名称，无法删除，请刷新')
+
+
+def thumbnail_process(request):
+    access_key = 'L7Idi7_0oH-8LC1g2CjLb1h9Z6kN4-JLoqoOn21U'
+    secret_key = 'L7Idi7_0oH-8LC1g2CjLb1h9Z6kN4-JLoqoOn21U'
+    bucket = 'establish'
+    q = qiniuAuth(access_key,secret_key)
+    token = q.upload_token(bucket)
+    return restful.result(data={'token':token})

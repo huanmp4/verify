@@ -17,6 +17,7 @@ function Signin(){
     this.signupGroup = $('.signup-group');
     this.signupTelephone = this.signupGroup.find('input[name="telephone"]');
     this.msCaptcha = this.signupGroup.find('input[name="img-captcha-code"]');
+    this.testNum = 'test1112';
 }
 
 
@@ -33,7 +34,7 @@ Signin.prototype.listenSendMessageEvent = function(){
         self.smsCaptchaBtn.unbind('click');
         console.log('telephone',signupTelephoneNum);
         console.log('code',mscaptchaNum);
-        var count = 10;
+        var count = 5;
         self.smsCaptchaBtn.addClass('disableClass');
         var timer = setInterval(function(){
             self.smsCaptchaBtn.text(count+'s');
@@ -44,7 +45,7 @@ Signin.prototype.listenSendMessageEvent = function(){
                 self.smsCaptchaBtn.removeClass('disableClass');
                 self.listenSendMessageEvent();
             }
-        },500);
+        },1000);
         yourajax.get({
             'url':'/register/send',
             'data':{'telephone':signupTelephoneNum,'code':mscaptchaNum},
@@ -90,6 +91,9 @@ Signin.prototype.signinPromptShowEvent = function(){
 
 
 
+
+
+
 //所有登录注册监听时间
 Signin.prototype.ListenClick = function(){
     var self = this;
@@ -110,50 +114,15 @@ Signin.prototype.ListenClick = function(){
         self.signinPromptHideEvent();
         self.signinPromptShowEvent();
 
-        yourajax.post({
+        loginajax.post({
             'url':'/register/loginView',
             'data':{'username':username,'password':password},
-            'success':function(result){
-                console.log('result总信息',result);
-                if (result['code'] === 200){
+            'success':function(result) {
+                console.log('result总信息', result);
+                if (result['code'] === 200) {
                     window.messageBox.show('成功登录');
                     window.location.reload();
                 }
-                else if(result['code'] === 301){
-                    self.promptPassword.text(result['message']);
-                    self.passwordBorder.css({'border':'1px solid red'});
-                }
-                else if(result['code'] === 302){
-                    self.promptAccount.text(result['message']);
-                    self.usernameBorder.css({'border':'1px solid red'});
-                }
-                else if(result['code'] === 401){
-                    self.promptPassword.text('code:401',result['message']);
-                    self.passwordBorder.css({'border':'1px solid red'});
-                }
-                else{
-                    console.log('else');
-                    var messageObject = result['message'];
-                    console.log('other messing',messageObject);
-                    for (var key in messageObject){
-                        var messages = messageObject[key];
-                        var message = messages[0];
-                        if ( key === 'username'){
-                            self.promptAccount.text(message);
-                            self.usernameBorder.css({'border':'1px solid red'});
-                        }
-                        else if ( key === 'password'){
-                            self.promptPassword.text(message);
-                            self.passwordBorder.css({'border':'1px solid red'})
-                        }
-                        else{
-                            this.promptAccount.text('错误,请联系管理员,代码3301');
-                        }
-                    }
-                }
-            },
-            'fail':function(error){
-                console.log(error)
             }
         })
     });
@@ -216,11 +185,9 @@ Signin.prototype.ListenClick = function(){
                 else{
                     var messageObject = result['message'];
                     if (messageObject == 'String' || messageObject.constructor == String){
-
                         window.messageBox.show(messageObject);
                     }else{
                         console.log('messageObject',messageObject);
-
                         //打印出来
                     }
                 }

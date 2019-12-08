@@ -146,3 +146,6 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = os.path.join(BASE_DIR,'static_dist')
 AUTH_USER_MODEL = 'register.User'
+
+CLIENTIMAGE_URL = '/front/source/client_image/'
+CLIENTIMAGE_ROOT = os.path.join(BASE_DIR,'front','source','client_image')

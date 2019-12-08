@@ -8,6 +8,7 @@ function Login(){
     this.taggle_logup = $('.toggle-logup');
     this.entourage = $('.entourage');
     this.taggle_login = $('.toggle-login-rich');
+
 }
 
 Login.prototype.hideEvent = function(){
@@ -30,6 +31,8 @@ Login.prototype.toggleLogin = function(){
         this.entourage.animate({'left':-300},500);
     }
 };
+
+
 
 Login.prototype.run = function(){
     var self = this;

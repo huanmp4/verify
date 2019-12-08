@@ -37,9 +37,10 @@ def loginView(request):
                 login(request,user)
                 if remember:
                     request.session.set_expiry(None)
+                    return restful.ok()
                 else:
                     request.session.set_expiry(0)
-                return restful.ok()
+                    return restful.ok()
             else:
                 return restful.auth_error('帐号被冻结')
         elif onlyUsername2: #这里的username和上面的username存在冲突一次
@@ -49,7 +50,7 @@ def loginView(request):
             return restful.account_error('帐号不存在')
     else:
         print('form.get_error()',form.get_errors())
-        return restful.params_error(message=form.get_errors())
+        return restful.form_error(message=form.get_errors())
 
 
 #更改密码

@@ -8,9 +8,11 @@ class HttpCode(object):
     unauth = 401
     methoderror = 405
     servererror = 500
+    formerror = 300
     passworderror = 301
     accounterror = 302
-    sendmessageerror =311
+    sendmessageerror = 311
+
 
 def result(code=HttpCode.ok,message=None,data=None):
     json_dict = {'code':code,'message':message,'data':data}
@@ -34,6 +36,9 @@ def method_error(message=None,data=None):
 
 def server_error(message=None,data=None):
     return result(code=HttpCode.servererror,message=message,data=data)
+
+def form_error(message=None,data=None):
+    return result(code=HttpCode.formerror,message=message,data=data)
 
 def ok():
     return result()

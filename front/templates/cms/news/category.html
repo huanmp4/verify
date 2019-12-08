@@ -5,43 +5,77 @@
 {% endblock title %}
 
 {% block style %}
+    <link rel="stylesheet" href="{% static 'css/sweetalert/sweetalert.css' %}">
+
+    <script src="{% static 'css/sweetalert/sweetalert.min.js' %}"></script>
+    <script src="{% static 'js/alert.js' %}"></script>
+    <script src="{% static 'js/cms.js' %}"></script>
 
 {% endblock style %}
 
 
 {% block content %}
 <div class="content-wrapper" style="min-height:813px">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="box box-primary">
-                <div class="box-header">
-                    <button class="btn btn-primary pull-right"  id="add-new-category">添加分类</button>
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>新闻标签管理</h1>
                 </div>
-                <div class="box-body">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>id</th>
-                                <th>类别名称</th>
-                                <th>新闻数量</th>
-                                <th>操作</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for category in categorys %}
-                                <tr data-id="{{ category.id }}" data-name="{{ category.name }}">
-                                    <td>{{ category.id }}</td>
-                                    <td>{{ category.name }}</td>
-                                    <td>20</td>
-                                    <td><button class="btn btn-warning btn-xs btn-delete">删除</button></td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item">
+                            <a href="">主页</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            新闻标签管理
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class=""></div>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-header">
+                            <button class="btn btn-primary fa-pull-right" id="add-new-category">添加新分类</button>
+                        </div>
+                        <div class="box-body">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>类别名称</th>
+                                        <th>新闻数量</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for category in categorys %}
+                                        <tr data-id="{{ category.id }}" data-name="{{ category.name }}">
+                                            <td>{{ category.id }}</td>
+                                            <td>{{ category.name }}</td>
+                                            <td>20</td>
+                                            <td>
+                                                <button class="btn btn-warning btn-xs btn-modify" >更改</button>
+                                                <button class="btn btn-info btn-xs btn-delete" >删除</button>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
 
 
 
