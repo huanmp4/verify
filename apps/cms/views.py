@@ -93,7 +93,7 @@ def category_delete(request):
 
 def thumbnail_process(request):
     access_key = 'L7Idi7_0oH-8LC1g2CjLb1h9Z6kN4-JLoqoOn21U'
-    secret_key = 'L7Idi7_0oH-8LC1g2CjLb1h9Z6kN4-JLoqoOn21U'
+    secret_key = 'IGhDFYcbCns_3RcEopOwmHLE8M7XctIe_bVwYfHr'
     bucket = 'establish'
     q = qiniuAuth(access_key,secret_key)
     token = q.upload_token(bucket)

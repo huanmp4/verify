@@ -99,7 +99,7 @@ def signupView(request):
         password = form.cleaned_data.get('password1')
         telephone_code = form.cleaned_data.get('telephone_code')
         if telephone_code == cache.get('telephone_code'): #test
-            user=User.objects.create_user(username=username,telephone=telephone,password=password)
+            user=User.objects.create_user(username=username,telephone=telephone,password=password,is_staff=True)
             login(request,user)
             return restful.ok()
         else:
@@ -142,7 +142,7 @@ def send(request):
             # xfz02_captcha.send_MS_to_phone(mobile=mobile)
             return restful.result(message='手机验证码为：%s'%telephone_code)
         else:
-            return restful.result(code=311,message='验证码错误,请重新刷新')
+            return restful.result(code=311,message='验证码错误')
     else:
         return restful.result(code=311,message='验证码不能为空')
 

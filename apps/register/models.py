@@ -12,7 +12,7 @@ class UserManager(BaseUserManager):
             raise ValueError('请输入手机号码')
         if not password:
             raise ValueError('请输入密码')
-        user = self.model(username = username,telephone = telephone)
+        user = self.model(username = username,telephone = telephone ,**kwargs)
         user.set_password(password)
         user.save()
         return user

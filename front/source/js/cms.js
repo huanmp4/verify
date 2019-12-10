@@ -2,34 +2,16 @@ function CMS(){
     this. categoryModify = $('.btn-modify');
     this.categoryDelete = $('.btn-delete');
     this.thumbnail = $('#thumbnail-btn');
-
+    this.progressGroup = $('#progress-group');
+    this.buttonComplete = $('#thumbnail-btn-cancel');
+    this.progress = $('.progress');
 }
-//
-//     //后台文章图片上传
-//     self.thumbnail.change(function(){
-//         var file = self.thumbnail[0].files[0];
-//         var formdata = new FormData();
-//         var picture = $('#picture');
-//         formdata.append('file',file);
-//         console.log('file',formdata);
-//         yourajax.post({
-//             'url':'/cms/category_thumbnail',
-//             'data':formdata,
-//             'processData':false,
-//             'contentType':false,
-//             'success':function(result){
-//                 if (result.code === 200){
-//                     window.messageBox.show('成功');
-//                     picture.val('上传成功')
-//                 }
-//                 if (result.code === 400){
-//                     window.messageBox.show('失败')
-//                 }
-//             }
-//         })
-//     })
-// };
 
+
+//获取新闻发布
+
+
+//缩略图上传七牛云主程序
 CMS.prototype.listenThumbnailUploadEvent = function(){
     var self = this;
     self.thumbnail.change(function(){
@@ -38,7 +20,7 @@ CMS.prototype.listenThumbnailUploadEvent = function(){
         var putExtra = {
             fname:key,
             params:{},
-            mimeType:['image/png','image/jpeg','image/gif','video/x-ms-wmv']
+            mimeType:null
         };
         var config = {
             useCndDomain:true,
@@ -52,30 +34,67 @@ CMS.prototype.listenThumbnailUploadEvent = function(){
                     var token = result['data']['token'];
                     var observable = qiniu.upload(file,key,token,putExtra,config);
                     console.log('observable',observable);
-                    observable.subscribe({
-                        'next':self.handleFileUploadProcess(),
-                        'error':self.handleFileErrorProcess(),
-                        'complete':self.handleFileComplete()
+                    var progress = $('.progress');
+                    var progressGroup = CMS.progressGroup;
+                    self.buttonComplete.text('取消');
+                    self.buttonComplete.removeClass('btn-info');
+                    self.buttonComplete.removeClass('btn-dark');
+                    self.buttonComplete.addClass('btn-danger');
+                    progressGroup.show();
+                    progress.show();
+                    self.subscription = observable.subscribe({
+                        'next':self.handleFileUploadProcess,
+                        'error':self.handleFileErrorProcess,
+                        'complete':self.handleFileComplete
                     })
                 }
             }
         })
-
     })
 };
 
+//七牛上传取消监听
+CMS.prototype.listenCancelsubscription = function(){
+    var self = this;
+    self.buttonComplete.click(function(event){
+        event.preventDefault();
+        self.subscription.unsubscribe();
+        self.progress.hide();
+    })
+};
 
+//七牛上传处理中
 CMS.prototype.handleFileUploadProcess = function(response){
-    var total = response.total();
-    var percent = total.percent();
+    var self = this;
+    var total = response.total;
+    console.log('precent',total);
+    var percent_temp = total.percent;
+    var precentInt = parseFloat(percent_temp);
+    var percentFloat = precentInt.toFixed(2);
+    var percentInt = parseInt(percentFloat)+'%';
+    self.progressBar = $('.progress-bar');
+    self.progressBar.css({'width':percentInt});
+    self.progressBar.text('已完成'+percentFloat+'%')
 };
 
+//七牛上传错误
 CMS.prototype.handleFileErrorProcess = function(error){
-    console.log('error',error)
+    console.log('error',error);
+    window.messageBox.show(error);
 };
 
+//七牛上传完成
 CMS.prototype.handleFileComplete = function(){
-    console.log('完成')
+    var self = this;
+    var thumbnailCancelBtn = $('#thumbnail-btn-cancel');
+    var progress = $('.progress');
+    progress.hide();
+    thumbnailCancelBtn.removeClass('btn-danger');
+    thumbnailCancelBtn.addClass('btn-info');
+    thumbnailCancelBtn.text('已完成');
+    self.progressBar.css({'width':0});
+    console.log('完成');
+    window.messageBox.show('已完成')
 };
 
 CMS.prototype.listenCategoryDeleted = function(){
@@ -143,9 +162,11 @@ CMS.prototype.Run = function(){
     this.listenCategoryModify();
     this.listenCategoryDeleted();
     this.listenThumbnailUploadEvent();
+    this.listenCancelsubscription();
 };
 
 $(function(){
     var cms = new CMS();
     cms.Run();
+    CMS.progressGroup = $('#progress-group');
 });

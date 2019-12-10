@@ -60,6 +60,9 @@ var loginajax = {
                 self.promptAccount.text(result['message']);
                 self.usernameBorder.css({'border':'1px solid red'});
             }
+            else if(result['code'] === 311){
+                window.messageBox.show(result['message'])
+            }
             else if(result['code'] === 401){
                 self.promptPassword.text('code:401',result['message']);
                 self.passwordBorder.css({'border':'1px solid red'});

@@ -53,9 +53,6 @@ Signin.prototype.listenSendMessageEvent = function(){
                 if (result['code'] === 200){
                     window.messageBox.show(result['message']);
                 }
-                else if (result['code'] === 311){
-                    window.messageBox.show('未知错误1')
-                }
             },
             'fail':function(error){
                 console('错误',error)
