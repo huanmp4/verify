@@ -11,13 +11,13 @@ from apps.register.models import User
 def index(request):
     return render(request,'news/index.html')
 
-class Discover_Process(View):
-    def get(self,request):
+def Discover_Process(request):
+    if request.method == 'GET':
         discover = Discover.objects.all()
         context = {'discover':discover}
         return render(request,'news/discover.html',context)
 
-    def post(self,request):
+    else:
         form = DiscoverForm(request.POST)
         if form.is_valid():
             content = form.cleaned_data.get('content')
