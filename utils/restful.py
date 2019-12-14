@@ -48,6 +48,8 @@ class FormError(object):
     def get_errors(self):
         if hasattr(self, 'error'):
             error = self.error.get_json_data()
+
+            print('表单error',error)
             new_error = []
             for key, values in error.items(): # {'password': [{'message': '密码长度不能少于4位', 'code': 'min_length'}]}
                 value_set = []

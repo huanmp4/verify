@@ -1,38 +1,11 @@
 function News(){
-    this.releaseNewsBtn = $('#release-news-button');
+
     this.thumbnail = $('#thumbnail-btn');
     console.log('test News成功')
 
 }
 
 
-
-News.prototype.listenReleaseBTN = function() {
-    var self = this;
-    self.releaseNewsBtn.click(function (event) {
-        event.preventDefault();
-        var name = $('#title-news').val();
-        var category = $('#option-control').val();
-        var content = $('#textarea-news').val();
-        yourajax.post({
-            'url': '/cms/release_news',
-            'data': {'name': name, 'content': content},
-            'success': function (result) {
-                if (result['code'] === 200) {
-                    window.alert('文章发表成功');
-                    console.log('成功', result);
-                }
-                else {
-                    console.log('result失败', result);
-                    console.log('result失败', result['code']);
-                }
-            },
-            'fail': function (error) {
-                console.log('error失败', error)
-            }
-        })
-    });
-};
 
 
 News.prototype.listTest = function(){
@@ -73,7 +46,6 @@ News.prototype.listenCategoryAdd = function(){
 
 News.prototype.Run = function(){
     this.listenCategoryAdd();
-    this.listenReleaseBTN();
 };
 
 

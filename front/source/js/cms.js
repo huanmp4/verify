@@ -5,10 +5,68 @@ function CMS(){
     this.progressGroup = $('#progress-group');
     this.buttonComplete = $('#thumbnail-btn-cancel');
     this.progress = $('.progress');
+    this.releaseNewsBtn = $('#release-news-button');
 }
 
 
+
+CMS.prototype.listenReleaseBTN = function() {
+    var self = this;
+    self.releaseNewsBtn.click(function (event) {
+        event.preventDefault();
+        var title = $('#title-news').val();
+        var category = $('#option-control').val();
+        var category_text = $('#option-control option[value="'+category+'"]').text();
+        var content = window.ue.getContent();
+        var thumbnail = CMS.thumbnail.val();
+        console.log('title',title);
+        console.log('category_text',category_text);
+        console.log('category',category);
+        console.log('content',content);
+        console.log('thumbnail',thumbnail);
+        yourajax.post({
+            'url': '/cms/release_news',
+            'data': {'title': title, 'category':category, 'content': content,'thumbnail':thumbnail},
+            'success': function (result) {
+                if (result['code'] === 200) {
+                    alertBox.alertSuccess('已完成');
+                    console.log('成功', result);
+
+                }
+            }
+        })
+    });
+};
+
+
+
+//ueditor
+CMS.prototype.initUeditor = function(){
+    window.ue = UE.getEditor('editor',{
+        'initialFrameWidth':'100%',
+        'serverUrl':'/ueditor/upload/',
+        'toolbars':[[
+            'fullscreen','source', '|', 'undo', 'redo', '|',
+            'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
+            'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
+            'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
+            'directionalityltr', 'directionalityrtl', 'indent', '|',
+            'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase', '|',
+            'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
+            'simpleupload', 'insertimage', 'emotion', 'scrawl', 'insertvideo', 'music', 'attachment', 'map', 'gmap', 'insertframe', 'insertcode', 'webapp', 'pagebreak', 'template', 'background', '|',
+            'horizontal', 'date', 'time', 'spechars', 'snapscreen', 'wordimage', '|',
+            'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', 'charts', '|',
+            'print', 'preview', 'searchreplace', 'drafts','help'
+        ]]
+    })
+};
+
+
 //获取新闻发布
+
+
+
+
 
 
 //缩略图上传七牛云主程序
@@ -84,7 +142,8 @@ CMS.prototype.handleFileErrorProcess = function(error){
 };
 
 //七牛上传完成
-CMS.prototype.handleFileComplete = function(){
+CMS.prototype.handleFileComplete = function(response){
+    console.log('complete_response',response);
     var self = this;
     var thumbnailCancelBtn = $('#thumbnail-btn-cancel');
     var progress = $('.progress');
@@ -94,6 +153,10 @@ CMS.prototype.handleFileComplete = function(){
     thumbnailCancelBtn.text('已完成');
     self.progressBar.css({'width':0});
     console.log('完成');
+    var thumbnail = CMS.thumbnail;
+    var domain = 'http://q1wvz08zi.bkt.clouddn.com/';
+    var url = domain + response.key;
+    thumbnail.val(url);
     window.messageBox.show('已完成')
 };
 
@@ -163,10 +226,13 @@ CMS.prototype.Run = function(){
     this.listenCategoryDeleted();
     this.listenThumbnailUploadEvent();
     this.listenCancelsubscription();
+    this.initUeditor();
+    this.listenReleaseBTN();
 };
 
 $(function(){
     var cms = new CMS();
     cms.Run();
     CMS.progressGroup = $('#progress-group');
+    CMS.thumbnail = $('#picture');
 });

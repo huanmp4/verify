@@ -15,7 +15,7 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/front/node_modules" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.7 (verify)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.6 (verify) (1)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TemplatesService">

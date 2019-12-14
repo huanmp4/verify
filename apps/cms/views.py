@@ -1,10 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import View
-from .forms import NewsForm
 from ..news.models import News
 from utils import restful
-from .forms import CategoryForm
+from .forms import CategoryForm,NewsForm
 from apps.news.models import Category
 import os
 from django.conf import settings
@@ -17,24 +16,33 @@ def home(request):
 def news_release(request):
     return render(request,'cms/news/release.html')
 
-def ReleaseNews(request):
-    if request.POST:
+class ReleaseNews(View):
+    def get(self,request):
+        category = Category.objects.all()
+        context = {'category':category}
+        return render(request,'cms/news/release.html',context=context)
+    def post(self,request):
+        print('到post这了')
         form = NewsForm(request.POST)
-        print('到这里了')
         if form.is_valid():
-            name = form.cleaned_data.get('name')
-            print('name',name)
+            title = form.cleaned_data.get('title')
             content = form.cleaned_data.get('content')
-            news=News.objects.create(name=name,content=content)
-            news.save()
-            print('成功')
+            print('content',content)
+            category_id = form.cleaned_data.get('category')
+            category = Category.objects.get(id = category_id)
+            print('category_id',category_id)
+            thumbnail = form.cleaned_data.get('thumbnail')
+            author = request.user
+            new = News.objects.create(title=title,content=content,category=category,thumbnail=thumbnail,author=author)
+            new.save()
+            print('OK')
             return restful.ok()
-        else:
-            return restful.params_error(form.get_errors())
-    else:
-        return render(request,'cms/news/release.html')
-
+        print('表单错')
+        print('form.get_errors',form.get_errors)
+        return restful.params_error(message='G表单问题')
 #标签
+
+
 def category(request):
     if request.method == 'GET':
         categorys = Category.objects.all().order_by("-id")

@@ -25,7 +25,7 @@ SECRET_KEY = 's=rl3ghy&&txqbc5=6k+01&2nzl%6^9nzr(%)*7w7@oc89y_1u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.106','sapphpire.natapp1.cc','127.0.0.1']
+ALLOWED_HOSTS = ['122.114.157.40','192.168.1.106','sapphpire.natapp1.cc','127.0.0.1']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'apps.course',
     'apps.payinfo',
     'apps.search',
+    'apps.ueditor',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -146,6 +147,28 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = os.path.join(BASE_DIR,'static_dist')
 AUTH_USER_MODEL = 'register.User'
-
 CLIENTIMAGE_URL = '/front/source/client_image/'
 CLIENTIMAGE_ROOT = os.path.join(BASE_DIR,'front','source','client_image')
+
+
+
+#七牛
+# Qiniu配置
+QINIU_ACCESS_KEY = 'L7Idi7_0oH-8LC1g2CjLb1h9Z6kN4-JLoqoOn21U'
+QINIU_SECRET_KEY = 'IGhDFYcbCns_3RcEopOwmHLE8M7XctIe_bVwYfHr'
+QINIU_BUCKET_NAME = 'establish'
+QINIU_DOMAIN = 'http://q1wvz08zi.bkt.clouddn.com/'
+
+# 七牛和自己的服务器，最少要配置一个
+# UEditor配置
+UEDITOR_UPLOAD_TO_QINIU = True
+UEDITOR_QINIU_ACCESS_KEY = QINIU_ACCESS_KEY
+UEDITOR_QINIU_SECRET_KEY = QINIU_SECRET_KEY
+UEDITOR_QINIU_BUCKET_NAME = QINIU_BUCKET_NAME
+UEDITOR_QINIU_DOMAIN = QINIU_DOMAIN
+
+#ueditor
+UEDITOR_UPLOAD_TO_SERVER = True
+UEDITOR_UPLOAD_PATH = CLIENTIMAGE_ROOT
+UEDITOR_CONFIG_PATH = os.path.join(BASE_DIR,'front','district','ueditor','config.json')
+

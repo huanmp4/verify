@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
+</head>
+<body>
+    <select name="province_name" id="province_name">
+        <option value="1">江苏</option>
+        <option value="2">浙江</option>
+        <option value="3">上海</option>
+    </select>
+    <a href="javascript:;" id="btn">点击</a>
+    <br/>
+    <br/>
+    <br/>
+    <div id="text_div"></div>
+    <div id="value_div"></div>
+    <script type="text/javascript">
+        $(function(){
+            $("#btn").click(function(){
+                var category = $('#province_name').val();
+                var categorytext = $('#province_name').text();
+                console.log('category',category);
+                console.log('categorytext',categorytext);
+                var test = $("#province_name option[value = 'category']").text();
+                console.log('test',test);
+                var select_val=$("#province_name").val();
+                var select_option_obj=$("#province_name option[value='"+select_val+"']").text();
+                console.log('select_option_obj',select_option_obj);
+                $("#text_div").text("text是 "+select_option_obj.text());
+                $("#value_div").text("value是 "+select_option_obj.val());
+            });
+
+        });
+    </script>
+</body>
+</html>

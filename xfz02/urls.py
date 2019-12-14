@@ -24,5 +24,6 @@ urlpatterns = [
     path('course/',include('apps.course.urls')),
     path('pay/',include('apps.payinfo.urls')),
     path('search/',include('apps.search.urls')),
+    path('ueditor/',include('apps.ueditor.urls')),
     path('', views.test)
 ]
