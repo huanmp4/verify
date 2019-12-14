@@ -1,0 +1,16 @@
+[uwsgi]
+#子目录
+chdir=/xfz01
+#wsgi的目录
+module=xfz02.wsgi
+#虚拟环境
+
+home=/root/.virtualenvs/verify
+master=true
+processes=10
+#http=:8000
+socket=/xfz01/xfz01.sock
+chmod-socket = 666
+#退出真空清除
+vacuum = ture
+daemonize = /xfz01/uwsgi.log
