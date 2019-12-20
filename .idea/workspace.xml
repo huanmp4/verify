@@ -3,622 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="edc1a9fb-64dd-4ec4-b20a-4edbcfda3c4f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/apps/cms/forms.py" afterPath="$PROJECT_DIR$/apps/cms/forms.py" />
-      <change beforePath="$PROJECT_DIR$/apps/cms/urls.py" afterPath="$PROJECT_DIR$/apps/cms/urls.py" />
-      <change beforePath="$PROJECT_DIR$/apps/cms/views.py" afterPath="$PROJECT_DIR$/apps/cms/views.py" />
-      <change beforePath="$PROJECT_DIR$/apps/news/forms.py" afterPath="$PROJECT_DIR$/apps/news/forms.py" />
-      <change beforePath="$PROJECT_DIR$/apps/news/models.py" afterPath="$PROJECT_DIR$/apps/news/models.py" />
-      <change beforePath="$PROJECT_DIR$/apps/news/urls.py" afterPath="$PROJECT_DIR$/apps/news/urls.py" />
-      <change beforePath="$PROJECT_DIR$/apps/news/views.py" afterPath="$PROJECT_DIR$/apps/news/views.py" />
-      <change beforePath="$PROJECT_DIR$/front/source/js/ajax.js" afterPath="$PROJECT_DIR$/front/source/js/ajax.js" />
-      <change beforePath="$PROJECT_DIR$/front/source/js/cms.js" afterPath="$PROJECT_DIR$/front/source/js/cms.js" />
-      <change beforePath="$PROJECT_DIR$/front/source/js/index.js" afterPath="$PROJECT_DIR$/front/source/js/index.js" />
-      <change beforePath="$PROJECT_DIR$/front/source/js/news.js" afterPath="$PROJECT_DIR$/front/source/js/news.js" />
-      <change beforePath="$PROJECT_DIR$/front/templates/cms/base.html" afterPath="$PROJECT_DIR$/front/templates/cms/base.html" />
-      <change beforePath="$PROJECT_DIR$/front/templates/cms/home.html" afterPath="$PROJECT_DIR$/front/templates/cms/news/home.html" />
-      <change beforePath="$PROJECT_DIR$/front/templates/cms/news/category.html" afterPath="$PROJECT_DIR$/front/templates/cms/news/category.html" />
-      <change beforePath="$PROJECT_DIR$/front/templates/cms/news/module.html" afterPath="$PROJECT_DIR$/front/templates/cms/news/module.html" />
-      <change beforePath="$PROJECT_DIR$/front/templates/cms/news/release.html" afterPath="$PROJECT_DIR$/front/templates/cms/news/release.html" />
-      <change beforePath="$PROJECT_DIR$/front/templates/news/base.html" afterPath="$PROJECT_DIR$/front/templates/news/base.html" />
-      <change beforePath="$PROJECT_DIR$/front/templates/news/discover.html" afterPath="$PROJECT_DIR$/front/templates/news/discover.html" />
-      <change beforePath="$PROJECT_DIR$/front/templates/news/index.html" afterPath="$PROJECT_DIR$/front/templates/news/index.html" />
-      <change beforePath="$PROJECT_DIR$/front/templates/news/news_detail.html" afterPath="$PROJECT_DIR$/front/templates/news/news_detail.html" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/css/autocomplete.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/css/base.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/css/changelists.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/css/dashboard.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/css/fonts.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/css/forms.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/css/login.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/css/responsive.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/css/responsive_rtl.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/css/rtl.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/css/vendor/select2/LICENSE-SELECT2.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/css/vendor/select2/select2.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/css/vendor/select2/select2.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/css/widgets.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/fonts/LICENSE.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/fonts/README.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/fonts/Roboto-Bold-webfont.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/fonts/Roboto-Light-webfont.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/fonts/Roboto-Regular-webfont.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/img/LICENSE" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/img/README.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/img/calendar-icons.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/img/gis/move_vertex_off.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/img/gis/move_vertex_on.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/img/icon-addlink.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/img/icon-alert.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/img/icon-calendar.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/img/icon-changelink.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/img/icon-clock.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/img/icon-deletelink.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/img/icon-no.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/img/icon-unknown-alt.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/img/icon-unknown.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/img/icon-yes.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/img/inline-delete.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/img/search.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/img/selector-icons.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/img/sorting-icons.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/img/tooltag-add.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/img/tooltag-arrowright.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/SelectBox.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/SelectFilter2.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/actions.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/actions.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/admin/DateTimeShortcuts.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/admin/RelatedObjectLookups.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/autocomplete.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/calendar.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/cancel.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/change_form.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/collapse.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/collapse.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/core.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/inlines.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/inlines.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/jquery.init.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/popup_response.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/prepopulate.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/prepopulate.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/prepopulate_init.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/timeparse.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/urlify.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/jquery/LICENSE-JQUERY.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/jquery/jquery.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/jquery/jquery.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/LICENSE-SELECT2.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/ar.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/az.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/bg.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/ca.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/cs.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/da.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/de.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/el.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/en.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/es.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/et.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/eu.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/fa.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/fi.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/fr.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/gl.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/he.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/hi.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/hr.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/hu.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/id.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/is.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/it.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/ja.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/km.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/ko.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/lt.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/lv.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/mk.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/ms.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/nb.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/nl.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/pl.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/pt-BR.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/pt.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/ro.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/ru.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/sk.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/sr-Cyrl.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/sr.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/sv.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/th.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/tr.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/uk.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/vi.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/zh-CN.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/i18n/zh-TW.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/select2.full.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/select2/select2.full.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/xregexp/LICENSE-XREGEXP.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/xregexp/xregexp.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/admin/js/vendor/xregexp/xregexp.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/css/adminlte.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/css/adminlte.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/css/adminlte.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/css/adminlte.min.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/AdminLTELogo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/avatar.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/avatar04.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/avatar2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/avatar3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/avatar5.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/boxed-bg.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/boxed-bg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/credit/american-express.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/credit/cirrus.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/credit/mastercard.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/credit/mestro.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/credit/paypal.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/credit/paypal2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/credit/visa.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/default-150x150.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/icons.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/photo1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/photo2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/photo3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/photo4.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/prod-1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/prod-2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/prod-3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/prod-4.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/prod-5.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/user1-128x128.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/user2-160x160.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/user3-128x128.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/user4-128x128.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/user5-128x128.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/user6-128x128.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/user7-128x128.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/img/user8-128x128.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/js/adminlte.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/js/adminlte.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/js/adminlte.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/js/adminlte.min.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/js/demo.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/js/pages/dashboard.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/js/pages/dashboard2.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/dist/js/pages/dashboard3.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/bootstrap/js/bootstrap.bundle.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/bootstrap/js/bootstrap.bundle.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/bootstrap/js/bootstrap.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/bootstrap/js/bootstrap.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/bootstrap/js/bootstrap.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/bootstrap/js/bootstrap.min.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/css/all.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/css/all.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/css/brands.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/css/brands.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/css/fontawesome.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/css/fontawesome.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/css/regular.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/css/regular.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/css/solid.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/css/solid.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/css/svg-with-js.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/css/svg-with-js.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/css/v4-shims.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/css/v4-shims.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/webfonts/fa-brands-400.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/webfonts/fa-brands-400.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/webfonts/fa-brands-400.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/webfonts/fa-brands-400.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/webfonts/fa-brands-400.woff2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/webfonts/fa-regular-400.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/webfonts/fa-regular-400.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/webfonts/fa-regular-400.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/webfonts/fa-regular-400.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/webfonts/fa-regular-400.woff2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/webfonts/fa-solid-900.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/webfonts/fa-solid-900.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/webfonts/fa-solid-900.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/webfonts/fa-solid-900.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/fontawesome-free/webfonts/fa-solid-900.woff2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/jquery/core.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/jquery/jquery.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/jquery/jquery.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/jquery/jquery.min.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/jquery/jquery.slim.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/jquery/jquery.slim.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminLTE/plugins/jquery/jquery.slim.min.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminlt/css/adminlte.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminlt/css/adminlte.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminlt/css/all.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminlt/css/all.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminlt/css/icheck-bootstrap.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminlt/css/icheck-bootstrap.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminlt/jquery/jquery.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminlt/js/bootstrap.bundle.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/adminlt/js/bootstrap.bundle.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/client_image/strenth.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/client_image/战斗机.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/client_image/未标题-1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/common/body.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/common/body.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/common/body.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/common/body.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/common/constants.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/common/constants.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/common/constants.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/common/constants.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/common/footer.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/common/footer.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/common/footer.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/common/footer.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/common/header.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/common/header.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/common/header.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/common/header.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/common/init.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/common/init.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/common/init.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/common/init.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/common/news_list.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/common/news_list.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/common/news_list.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/common/news_list.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/course/course_detail.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/course/course_detail.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/course/course_detail.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/course/course_detail.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/course/course_index.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/course/course_index.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/course/course_index.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/course/course_index.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/course/course_nav.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/course/course_nav.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/course/course_nav.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/course/course_nav.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/imports.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/index.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/news/discover.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/news/discover.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/news/index.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/news/index.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/news/index.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/news/index.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/news/news_detail.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/news/news_detail.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/news/news_detail.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/news/news_detail.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/news/test2.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/payinfo/payinfo.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/payinfo/payinfo.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/payinfo/payinfo.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/payinfo/payinfo.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/register/constants.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/register/constants.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/register/init.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/register/init.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/register/login.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/register/login.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/search/search.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/search/search.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/search/search.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/search/search.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/sweetalert/sweetalert.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/sweetalert/sweetalert.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/test2.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/testapp/test2.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/testapp/test2.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/testapp/test2.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/css/testapp/test2.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/images/head protrait.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/index.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/js/LoginMessage.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/js/ajax.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/js/ajax.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/js/ajax_process.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/js/alert.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/js/cms.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/js/cms.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/js/discover/discover.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/js/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/js/index.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/js/jquery-3.3.1.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/js/jquery-3.3.1.min.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/js/login_ajax.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/js/login_ajax_process.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/js/login_ajax_process.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/js/message.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/js/message.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/js/news.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/js/news.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/js/qiniu.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/js/test.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/js/test.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/js/test2.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/sweetalert/sweetalert.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/sweetalert/sweetalert.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/config.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/anchor/anchor.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/attachment.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/attachment.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/attachment.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/fileTypeImages/icon_chm.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/fileTypeImages/icon_default.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/fileTypeImages/icon_doc.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/fileTypeImages/icon_exe.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/fileTypeImages/icon_jpg.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/fileTypeImages/icon_mp3.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/fileTypeImages/icon_mv.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/fileTypeImages/icon_pdf.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/fileTypeImages/icon_ppt.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/fileTypeImages/icon_psd.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/fileTypeImages/icon_rar.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/fileTypeImages/icon_txt.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/fileTypeImages/icon_xls.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/images/alignicon.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/images/alignicon.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/images/bg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/images/file-icons.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/images/file-icons.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/images/icons.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/images/icons.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/images/image.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/images/progress.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/images/success.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/attachment/images/success.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/background/background.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/background/background.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/background/background.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/background/images/bg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/background/images/success.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/charts/chart.config.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/charts/charts.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/charts/charts.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/charts/charts.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/charts/images/charts0.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/charts/images/charts1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/charts/images/charts2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/charts/images/charts3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/charts/images/charts4.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/charts/images/charts5.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/emotion/emotion.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/emotion/emotion.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/emotion/emotion.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/emotion/images/0.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/emotion/images/bface.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/emotion/images/cface.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/emotion/images/fface.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/emotion/images/jxface2.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/emotion/images/neweditor-tab-bg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/emotion/images/tface.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/emotion/images/wface.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/emotion/images/yface.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/gmap/gmap.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/help/help.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/help/help.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/help/help.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/image/image.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/image/image.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/image/image.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/image/images/alignicon.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/image/images/bg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/image/images/icons.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/image/images/icons.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/image/images/image.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/image/images/progress.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/image/images/success.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/image/images/success.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/insertframe/insertframe.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/internal.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/link/link.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/map/map.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/map/show.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/music/music.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/music/music.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/music/music.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/preview/preview.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/scrawl/images/addimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/scrawl/images/brush.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/scrawl/images/delimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/scrawl/images/delimgH.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/scrawl/images/empty.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/scrawl/images/emptyH.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/scrawl/images/eraser.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/scrawl/images/redo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/scrawl/images/redoH.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/scrawl/images/scale.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/scrawl/images/scaleH.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/scrawl/images/size.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/scrawl/images/undo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/scrawl/images/undoH.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/scrawl/scrawl.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/scrawl/scrawl.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/scrawl/scrawl.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/searchreplace/searchreplace.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/searchreplace/searchreplace.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/snapscreen/snapscreen.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/spechars/spechars.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/spechars/spechars.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/table/dragicon.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/table/edittable.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/table/edittable.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/table/edittable.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/table/edittd.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/table/edittip.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/template/config.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/template/images/bg.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/template/images/pre0.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/template/images/pre1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/template/images/pre2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/template/images/pre3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/template/images/pre4.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/template/template.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/template/template.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/template/template.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/video/images/bg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/video/images/center_focus.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/video/images/file-icons.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/video/images/file-icons.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/video/images/icons.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/video/images/icons.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/video/images/image.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/video/images/left_focus.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/video/images/none_focus.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/video/images/progress.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/video/images/right_focus.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/video/images/success.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/video/images/success.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/video/video.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/video/video.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/video/video.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/webapp/webapp.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/wordimage/fClipboard_ueditor.swf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/wordimage/imageUploader.swf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/wordimage/tangram.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/wordimage/wordimage.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/dialogs/wordimage/wordimage.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/lang/en/en.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/lang/en/images/addimage.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/lang/en/images/alldeletebtnhoverskin.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/lang/en/images/alldeletebtnupskin.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/lang/en/images/background.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/lang/en/images/button.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/lang/en/images/copy.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/lang/en/images/deletedisable.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/lang/en/images/deleteenable.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/lang/en/images/listbackground.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/lang/en/images/localimage.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/lang/en/images/music.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/lang/en/images/rotateleftdisable.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/lang/en/images/rotateleftenable.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/lang/en/images/rotaterightdisable.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/lang/en/images/rotaterightenable.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/lang/en/images/upload.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/lang/zh-cn/images/copy.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/lang/zh-cn/images/localimage.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/lang/zh-cn/images/music.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/lang/zh-cn/images/upload.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/lang/zh-cn/zh-cn.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/php/Uploader.class.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/php/action_crawler.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/php/action_list.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/php/action_upload.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/php/config.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/php/controller.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/css/ueditor.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/css/ueditor.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/dialogbase.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/anchor.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/arrow.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/arrow_down.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/arrow_up.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/button-bg.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/cancelbutton.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/charts.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/cursor_h.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/cursor_h.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/cursor_v.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/cursor_v.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/dialog-title-bg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/filescan.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/highlighted.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/icons-all.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/icons.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/icons.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/loaderror.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/loading.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/lock.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/neweditor-tab-bg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/pagebreak.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/scale.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/sortable.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/spacer.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/sparator_v.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/table-cell-align.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/tangram-colorpicker.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/toolbar_bg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/unhighlighted.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/upload.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/videologo.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/word.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/default/images/wordpaste.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/themes/iframe.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/SyntaxHighlighter/shCore.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/codemirror/codemirror.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/codemirror/codemirror.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/adapters/mootools-adapter.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/adapters/mootools-adapter.src.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/adapters/prototype-adapter.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/adapters/prototype-adapter.src.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/adapters/standalone-framework.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/adapters/standalone-framework.src.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/highcharts-more.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/highcharts-more.src.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/highcharts.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/highcharts.src.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/modules/annotations.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/modules/annotations.src.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/modules/canvas-tools.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/modules/canvas-tools.src.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/modules/data.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/modules/data.src.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/modules/drilldown.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/modules/drilldown.src.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/modules/exporting.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/modules/exporting.src.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/modules/funnel.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/modules/funnel.src.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/modules/heatmap.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/modules/heatmap.src.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/modules/map.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/modules/map.src.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/modules/no-data-to-display.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/modules/no-data-to-display.src.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/themes/dark-blue.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/themes/dark-green.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/themes/gray.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/themes/grid.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/highcharts/themes/skies.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/jquery-1.10.2.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/jquery-1.10.2.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/jquery-1.10.2.min.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/snapscreen/UEditorSnapscreen.exe" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/video-js/font/vjs.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/video-js/font/vjs.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/video-js/font/vjs.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/video-js/font/vjs.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/video-js/video-js.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/video-js/video-js.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/video-js/video-js.swf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/video-js/video.dev.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/video-js/video.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/webuploader/Uploader.swf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/webuploader/webuploader.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/webuploader/webuploader.custom.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/webuploader/webuploader.custom.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/webuploader/webuploader.flashonly.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/webuploader/webuploader.flashonly.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/webuploader/webuploader.html5only.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/webuploader/webuploader.html5only.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/webuploader/webuploader.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/webuploader/webuploader.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/webuploader/webuploader.withoutimage.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/webuploader/webuploader.withoutimage.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/xss.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/zeroclipboard/ZeroClipboard.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/zeroclipboard/ZeroClipboard.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/third-party/zeroclipboard/ZeroClipboard.swf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/ueditor.all.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static_dist/ueditor/ueditor.config.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/train.py" afterPath="$PROJECT_DIR$/train.py" />
-      <change beforePath="$PROJECT_DIR$/utils/restful.py" afterPath="$PROJECT_DIR$/utils/restful.py" />
-      <change beforePath="$PROJECT_DIR$/xfz02/settings.py" afterPath="$PROJECT_DIR$/xfz02/settings.py" />
-      <change beforePath="$PROJECT_DIR$/xfz02/urls.py" afterPath="$PROJECT_DIR$/xfz02/urls.py" />
-      <change beforePath="$PROJECT_DIR$/xfz02/views.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/front/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -656,11 +41,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.41204533">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/apps/cms/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2907">
-                  <caret line="163" column="20" lean-forward="false" selection-start-line="163" selection-start-column="4" selection-end-line="163" selection-end-column="20" />
+                <state relative-caret-position="2717">
+                  <caret line="143" column="27" lean-forward="true" selection-start-line="143" selection-start-column="27" selection-end-line="143" selection-end-column="27" />
                   <folding>
                     <element signature="e#0#35#0" expanded="true" />
                   </folding>
@@ -668,11 +53,33 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/apps/cms/urls.py">
+          <file leaf-file-name="news_utils.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/apps/news/templatetags/news_utils.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="20" column="77" lean-forward="false" selection-start-line="20" selection-start-column="77" selection-end-line="20" selection-end-column="77" />
+                <state relative-caret-position="589">
+                  <caret line="31" column="45" lean-forward="true" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+                  <folding>
+                    <element signature="e#17#44#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="uwsgi.ini" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/uwsgi.ini">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="209">
+                  <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="requirement.txt" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/requirement.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="247">
+                  <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
                   <folding />
                 </state>
               </provider>
@@ -688,11 +95,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/front/templates/cms/base.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="589">
-                  <caret line="121" column="0" lean-forward="true" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+                <state relative-caret-position="418">
+                  <caret line="112" column="37" lean-forward="false" selection-start-line="112" selection-start-column="37" selection-end-line="112" selection-end-column="37" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/front/templates/news/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="247">
+                  <caret line="13" column="37" lean-forward="false" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
                   <folding />
                 </state>
               </provider>
@@ -735,8 +152,8 @@
           <file leaf-file-name="banner.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/front/templates/cms/banner/banner.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="418">
-                  <caret line="22" column="18" lean-forward="false" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+                <state relative-caret-position="437">
+                  <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
                   <folding />
                 </state>
               </provider>
@@ -884,7 +301,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="245" />
     <option name="y" value="140" />
     <option name="width" value="1444" />
@@ -925,13 +342,14 @@
               <item name="xfz01" type="b2602c69:ProjectViewProjectNode" />
               <item name="xfz01" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xfz01" type="b2602c69:ProjectViewProjectNode" />
               <item name="xfz01" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
               <item name="news" type="462c0819:PsiDirectoryNode" />
+              <item name="templatetags" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xfz01" type="b2602c69:ProjectViewProjectNode" />
@@ -1207,7 +625,7 @@
     <option name="totallyTimeSpent" value="8186000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1014" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1014" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1275,38 +693,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/apps/news/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://E:/program/workon_home_env/verify/Lib/site-packages/django/db/models/fields/related.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="776" column="0" lean-forward="true" selection-start-line="776" selection-start-column="0" selection-end-line="776" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://E:/program/workon_home_env/verify/Lib/site-packages/django/db/models/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-369">
-          <caret line="19" column="36" lean-forward="true" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/payinfo/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/news/templatetags/news_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1370,6 +760,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="54" column="83" lean-forward="true" selection-start-line="54" selection-start-column="83" selection-end-line="54" selection-end-column="83" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1490,6 +881,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="12" column="67" lean-forward="true" selection-start-line="12" selection-start-column="67" selection-end-line="12" selection-end-column="67" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1529,17 +921,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/templates/news/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1159">
-          <caret line="61" column="36" lean-forward="false" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/cms/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1547,6 +933,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="91" column="4" lean-forward="false" selection-start-line="91" selection-start-column="4" selection-end-line="91" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1562,6 +949,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="30" column="37" lean-forward="true" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1569,6 +959,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="6" column="16" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1577,16 +968,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="6" selection-end-column="41" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/cms/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2907">
-          <caret line="163" column="20" lean-forward="false" selection-start-line="163" selection-start-column="4" selection-end-line="163" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1630,14 +1011,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/templates/cms/banner/banner.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="18" lean-forward="false" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/source/css/cms/banner_css.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
@@ -1648,9 +1021,69 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/front/templates/cms/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="121" column="0" lean-forward="true" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+        <state relative-caret-position="418">
+          <caret line="112" column="37" lean-forward="false" selection-start-line="112" selection-start-column="37" selection-end-line="112" selection-end-column="37" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/templates/news/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="37" lean-forward="false" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supervisor.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/news/templatetags/news_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="31" column="45" lean-forward="true" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+          <folding>
+            <element signature="e#17#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uwsgi.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirement.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/templates/cms/banner/banner.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/cms/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2717">
+          <caret line="143" column="27" lean-forward="true" selection-start-line="143" selection-start-column="27" selection-end-line="143" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
