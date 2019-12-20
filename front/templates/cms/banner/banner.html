@@ -1,0 +1,93 @@
+{% extends 'cms/base.html' %}
+
+{% block title %}Banner{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/cms/banner_css.css' %}">
+    <script src="{% static '/js/template-web.js' %}"></script>
+    <script src="{% static 'js/cms/banner.js' %}"></script>
+
+{% endblock style %}
+
+{% block content %}
+    <div class="content-wrapper" style='min-height:813px'>
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <button class="btn btn-primary" id="add-banner-btn-option">
+                        <span>添加轮播图</span>
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <ul class="cloumn">
+
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <script id="add-banner-template" type="text/html">
+        {% verbatim %}
+        {{ if banner }}
+        <li class="card card-warning banner-items" data-banner-id="{{ banner.id }}">
+        {{ else }}
+        <li class="card card-warning banner-items" data-banner-id="">
+        {{ /if }}
+            <div class="card-header">
+                <span>添加轮播图</span>
+                <button type="button" class="btn btn-tool btn-tool-to-css fa-pull-right" title="删除">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="card-body">
+                {{ if banner }}
+                <div class="text-blue">
+                    (数字越大越排前)当前优先级：{{ banner.priority }}
+                </div>
+                {{ else }}
+                <div class="text-blue">
+                    (数字越大越排前)当前优先级：0
+                </div>
+                {{ /if }}
+                <div class="form-wrapper-image col-sm-6 form-left-input ">
+                    <input type="file" hidden="hidden" id="images-click-A">
+                    {{ if banner }}
+                    <a href="#" id="images-click-B">
+                        <img src="{{ banner.image_url }}" alt="" class="image-banner-temp">
+                    </a>
+                    {{ else }}
+                    <a href="#" id="images-click-B">
+                        <img src="/static/images/banner.png" alt="" class="image-banner-temp">
+                    </a>
+                    {{ /if }}
+                </div>
+                <div class="form-wrapper-input col-sm-6 form-left-input">
+                    <div class="form-group">
+                        {{ if banner }}
+                        <input type="text" class="form-control priority_by_banner" placeholder="优先级" value="{{ banner.priority }}">
+                        {{ else }}
+                        <input type="text" class="form-control priority_by_banner" placeholder="优先级">
+                        {{ /if }}
+                    </div>
+                    <div class="form-group">
+                        {{ if banner }}
+                        <input type="text" class="form-control url-jump" placeholder="跳转url" value="{{ banner.image_url }}">
+                        {{ else }}
+                        <input type="text" class="form-control url-jump" placeholder="跳转url" >
+                        {{ /if }}
+                    </div>
+                </div>
+                <button class="btn btn-primary fa-pull-right btn-save-all-banner">保存</button>
+            </div>
+        </li>
+        {% endverbatim %}
+    </script>
+{% endblock content %}
+

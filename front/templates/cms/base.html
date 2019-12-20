@@ -15,12 +15,16 @@
   <link rel="stylesheet" href="{% static 'adminLTE/dist/css/adminlte.min.css' %}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+  <!-- alertBox提示 -->
+    <link rel="stylesheet" href="{% static 'css/sweetalert/sweetalert.css' %}">
+    <script src="{% static 'css/sweetalert/sweetalert.min.js' %}"></script>
+    <script src="{% static 'js/alert.js' %}"></script>
+
+  <!-- 手写的 -->
     <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static 'js/ajax.js' %}"></script>
-    <script src="{% static 'js/news.js' %}"></script>
     <script src="{% static 'js/message.min.js' %}"></script>
-
-
     {% block style %}{% endblock style %}
 
 </head>
@@ -83,7 +87,7 @@
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link active">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>新闻管理
                                     <i class="right fa fa-angle-left"></i></p>
@@ -102,9 +106,15 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="{% url 'cms:banner_control' %}" class="nav-link">
                                         <i class="fa fa-walking nav-icon"></i>
-                                        <p>其它</p>
+                                        <p>Banner管理</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'cms:news_cms_manager' %}" class="nav-link">
+                                        <i class="fa fa-adobe nav-icon"></i>
+                                        <p>News管理</p>
                                     </a>
                                 </li>
                             </ul>
@@ -122,7 +132,7 @@
 
 
 <!-- jQuery -->
-<script src="{% static 'adminLTE/plugins/jquery/jquery.min.js' %}"></script>
+{#<script src="{% static 'adminLTE/plugins/jquery/jquery.min.js' %}"></script>#}
 <!-- Bootstrap 4 -->
 <script src="{% static 'adminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 <!-- AdminLTE App -->

@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from . import views
+from apps.news import views
+from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('news/',include('apps.news.urls')),
@@ -25,5 +26,16 @@ urlpatterns = [
     path('pay/',include('apps.payinfo.urls')),
     path('search/',include('apps.search.urls')),
     path('ueditor/',include('apps.ueditor.urls')),
-    path('', views.test)
+    path('',views.index,name='index')
 ]
+
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        path('__debug__/', include(debug_toolbar.urls)),
+
+        # For django versions before 2.0:
+        # url(r'^__debug__/', include(debug_toolbar.urls)),
+
+    ] + urlpatterns

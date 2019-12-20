@@ -64,7 +64,7 @@ Banner.prototype.toggleArrow = function (isShow) {
     }
 };
 
-Banner.prototype.animate = function () {
+Banner.prototype.animateEvent = function () {
     var self = this;
     self.bannerUl.animate({"left":-798*self.index},500);
     var index = self.index;
@@ -87,7 +87,7 @@ Banner.prototype.loop = function () {
         }else{
             self.index++;
         }
-        self.animate();
+        self.animateEvent();
     },2000);
 };
 
@@ -103,7 +103,7 @@ Banner.prototype.listenArrowClick = function () {
         }else{
             self.index--;
         }
-        self.animate();
+        self.animateEvent();
     });
     
     self.rightArrow.click(function () {
@@ -113,7 +113,7 @@ Banner.prototype.listenArrowClick = function () {
         }else{
             self.index++;
         }
-        self.animate();
+        self.animateEvent();
     });
 };
 
@@ -134,8 +134,8 @@ Banner.prototype.listenPageControl = function () {
     var self = this;
     self.pageControl.children("li").each(function (index,obj) {
         $(obj).click(function () {
-            self.index = index;
-            self.animate();
+            self.index = index+1;
+            self.animateEvent();
         });
     });
 };
@@ -153,7 +153,6 @@ Banner.prototype.listenMoreBoxHover = function(){
 
 
 Banner.prototype.run = function () {
-    console.log("sss");
     this.initBanner();
     this.initPageControl();
     this.loop();
@@ -162,6 +161,10 @@ Banner.prototype.run = function () {
     this.listenPageControl();
     this.listenMoreBoxHover();
 };
+
+
+
+
 
 
 

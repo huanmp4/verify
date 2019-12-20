@@ -1,0 +1,19 @@
+.form-wrapper-image{
+    height:100px;
+    width:400px;
+}
+.form-wrapper-input{
+    width:500px;
+    height:100px;
+}
+.form-left-input{
+    float:left;
+}
+
+.image-banner-temp{
+    width:100%;
+    height:100%
+}
+.banner-items{
+    width:1000px;
+}

@@ -13,13 +13,13 @@ for key,value in a.items():
 
 #最大数为100
 chance = min(100,max(10,int(9)))
-print(chance)
+
 
 import memcache
 
 mc = memcache.Client(['127.0.0.1:11211'],debug=True)
 aa=mc.get('13005611192')
-print(aa)
+
 
 from qiniu import Auth
 
@@ -27,7 +27,6 @@ access_key = 'L7Idi7_0oH-8LC1g2CjLb1h9Z6kN4-JLoqoOn21U'
 secret_key = 'L7Idi7_0oH-8LC1g2CjLb1h9Z6kN4-JLoqoOn21U'
 
 Q = Auth(access_key,secret_key)
-print(Q)
 
 import os
 from qiniu import Auth, put_file, etag
@@ -45,8 +44,23 @@ key = 'chicken.png'
 token = q.upload_token(bucket_name, key, 3600)
 #要上传文件的本地路径
 
-localfile = os.path.join(os.path.dirname(__file__),'chicken.png')
-ret, info = put_file(token, key, localfile)
-print(info)
-assert ret['key'] == key
-assert ret['hash'] == etag(localfile)
+
+
+from datetime import datetime
+time = datetime.now()
+print('time',time)
+
+
+# from django import template
+# from datetime import datetime
+# from django.utils.timezone import now as now_func,localtime
+#
+# register = template.Library()
+# now1 = now_func()
+# print(now1)
+
+import re
+pattern = "[\u4e00-\u9fa5]+|"
+string = '在要要111dd'
+result = re.findall(pattern, string)
+print('正则',result)

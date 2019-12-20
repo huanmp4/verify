@@ -46,16 +46,14 @@ def ok():
 
 class FormError(object):
     def get_errors(self):
-        if hasattr(self, 'error'):
-            error = self.error.get_json_data()
-
-            print('表单error',error)
-            new_error = []
-            for key, values in error.items(): # {'password': [{'message': '密码长度不能少于4位', 'code': 'min_length'}]}
-                value_set = []
-                for value in values:
-                    value_set.append(value['message'])
-                new_error[key] = value_set
-            return new_error
+        if hasattr(self, 'errors'):
+            errors = self.errors.get_json_data()  # {'password': [{'message': '密码长度不能少于4位', 'code': 'min_length'}]}
+            new_errors = {}
+            for key, message_dicts in errors.items():
+                messages = []
+                for message in message_dicts:
+                    messages.append(message['message'])
+                new_errors[key] = messages
+            return new_errors
         else:
-            return {}
+            return '表单无验证无数据'

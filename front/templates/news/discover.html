@@ -1,7 +1,11 @@
 {% extends 'news/base.html' %}
-
+{% load news_utils %}
 {% block header %}
-        <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+
+{% endblock header %}
+
+{% block body %}
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
@@ -10,9 +14,7 @@
     <script src="{% static 'ueditor/ueditor.config.js' %}"></script>
     <script src="{% static 'ueditor/ueditor.all.min.js' %}"></script>
     <script src="{% static 'js/discover/discover.js' %}"></script>
-{% endblock header %}
 
-{% block body %}
     <div class="container">
         <div class="leaveMessage">
             {% for disc in discover %}
@@ -25,7 +27,7 @@
                 </div>
                 <div class="list-group-item list-group-item-success">
                     {{ disc.content|safe }}
-                    time:{{ disc.pub_time }}
+                    time:{{ disc.pub_time|time_since }}
                 </div>
                 <br>
                 <br>

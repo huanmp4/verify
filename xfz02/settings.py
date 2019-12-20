@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -55,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'xfz02.urls'
@@ -121,6 +123,51 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+DEBUG_TOOLBAR_PANELS = [
+    # 代表是哪个django版本
+    'debug_toolbar.panels.versions.VersionsPanel',
+    # 用来计时的，判断加载当前页面总共花的时间
+    'debug_toolbar.panels.timer.TimerPanel',
+    # 读取django中的配置信息
+    'debug_toolbar.panels.settings.SettingsPanel',
+    # 看到当前请求头和响应头信息
+    'debug_toolbar.panels.headers.HeadersPanel',
+    # 当前请求的想信息（视图函数，Cookie信息，Session信息等）
+    'debug_toolbar.panels.request.RequestPanel',
+    # 查看SQL语句
+    'debug_toolbar.panels.sql.SQLPanel',
+    # 静态文件
+    'debug_toolbar.panels.staticfiles.StaticFilesPanel',
+    # 模板文件
+    'debug_toolbar.panels.templates.TemplatesPanel',
+    # 缓存
+    'debug_toolbar.panels.cache.CachePanel',
+    # 信号
+    'debug_toolbar.panels.signals.SignalsPanel',
+    # 日志
+    'debug_toolbar.panels.logging.LoggingPanel',
+    # 重定向
+    'debug_toolbar.panels.redirects.RedirectsPanel',
+]
+
+DISABLE_PANELS = {'debug_toolbar.panels.profiling.ProfilingPanel','debug_toolbar.panels.versions.VersionsPanel','debug_toolbar.panels.settings.SettingsPanel'}
+
+INTERNAL_IPS = [
+    # ...
+    '127.0.0.1',
+    # ...
+]
+
+DEBUG_TOOLBAR_CONFIG = {
+    'JQUERY_URL': '',
+    # Toolbar options
+    'RESULTS_CACHE_SIZE': 3,
+    'SHOW_COLLAPSED': True,
+    # Panel options
+    'SQL_WARNING_THRESHOLD': 100,   # milliseconds
+}
+
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
@@ -143,11 +190,15 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'front','district'),
     os.path.join(BASE_DIR,'front','source')
-
 ]
+
 STATIC_ROOT = os.path.join(BASE_DIR,'static_dist')
+
 AUTH_USER_MODEL = 'register.User'
-CLIENTIMAGE_URL = '/front/source/client_image/'
+
+# CLIENTIMAGE_URL = '/front/source/client_image/'
+# CLIENTIMAGE_ROOT = os.path.join(BASE_DIR,'front','source','client_image')
+CLIENTIMAGE_URL = '/static/client_image/'
 CLIENTIMAGE_ROOT = os.path.join(BASE_DIR,'front','source','client_image')
 
 
@@ -171,4 +222,9 @@ UEDITOR_QINIU_DOMAIN = QINIU_DOMAIN
 UEDITOR_UPLOAD_TO_SERVER = True
 UEDITOR_UPLOAD_PATH = CLIENTIMAGE_ROOT
 UEDITOR_CONFIG_PATH = os.path.join(BASE_DIR,'front','district','ueditor','config.json')
+
+#page加载新闻数量
+
+PAGE_LOAD_NUM = 1
+
 

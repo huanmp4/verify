@@ -3,14 +3,15 @@ from django.http import HttpResponse
 from django.views.generic import View
 from ..news.models import News
 from utils import restful
-from .forms import CategoryForm,NewsForm
-from apps.news.models import Category
+from .forms import CategoryForm,NewsForm,BannerForm
+from apps.news.models import Category,Banner
 import os
 from django.conf import settings
 from qiniu import Auth as qiniuAuth
+from apps.news.serializers import BannerSerializers
 # Create your views here.
 def home(request):
-    return render(request,'cms/home.html')
+    return render(request, 'cms/news/home.html')
 
 
 def news_release(request):
@@ -59,14 +60,15 @@ def category(request):
         return restful.params_error('表单验证错误')
 
 
-def category_thumbnail(request):
+def image_upload_to_local(request):
     file = request.FILES.get('file')
-
-    with open((os.path.join(settings.CLIENTIMAGE_ROOT,file.name)),'wb') as f:
+    file_name = file.name
+    with open((os.path.join(settings.CLIENTIMAGE_ROOT,file_name)),'wb') as f:
         for chunk in file.chunks():
             f.write(chunk)
-    print(os.path.join(settings.CLIENTIMAGE_ROOT+file.name))
-    return restful.ok()
+    url = request.build_absolute_uri(settings.STATIC_URL+'client_image/'+file_name)
+    print(url)
+    return restful.result(data={'url':url})
 
 def category_modify(request):
     form = CategoryForm(request.POST)
@@ -106,3 +108,58 @@ def thumbnail_process(request):
     q = qiniuAuth(access_key,secret_key)
     token = q.upload_token(bucket)
     return restful.result(data={'token':token})
+
+def banner_control(request):
+    return render(request,'cms/banner/banner.html')
+
+
+#管理banner
+def banner_cms_manager_get(request):
+    banner = Banner.objects.all()
+    serializer = BannerSerializers(banner,many=True).data
+    context = {'banners':serializer}
+    return restful.result(data=context)
+
+#添加banner
+def banner_cms_manager_add(request):
+    form = BannerForm(request.POST)
+    if form.is_valid():
+        link_to = form.cleaned_data.get('link_to')
+        priority = form.cleaned_data.get('priority')
+        image_url = form.cleaned_data.get('image_url')
+        banner = Banner.objects.create(link_to=link_to,priority=priority,image_url=image_url)
+        banner.save()
+        return restful.result(data={'banner_id':banner.id})
+    else:
+        return restful.params_error(form.get_errors())
+
+#删除banner
+def banner_cms_manager_delete(request):
+    banner_id = request.POST.get('banner_id')
+    print('banner_id_POST',banner_id)
+    banner_id_get = request.GET.get('banner_id')
+    print('banner_id_GET',banner_id_get)
+    try:
+        banner = Banner.objects.get(id=banner_id).delete()
+        return restful.ok()
+    except:
+        return  restful.params_error(message='没有这条数据,请刷新')
+
+
+#编辑banner
+def banner_cms_manager_edit(request):
+    form = BannerForm(request.POST)
+    if form.is_valid():
+        link_to = form.cleaned_data.get('link_to')
+        priority = form.cleaned_data.get('priority')
+        image_url = form.cleaned_data.get('image_url')
+        banner_id = form.cleaned_data.get('banner_id')
+        banner = Banner.objects.filter(id=banner_id)
+        banner.update(link_to=link_to,priority=priority,image_url=image_url)
+        return restful.ok()
+    else:
+        return restful.params_error(message=form.get_errors())
+
+#新闻增删改查
+def news_cms_manager(request):
+    return render(request,'cms/news/news_manager.html')

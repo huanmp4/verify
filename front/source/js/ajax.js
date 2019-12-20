@@ -32,7 +32,7 @@ var yourajax = {
             else{
                 var messageObject = result['message'];
                 console.log('messageObject',messageObject);
-                if(typeof messageObject == 'string' || messageObject.constructor == string){
+                if(typeof messageObject == 'string' || messageObject.constructor == String){
                     window.messageBox.showError(messageObject);
                 }else{
                     // {"password":['密码最大长度不能超过20为！','xxx'],"telephone":['xx','x']}

@@ -1,15 +1,18 @@
 function CMS(){
-    this. categoryModify = $('.btn-modify');
-    this.categoryDelete = $('.btn-delete');
+
+
     this.thumbnail = $('#thumbnail-btn');
     this.progressGroup = $('#progress-group');
     this.buttonComplete = $('#thumbnail-btn-cancel');
     this.progress = $('.progress');
     this.releaseNewsBtn = $('#release-news-button');
+
 }
 
 
 
+
+//提交发表新闻表单
 CMS.prototype.listenReleaseBTN = function() {
     var self = this;
     self.releaseNewsBtn.click(function (event) {
@@ -160,74 +163,15 @@ CMS.prototype.handleFileComplete = function(response){
     window.messageBox.show('已完成')
 };
 
-CMS.prototype.listenCategoryDeleted = function(){
-    var self = this;
-    self.categoryDelete.click(function(event){
-        event.preventDefault();
-        var parent = $(this);
-        var tr = parent.parent().parent();
-        var id = tr.attr('data-id');
-        console.log('id',id);
-        alertBox.alertConfirm({
-            'title':'确定要删除吗',
-            'text':'删除后无法恢复',
-            'confirmCallback':function(){
-                yourajax.post({
-                    'url':'/cms/category_delete',
-                    'data':{'id':id},
-                    'success':function(result){
-                        if (result['code'] === 200){
-                            window.location.reload()
-                        }
-                    }
-                })
-            }
-        });
-
-    })
-};
+//------------------------
 
 
-CMS.prototype.listenCategoryModify = function(){
-    var self = this;
-    self.categoryModify.click(function(event){
-        event.preventDefault();
-        console.log('点击');
-        var btn = $(this);
-        var tr = btn.parent().parent();
-        var id = tr.attr('data-id');
-        var name = tr.attr('data-name');
-        console.log(name);
-        alertBox.alertOneInput({
-            'title': '修改分类名称',
-            'placeholder': '请输入新的分类名称',
-            'value':name,
-            'confirmCallback':function(inputValue){
-                yourajax.post({
-                    'url':'/cms/category_modify',
-                    'data':{'id':id,'name':inputValue},
-                    'success':function(result){
-                        if (result['code'] === 200){
-                            window.location.reload();
-                        }else{
-                            alertBox.close();
-                            messageBox.showError(result['message'])
-                        }
-                    }
-                })
-            }
-        })
-        
-    })
-};
 
 CMS.prototype.Run = function(){
-    this.listenCategoryModify();
-    this.listenCategoryDeleted();
     this.listenThumbnailUploadEvent();
     this.listenCancelsubscription();
-    this.initUeditor();
     this.listenReleaseBTN();
+    this.initUeditor();
 };
 
 $(function(){
