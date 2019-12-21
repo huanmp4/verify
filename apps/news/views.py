@@ -10,7 +10,7 @@ from .serializers import NewsSerializers,NewDetailSerializers,CommentSerializers
 # Create your views here.
 
 def index(request):
-    newses = News.objects.all()[3:4]
+    newses = News.objects.all()[0:1]
     banners = Banner.objects.all()
     context = {'newses':newses,'banners':banners}
     return render(request,'news/index.html',context)
@@ -30,9 +30,11 @@ def Discover_Process(request):
             if str(request.user) != 'AnonymousUser':
                 author = request.user
             else:
-                author = User.objects.get(uid = 123123)
-            print('最终形态',author)
-            print('content',content)
+                exist = User.objects.filter(username='未注册用户').exists()
+                if not exist:
+                    author = User.objects.create_user(uid = 123123,username='未注册用户',password=12341234,telephone=13005611199,is_staff=0)
+                else:
+                    author = User.objects.get(uid = 123123)
             disc = Discover.objects.create(content=content,author = author)
             disc.save()
             return restful.ok()
