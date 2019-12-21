@@ -7,6 +7,8 @@ from utils import restful
 from apps.register.models import User
 from django.conf import settings
 from .serializers import NewsSerializers,NewDetailSerializers,CommentSerializers,BannerSerializers
+import time
+
 # Create your views here.
 
 def index(request):
@@ -20,6 +22,26 @@ def index(request):
 def Discover_Process(request):
     count = settings.PAGE_LOAD_NUM
     if request.method == 'GET':
+        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+        if x_forwarded_for:
+            ip = x_forwarded_for.split(',')[0]  # 所以这里是真实的ip
+            print('IP地址', ip)
+        else:
+            ip = request.META.get('REMOTE_ADDR')  # 这里获得代理ip
+            print('访客代理ip:', ip)
+
+        log_time = time.strftime(
+            '[%Y-%m-%d %H:%M:%S]',
+            time.localtime(
+                time.time()))  # 转化时间格式
+        with open('djangolog.log', 'r') as r:
+            Read = r.readlines()
+
+        with open('djangolog.log', 'w') as w:
+            w.write("Time:%s,IP:%s\n" % (str(log_time), ip))
+            for i in Read:
+                w.write(i)
+
         discover = Discover.objects.all().select_related('author')
         context = {'discover':discover}
         return render(request,'news/discover.html',context)
