@@ -52,11 +52,11 @@ def Discover_Process(request):
             if str(request.user) != 'AnonymousUser':
                 author = request.user
             else:
-                exist = User.objects.filter(username='还未注册用户').exists()
-                if not exist:
-                    author = User.objects.create_user(username='还未注册用户',password=12341234,telephone=13005611199,is_staff=0)
+                exist = User.objects.filter(username='还未注册用户1').exists()
+                if exist:
+                    author = User.objects.get(username='还未注册用户1')
                 else:
-                    author = User.objects.filter(username='还未注册用户')
+                    author = User.objects.create_user(username='还未注册用户1',password=12341234,telephone=13005611199,is_staff=0)
             disc = Discover.objects.create(content=content,author = author)
             disc.save()
             return restful.ok()
