@@ -18,4 +18,6 @@ urlpatterns = [
     path('banner_cms_manager_edit', views.banner_cms_manager_edit, name='banner_cms_manager_edit'),
     path('banner_cms_manager_delete', views.banner_cms_manager_delete, name='banner_cms_manager_delete'),
     path('news_cms_manager', views.news_cms_manager, name='news_cms_manager'),
+    path('news_preview', views.news_preview, name='news_preview'),
+    path('lover_mumu', views.lover_mumu, name='lover_mumu'),
 ]+static(settings.CLIENTIMAGE_ROOT,document_root = settings.CLIENTIMAGE_ROOT)

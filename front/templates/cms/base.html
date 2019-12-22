@@ -26,7 +26,11 @@
     <script src="{% static 'js/ajax.js' %}"></script>
     <script src="{% static 'js/message.min.js' %}"></script>
     {% block style %}{% endblock style %}
-
+    <style>
+        .nav-item{
+            margin-left:20px;
+        }
+    </style>
 </head>
 <body class="sidebar-mini" style="height:auto">
     <div class="wrapper">
@@ -95,26 +99,32 @@
                             <ul class="nav nav-treeview" style="display:block">
                                 <li class="nav-item">
                                     <a href="{% url 'cms:release_news' %}" class="nav-link">
-                                        <i class="fa fa-sad-tear nav-icon"></i>
+                                        <i class="fa fa-copy nav-icon"></i>
                                         <p>新闻发布</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{% url 'cms:category' %}" class="nav-link">
-                                        <i class="fa fa-radiation nav-icon"></i>
+                                        <i class="fa fa-copy nav-icon"></i>
                                         <p>新闻标签管理</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{% url 'cms:banner_control' %}" class="nav-link">
-                                        <i class="fa fa-walking nav-icon"></i>
+                                        <i class="fa fa-copy nav-icon"></i>
                                         <p>Banner管理</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{% url 'cms:news_cms_manager' %}" class="nav-link">
-                                        <i class="fa fa-adobe nav-icon"></i>
+                                        <i class="fa fa-copy nav-icon"></i>
                                         <p>News管理</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'cms:news_preview' %}" class="nav-link">
+                                        <i class="fa fa-copy nav-icon"></i>
+                                        <p>New预览编辑</p>
                                     </a>
                                 </li>
                             </ul>

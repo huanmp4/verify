@@ -13,9 +13,11 @@ from apps.news.serializers import BannerSerializers
 def home(request):
     return render(request, 'cms/news/home.html')
 
-
 def news_release(request):
     return render(request,'cms/news/release.html')
+
+def news_preview(request):
+    return render(request,'cms/news/news_preview.html')
 
 class ReleaseNews(View):
     def get(self,request):
@@ -163,3 +165,8 @@ def banner_cms_manager_edit(request):
 #新闻增删改查
 def news_cms_manager(request):
     return render(request,'cms/news/news_manager.html')
+
+
+#慕慕
+def lover_mumu(request):
+    return render(request,'cms/banner/mumu.html')

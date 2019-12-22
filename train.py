@@ -1,3 +1,4 @@
+import numpy
 
 
 a = {'password': [{'message': '密码长度不能少于4位', 'code': 'min_length'}]}

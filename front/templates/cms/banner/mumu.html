@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap-css -->
+<link href="{% static 'mumu/css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+<!--// bootstrap-css -->
+<!-- css -->
+<link rel="stylesheet" href="{% static 'mumu/css/style.css' %}" type="text/css" media="all" />
+<!--// css -->
+<!-- font-awesome icons -->
+<link href="{% static 'mumu/css/font-awesome.css' %}" rel="stylesheet">
+<!-- //font-awesome icons -->
+<!-- font -->
+<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<!-- //font -->
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+{#<script src="js/bootstrap.js"></script>#}
+    <script src="{% static 'adminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script> 
+</head>
+<body>
+	<!-- banner -->
+	<div class="banner">
+		<div class="header">
+			<div class="container">
+				<div class="header-left">
+					<div class="w3layouts-logo">
+						<h1>
+							美丽温柔的慕慕 <span>Personal Blog</span>
+						</h1>
+					</div>
+				</div>
+				<div class="top-nav">
+					<nav class="navbar navbar-default">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+							</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+
+							</ul>	
+							<div class="clearfix"> </div>
+						</div>	
+					</nav>		
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<div class="w3layouts-banner-slider">
+			<div class="container">
+				<div class="slider">
+					<div class="callbacks_container">
+						<ul class="rslides callbacks callbacks1" id="slider4">
+							<li>
+								<div class="agileits-banner-info">
+									<h3>Enjoy <span>your best day ever</span></h3>
+									<div class="w3-button">
+										<a href="#">lover</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<script src="">{% static 'mumu/js/responsiveslides.min.js' %}</script>
+					<script>
+						// You can also use "$(window).load(function() {"
+						$(function () {
+						  // Slideshow 4
+						  $("#slider4").responsiveSlides({
+							auto: true,
+							pager:true,
+							nav:false,
+							speed: 500,
+							namespace: "callbacks",
+							before: function () {
+							  $('.events').append("<li>before event fired.</li>");
+							},
+							after: function () {
+							  $('.events').append("<li>after event fired.</li>");
+							}
+						  });
+					
+						});
+					 </script>
+					<!--banner Slider starts Here-->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //banner -->
+	<!-- banner-bottom -->
+	<div class="banner-bottom">
+		<div class="container">
+			<div class="w3l-banner-bottom-grids">
+				<div class="col-md-4 w3l-banner-bottom-grid">
+					<div class="bottom-icon">
+						<i class="fa fa-cog" aria-hidden="true"></i>
+					</div>
+					<div class="bottom-text">
+						<h4>Dry martin</h4>
+						<p>你以为躲在家里就找不到你吗？没用的，你那样拉风的女人无论在哪，都像黑夜里的莹火虫那样的鲜明、那样的出众，你那忧郁的眼神，稀嘘的发型，神乎其技的枪法，还有那杯Dry martin.</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="col-md-4 w3l-banner-bottom-grid">
+					<div class="bottom-icon">
+						<i class="fa fa-thumbs-up" aria-hidden="true"></i>
+					</div>
+					<div class="bottom-text">
+						<h4>Time is Money</h4>
+						<p>我一秒钟几十万上下，我会和你去踢吃鸡？.</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="col-md-4 w3l-banner-bottom-grid">
+					<div class="bottom-icon">
+						<i class="fa fa-user" aria-hidden="true"></i>
+					</div>
+					<div class="bottom-text">
+						<h4>bullet</h4>
+						<p>古时有关云长全神贯注下象棋刮骨疗毒，今日有我慕慕精会神看《恋恋江湖》挖骨取弹头.</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div><div class="tlinks"></div>
+	<!-- //banner-bottom -->
+	<!-- welcome -->
+	<div class="welcome">
+		<div class="container">
+			<div class="welcome-grids">
+				<div class="col-md-6 w3ls-welcome-left">
+					<div class="w3ls-welcome-left-img">
+						
+					</div>
+				</div>
+				<div class="col-md-6 w3ls-welcome-right">
+					<div class="w3ls-welcome-right-info">
+						<h2>Some Words <span>About HER</span></h2>
+						<p>高傲，但是宅心仁厚，她低调，但是受万人景仰，她可以把神赐给人类的火，运用得出神入化，烧出堪称火之艺术的超级菜式，她究竟是神仙的化身？还是地狱的使者？没人知道，但是可以肯定，每个人都给她一个称号——吃鸡女神..
+                            </p>
+					</div>
+					<div class="agileits-border">
+						<div class="agileinfo-red"> </div>
+						<div class="agileinfo-red agileinfo-green"> </div>
+						<div class="agileinfo-red agileinfo-blue"> </div>
+						<div class="agileinfo-red agileinfo-yellow"> </div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //welcome -->
+	<!-- services -->
+	<div class="services">
+		<div class="container">
+			<div class="w3-agileits-heading">
+				<h3>Best <span>Services</span></h3>
+			</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //services -->
+
+	<!-- //footer -->
+	<script src="{% static 'mumu/js/responsiveslides.min.js' %}"></script>
+	<script src="{% static 'mumu/js/jarallax.js' %}"></script>
+	<script src="{% static 'mumu/js/SmoothScroll.min.js' %}"></script>
+	<script type="text/javascript">
+		/* init Jarallax */
+		$('.jarallax').jarallax({
+			speed: 0.5,
+			imgWidth: 1366,
+			imgHeight: 768
+		})
+	</script>
+<script type="text/javascript" src="{% static 'mumu/js/move-top.js' %}"></script>
+<script type="text/javascript" src="{% static 'mumu/js/easing.js' %}"></script>
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+<!-- //here ends scrolling icon -->
+</body>	
+</html>

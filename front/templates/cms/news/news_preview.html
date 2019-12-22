@@ -1,0 +1,38 @@
+{% extends 'cms/base.html' %}
+
+{% block title %}{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/cms/news/news_pewview.css' %}">
+{% endblock style %}
+
+{% block content %}
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box">
+                        <div class="box-header">
+                            <div class="form-inline">
+                                <div class="form-group left-group">
+                                    <span for="time-start">开始：</span>
+                                    <input type="text" id="time-start" disabled="disabled">&nbsp — &nbsp
+                                    <span for="time-end ">结束：</span>
+                                    <input type="text" id="time-end" disabled="disabled">
+                                </div>
+                                <div class="form-group right-group">
+                                    <span for="search ">搜索关键字：</span>
+                                    <input type="text" id="search" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+{% endblock content %}
