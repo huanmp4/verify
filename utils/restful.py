@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 
-import requests
+import requests,time
 
 class HttpCode(object):
     ok = 200
@@ -57,3 +57,33 @@ class FormError(object):
             return new_errors
         else:
             return '表单无验证无数据'
+
+
+def get_IP(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]  # 所以这里是真实的ip
+        print('IP地址', ip)
+    else:
+        ip = request.META.get('REMOTE_ADDR')  # 这里获得代理ip
+        print('访客代理ip:', ip)
+
+    log_time = time.strftime(
+        '[%Y-%m-%d %H:%M:%S]',
+        time.localtime(
+            time.time()))  # 转化时间格式
+    try:
+        with open('../demo_of_comment.log', 'r') as r:
+            try:
+                Read = r.readlines()
+            except:
+                with open('../demo_of_comment.log', 'w') as r:
+                    Read = r.readlines()
+    except:
+        with open('../demo_of_comment.log', 'w') as r:
+            Read = r.readlines()
+
+    with open('../demo_of_comment.log', 'w') as w:
+        w.write("Time:%s,IP:%s,comment of index click\n" % (str(log_time), ip))
+        for i in Read:
+            w.write(i)

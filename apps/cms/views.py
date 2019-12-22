@@ -182,16 +182,19 @@ def lover_mumu(request):
         '[%Y-%m-%d %H:%M:%S]',
         time.localtime(
             time.time()))  # 转化时间格式
-
-    with open('../demo_of_comment.log', 'r') as r:
-        try:
-            Read = r.readlines()
-        except:
-            with open('../demo_of_comment.log', 'w') as r:
+    try:
+        with open('../demo_of_comment.log', 'r') as r:
+            try:
                 Read = r.readlines()
+            except:
+                with open('../demo_of_comment.log', 'w') as r:
+                    Read = r.readlines()
+    except:
+        with open('../demo_of_comment.log', 'w') as r:
+            Read = r.readlines()
 
     with open('../demo_of_comment.log', 'w') as w:
-        w.write("Time:%s,IP:%s,comment of index click\n" % (str(log_time), ip))
+        w.write("Time:%s,IP:%s,comment of mumu\n" % (str(log_time), ip))
         for i in Read:
             w.write(i)
     return render(request,'cms/banner/mumu.html')
