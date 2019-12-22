@@ -5,10 +5,11 @@ from ..news.models import News
 from utils import restful
 from .forms import CategoryForm,NewsForm,BannerForm
 from apps.news.models import Category,Banner
-import os
+import os,time
 from django.conf import settings
 from qiniu import Auth as qiniuAuth
 from apps.news.serializers import BannerSerializers
+
 # Create your views here.
 def home(request):
     return render(request, 'cms/news/home.html')
@@ -169,4 +170,28 @@ def news_cms_manager(request):
 
 #慕慕
 def lover_mumu(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]  # 所以这里是真实的ip
+        print('IP地址', ip)
+    else:
+        ip = request.META.get('REMOTE_ADDR')  # 这里获得代理ip
+        print('访客代理ip:', ip)
+
+    log_time = time.strftime(
+        '[%Y-%m-%d %H:%M:%S]',
+        time.localtime(
+            time.time()))  # 转化时间格式
+
+    with open('../demo_of_comment.log', 'r') as r:
+        try:
+            Read = r.readlines()
+        except:
+            with open('../demo_of_comment.log', 'w') as r:
+                Read = r.readlines()
+
+    with open('../demo_of_comment.log', 'w') as w:
+        w.write("Time:%s,IP:%s,comment of index click\n" % (str(log_time), ip))
+        for i in Read:
+            w.write(i)
     return render(request,'cms/banner/mumu.html')
