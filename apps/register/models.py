@@ -35,7 +35,7 @@ class User(AbstractBaseUser,PermissionsMixin):
     joined_time = models.DateTimeField(auto_now_add=True)
 
     USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ['telephone']
 
     objects = UserManager()
 
