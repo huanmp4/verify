@@ -62,34 +62,3 @@ import requests
 # print('国家: %s\n区域: %s\n省份: %s\n城市: %s\n运营商: %s\n' % (country, area, region, city, isp))
 #
 
-import httplib2
-from urllib.parse import urlencode #python3
-#from urllib import urlencode #python2
-import json
-ip = '14.210.1.180'
-token='4120d93d1b807a778e37dd9b37c8d5d8'
-oid=27558
-mid=89951
-datatype='jsonp'
-callback='find'
-headers = {"token":token}
-params = urlencode({'ip':ip,'datatype':datatype,'callback':'find'})
-url = 'http://api.ip138.com/query/?'+params
-http = httplib2.Http()
-response, content = http.request(url,'GET',headers=headers)
-result=content.decode("utf-8")
-
-result_extract = result[5:]
-re = result_extract
-num = len(result_extract) - 1
-list = []
-for i in range(num):
-    list.append(result_extract[i])
-list=''.join(list)
-li = json.loads(list)
-ip = li['ip']
-country = li['data'][0]
-province = li['data'][1]
-city = li['data'][2]
-isp = li[da]
-print(li)
