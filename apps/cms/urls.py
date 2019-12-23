@@ -20,4 +20,6 @@ urlpatterns = [
     path('news_cms_manager', views.news_cms_manager, name='news_cms_manager'),
     path('news_preview', views.news_preview, name='news_preview'),
     path('lover_mumu', views.lover_mumu, name='lover_mumu'),
+    path('Discover_Process', views.Discover_Process, name='Discover_Process'),
+    path('demo_cms_address_ip', views.demo_cms_address_ip, name='demo_cms_address_ip'),
 ]+static(settings.CLIENTIMAGE_ROOT,document_root = settings.CLIENTIMAGE_ROOT)

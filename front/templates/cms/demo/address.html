@@ -1,0 +1,44 @@
+{% extends 'cms/base.html' %}
+{% load news_utils %}
+{% block title %}{% endblock title %}
+
+{% block style %}{% endblock style %}
+
+{% block content %}
+<div class="content-wrapper" style="min-height:813px">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12"></div>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>IP地址</th>
+                                <th>访问板块</th>
+                                <th>时间</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for address in addresses %}
+                            <tr>
+                                <td>{{ address.ip }}</td>
+                                <td>{{ address.content }}</td>
+                                <td>{{ address.pub_time|time_since }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock content %}
+
