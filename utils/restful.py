@@ -67,9 +67,8 @@ def get_address(request,content='主页留言'):
         ip = http_x_forwarded_for.split(',')[0]
     else:
         ip = request.META.get('REMOTE_ADDR')  # 这里获得代理ip
-    if str(ip) == '127.0.0.1':
-        pass
-    else:
+
+    try:
         ip = ip
         r = requests.get('http://ip.taobao.com/service/getIpInfo.php?ip=%s' % ip)
         print('r.json()',r.json()['code'] )
@@ -80,10 +79,10 @@ def get_address(request,content='主页留言'):
             region = i['region']  # 地区
             city = i['city']  # 城市
             isp = i['isp']  # 运营商
-
             print('国家: %s\n区域: %s\n省份: %s\n城市: %s\n运营商: %s\n' % (country, area, region, city, isp))
             address = Address.objects.create(ip=ip, content=content, country=country, province=region, city=city, isp=isp)
             address.save()
         else:
             print("错误! ip: %s" % ip)
-        return ip
+    except:
+        Address.objects.create(ip=ip, content=content, country='无法查到', province='无法查到', city='无法查到', isp='无法查到')
