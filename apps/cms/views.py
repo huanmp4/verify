@@ -168,9 +168,6 @@ def banner_cms_manager_edit(request):
     else:
         return restful.params_error(message=form.get_errors())
 
-#新闻增删改查
-def news_cms_manager(request):
-    return render(request,'cms/news/news_manager.html')
 
 
 #慕慕
@@ -210,3 +207,8 @@ def Discover_Process(request):
 def demo_cms_address_ip(request):
     address = Address.objects.all()
     return render(request,'cms/demo/address.html',context={'addresses':address})
+
+
+def demo_cms_manager_client(request):
+    user = User.objects.all()
+    return render(request,'cms/demo/user_manager.html',context={'users':user})

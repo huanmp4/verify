@@ -1,0 +1,50 @@
+{% extends 'cms/base.html' %}
+{% load news_utils %}
+{% block title %}用户管理{% endblock title %}
+
+{% block style %}{% endblock style %}
+
+{% block content %}
+<div class="content-wrapper" style="min-height:813px">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12"></div>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>telephone</th>
+                                <th>is_staff</th>
+                                <th>is_superuser</th>
+                                <th>time</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for user in users %}
+                            <tr data-pk="{{ user.uid }}">
+                                <td>{{ user.username }}</td>
+                                <td>{{ user.telephone }}</td>
+                                <td>{{ user.is_staff}}</td>
+                                <td>{{ user.is_superuser }}</td>
+                                <td>{{ user.joined_time|time_since }}</td>
+                                <td><a href="#" class="btn btn-primary btn-sm">保存</a></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock content %}
+

@@ -116,12 +116,6 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{% url 'cms:news_cms_manager' %}" class="nav-link">
-                                        <i class="fa fa-copy nav-icon"></i>
-                                        <p>News管理</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
                                     <a href="{% url 'cms:news_preview' %}" class="nav-link">
                                         <i class="fa fa-copy nav-icon"></i>
                                         <p>New预览编辑</p>
@@ -132,7 +126,7 @@
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
-                                <p>日志
+                                <p>日志管理
                                     <i class="right fa fa-angle-left"></i></p>
                             </a>
                             {% if user.is_superuser %}
@@ -141,6 +135,12 @@
                                     <a href="{% url 'cms:demo_cms_address_ip' %}" class="nav-link">
                                         <i class="fa fa-copy nav-icon"></i>
                                         <p>查看人数</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'cms:demo_cms_manager_client' %}" class="nav-link">
+                                        <i class="fa fa-copy nav-icon"></i>
+                                        <p>用户管理</p>
                                     </a>
                                 </li>
                             </ul>
