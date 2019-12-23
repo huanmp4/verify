@@ -15,6 +15,7 @@ def index(request):
     newses = News.objects.all()[0:1]
     banners = Banner.objects.all()
     context = {'newses':newses,'banners':banners}
+    restful.get_address(request,'进入到主页')
     return render(request,'news/index.html',context)
 
 def news_list(request):
