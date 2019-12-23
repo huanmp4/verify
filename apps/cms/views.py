@@ -181,6 +181,7 @@ def Discover_Process(request):
     count = settings.PAGE_LOAD_NUM
     if request.method == 'GET':
         restful.get_address(request=request)
+
         discover = Discover.objects.all().select_related('author')
         context = {'discover': discover}
         return render(request, 'news/discover.html', context)
@@ -203,12 +204,22 @@ def Discover_Process(request):
         else:
             return restful.params_error('内容或标题不能为空')
 
-
+#渲染IP页面
 def demo_cms_address_ip(request):
     address = Address.objects.all()
     return render(request,'cms/demo/address.html',context={'addresses':address})
 
 
+#查用户
 def demo_cms_manager_client(request):
     user = User.objects.all()
     return render(request,'cms/demo/user_manager.html',context={'users':user})
+
+#删除IP
+def demo_cms_delete_ip(request):
+    pk = request.POST.get('pk')
+    try:
+        Address.objects.get(pk=pk).delete()
+        return restful.ok()
+    except:
+        return restful.params_error('未查到该id')

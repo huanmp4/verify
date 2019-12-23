@@ -1,5 +1,6 @@
 function Discover(){
     this.btnDiscover = $('#btn-discover');
+
 }
 
 

@@ -2,7 +2,9 @@
 {% load news_utils %}
 {% block title %}{% endblock title %}
 
-{% block style %}{% endblock style %}
+{% block style %}
+    <script src="{% static 'js/cms/demo.js' %}"></script>
+{% endblock style %}
 
 {% block content %}
 <div class="content-wrapper" style="min-height:813px">
@@ -23,14 +25,24 @@
                                 <th>IP地址</th>
                                 <th>访问板块</th>
                                 <th>时间</th>
+                                <th>国家</th>
+                                <th>省份</th>
+                                <th>城市</th>
+                                <th>运营商</th>
+                                <th>操作</th>
                             </tr>
                         </thead>
                         <tbody>
                         {% for address in addresses %}
-                            <tr>
+                            <tr data-pk="{{ address.pk }}">
                                 <td>{{ address.ip }}</td>
                                 <td>{{ address.content }}</td>
                                 <td>{{ address.pub_time|time_since }}</td>
+                                <td>{{ address.country }}</td>
+                                <td>{{ address.province }}</td>
+                                <td>{{ address.city }}</td>
+                                <td>{{ address.isp}}</td>
+                                <td><button class="btn btn-danger btn-delete-ip" >删除</button></td>
                             </tr>
                         {% endfor %}
                         </tbody>

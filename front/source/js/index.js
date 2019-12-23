@@ -152,6 +152,8 @@ Banner.prototype.listenMoreBoxHover = function(){
 };
 
 
+
+
 Banner.prototype.run = function () {
     this.initBanner();
     this.initPageControl();

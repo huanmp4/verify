@@ -1,4 +1,4 @@
-import numpy
+
 
 
 a = {'password': [{'message': '密码长度不能少于4位', 'code': 'min_length'}]}
@@ -46,22 +46,19 @@ token = q.upload_token(bucket_name, key, 3600)
 #要上传文件的本地路径
 
 
-
+import requests
 from datetime import datetime
 time = datetime.now()
-print('time',time)
+ip = '180.97.118.223'
+r = requests.get('http://ip.taobao.com/service/getIpInfo.php?ip=%s' % ip)
+if r.json()['code'] == 0:
+    i = r.json()['data']
+    country = i['country']  # 国家
+    area = i['area']  # 区域
+    region = i['region']  # 地区
+    city = i['city']  # 城市
+    isp = i['isp']  # 运营商
 
-
-# from django import template
-# from datetime import datetime
-# from django.utils.timezone import now as now_func,localtime
-#
-# register = template.Library()
-# now1 = now_func()
-# print(now1)
-
-import re
-pattern = "[\u4e00-\u9fa5]+|"
-string = '在要要111dd'
-result = re.findall(pattern, string)
-print('正则',result)
+    print('国家: %s\n区域: %s\n省份: %s\n城市: %s\n运营商: %s\n' % (country, area, region, city, isp))
+else:
+    print("错误! ip: %s" %ip)

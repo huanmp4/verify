@@ -63,12 +63,27 @@ def get_address(request,content='主页留言'):
     content = content
     http_x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
     dd = request.META
-    print('http_x_forwarded_for', http_x_forwarded_for)
     if http_x_forwarded_for:
         ip = http_x_forwarded_for.split(',')[0]
-        print('ip地址', ip)
     else:
         ip = request.META.get('REMOTE_ADDR')  # 这里获得代理ip
-        print('访客代理ip:', ip)
-    address = Address.objects.create(ip=ip, content=content)
-    return 'ok'
+    if str(ip) == '127.0.0.1':
+        pass
+    else:
+        ip = ip
+        r = requests.get('http://ip.taobao.com/service/getIpInfo.php?ip=%s' % ip)
+        print('r.json()',r.json()['code'] )
+        if r.json()['code'] == 0:
+            i = r.json()['data']
+            country = i['country']  # 国家
+            area = i['area']  # 区域
+            region = i['region']  # 地区
+            city = i['city']  # 城市
+            isp = i['isp']  # 运营商
+
+            print('国家: %s\n区域: %s\n省份: %s\n城市: %s\n运营商: %s\n' % (country, area, region, city, isp))
+            address = Address.objects.create(ip=ip, content=content, country=country, province=region, city=city, isp=isp)
+            address.save()
+        else:
+            print("错误! ip: %s" % ip)
+        return ip

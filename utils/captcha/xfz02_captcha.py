@@ -87,7 +87,7 @@ class Captcha(object):
             'key': 'ae3257a9897e7c2f4b79265dd6257d8c',
         }
         response = requests.get(url, params=params)
-        response = response.json()
+        print('response',response)
         if response['error_code'] == 0:
             return restful.ok()
         else:

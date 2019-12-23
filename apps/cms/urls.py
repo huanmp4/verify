@@ -22,4 +22,5 @@ urlpatterns = [
     path('Discover_Process', views.Discover_Process, name='Discover_Process'),
     path('demo_cms_address_ip', views.demo_cms_address_ip, name='demo_cms_address_ip'),
     path('demo_cms_manager_client', views.demo_cms_manager_client, name='demo_cms_manager_client'),
+    path('demo_cms_delete_ip', views.demo_cms_delete_ip, name='demo_cms_delete_ip'),
 ]+static(settings.CLIENTIMAGE_ROOT,document_root = settings.CLIENTIMAGE_ROOT)
