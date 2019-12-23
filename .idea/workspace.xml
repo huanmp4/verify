@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edc1a9fb-64dd-4ec4-b20a-4edbcfda3c4f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/train.py" afterPath="$PROJECT_DIR$/train.py" />
       <change beforePath="$PROJECT_DIR$/utils/restful.py" afterPath="$PROJECT_DIR$/utils/restful.py" />
     </list>
     <ignored path="$PROJECT_DIR$/front/node_modules/" />
@@ -21,7 +22,7 @@
     <SUITE FILE_PATH="coverage/xfz01$requests.coverage" NAME="requests Coverage Results" MODIFIED="1574417094431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/register" />
     <SUITE FILE_PATH="coverage/xfz01$views.coverage" NAME="views Coverage Results" MODIFIED="1573850770469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/register" />
     <SUITE FILE_PATH="coverage/xfz01$1.coverage" NAME="练习1 Coverage Results" MODIFIED="1576930500647" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../old_astronaut/astronaut" />
-    <SUITE FILE_PATH="coverage/xfz01$train.coverage" NAME="train Coverage Results" MODIFIED="1577072966067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/xfz01$train.coverage" NAME="train Coverage Results" MODIFIED="1577083695344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/xfz01$views__1_.coverage" NAME="views (1) Coverage Results" MODIFIED="1577071547347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/cms" />
   </component>
   <component name="DatabaseView">
@@ -44,8 +45,8 @@
       <file leaf-file-name="xfz02_captcha.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/captcha/xfz02_captcha.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="88" column="51" lean-forward="true" selection-start-line="88" selection-start-column="51" selection-end-line="88" selection-end-column="51" />
+            <state relative-caret-position="406">
+              <caret line="85" column="44" lean-forward="true" selection-start-line="85" selection-start-column="44" selection-end-line="85" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -54,8 +55,30 @@
       <file leaf-file-name="restful.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/utils/restful.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="83" column="26" lean-forward="true" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
+            <state relative-caret-position="285">
+              <caret line="90" column="37" lean-forward="true" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="train.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/train.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="82" column="19" lean-forward="true" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="练习1.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/练习1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2092">
+              <caret line="214" column="17" lean-forward="true" selection-start-line="214" selection-start-column="17" selection-end-line="214" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -76,7 +99,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>block</find>
       <find>image-banner-temp</find>
       <find>位置：0</find>
       <find>form-wrapper-image</find>
@@ -106,6 +128,7 @@
       <find>w3ls-welcome-left-img</find>
       <find>news_cms_manager</find>
       <find>requests</find>
+      <find>[</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -160,13 +183,13 @@
         <option value="$PROJECT_DIR$/front/source/js/discover/discover.js" />
         <option value="$PROJECT_DIR$/front/templates/news/discover.html" />
         <option value="$PROJECT_DIR$/utils/captcha/xfz02_captcha.py" />
-        <option value="$PROJECT_DIR$/train.py" />
         <option value="$PROJECT_DIR$/apps/cms/models.py" />
         <option value="$PROJECT_DIR$/apps/cms/views.py" />
         <option value="$PROJECT_DIR$/apps/cms/urls.py" />
         <option value="$PROJECT_DIR$/front/source/js/cms/user.js" />
         <option value="$PROJECT_DIR$/front/templates/cms/demo/address.html" />
         <option value="$PROJECT_DIR$/front/source/js/cms/demo.js" />
+        <option value="$PROJECT_DIR$/train.py" />
         <option value="$PROJECT_DIR$/utils/restful.py" />
       </list>
     </option>
@@ -374,11 +397,11 @@
       <recent name="D:\Tequila\django\xfz02\front\source\css\testapp" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Tequila\django\xfz01" />
       <recent name="E:\Tequila\django\xfz01\front\templates\cms\news" />
       <recent name="E:\Tequila\django\xfz01\front\templates\cms\demo" />
       <recent name="E:\Tequila\django\xfz01\front\district\mumu" />
       <recent name="E:\Tequila\django\xfz01\front\source\images" />
-      <recent name="E:\Tequila\django\xfz01\front\district\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -633,19 +656,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/apps/course/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/district/mumu/images/1.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/district/mumu/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1785">
@@ -961,14 +971,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/train.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="62" column="5" lean-forward="false" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/source/js/cms.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1035,19 +1037,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/train_old.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/utils/captcha/xfz02_captcha.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="88" column="51" lean-forward="true" selection-start-line="88" selection-start-column="51" selection-end-line="88" selection-end-column="51" />
+        <state relative-caret-position="406">
+          <caret line="85" column="44" lean-forward="true" selection-start-line="85" selection-start-column="44" selection-end-line="85" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/练习1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2092">
+          <caret line="214" column="17" lean-forward="true" selection-start-line="214" selection-start-column="17" selection-end-line="214" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="82" column="19" lean-forward="true" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/restful.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="83" column="26" lean-forward="true" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
-          <folding />
+        <state relative-caret-position="285">
+          <caret line="90" column="37" lean-forward="true" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

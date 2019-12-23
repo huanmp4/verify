@@ -45,20 +45,51 @@ key = 'chicken.png'
 token = q.upload_token(bucket_name, key, 3600)
 #要上传文件的本地路径
 
-
+#
 import requests
-from datetime import datetime
-time = datetime.now()
-ip = '180.97.118.223'
-r = requests.get('http://ip.taobao.com/service/getIpInfo.php?ip=%s' % ip)
-if r.json()['code'] == 0:
-    i = r.json()['data']
-    country = i['country']  # 国家
-    area = i['area']  # 区域
-    region = i['region']  # 地区
-    city = i['city']  # 城市
-    isp = i['isp']  # 运营商
+# from datetime import datetime
+# time = datetime.now()
+# ip = '180.97.118.223'
+# r=requests.get(url='http://ip.taobao.com/service/getIpInfo.php', params=ip,timeout=3)
+# ping = r.json()
+# print(ping)
+# i = r.json()['data']
+# country = i['country']  # 国家
+# area = i['area']  # 区域
+# region = i['region']  # 地区
+# city = i['city']  # 城市
+# isp = i['isp']  # 运营商
+# print('国家: %s\n区域: %s\n省份: %s\n城市: %s\n运营商: %s\n' % (country, area, region, city, isp))
+#
 
-    print('国家: %s\n区域: %s\n省份: %s\n城市: %s\n运营商: %s\n' % (country, area, region, city, isp))
-else:
-    print("错误! ip: %s" %ip)
+import httplib2
+from urllib.parse import urlencode #python3
+#from urllib import urlencode #python2
+import json
+ip = '14.210.1.180'
+token='4120d93d1b807a778e37dd9b37c8d5d8'
+oid=27558
+mid=89951
+datatype='jsonp'
+callback='find'
+headers = {"token":token}
+params = urlencode({'ip':ip,'datatype':datatype,'callback':'find'})
+url = 'http://api.ip138.com/query/?'+params
+http = httplib2.Http()
+response, content = http.request(url,'GET',headers=headers)
+result=content.decode("utf-8")
+
+result_extract = result[5:]
+re = result_extract
+num = len(result_extract) - 1
+list = []
+for i in range(num):
+    list.append(result_extract[i])
+list=''.join(list)
+li = json.loads(list)
+ip = li['ip']
+country = li['data'][0]
+province = li['data'][1]
+city = li['data'][2]
+isp = li[da]
+print(li)
