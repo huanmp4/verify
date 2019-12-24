@@ -178,8 +178,8 @@ def lover_mumu(request):
 def Discover_Process(request):
     count = settings.PAGE_LOAD_NUM
     if request.method == 'GET':
-        restful.get_address(request=request)
-
+        pp = restful.get_address(request=request)
+        print(pp)
         discover = Discover.objects.all().select_related('author')
         context = {'discover': discover}
         return render(request, 'news/discover.html', context)

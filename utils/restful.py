@@ -65,19 +65,22 @@ class FormError(object):
 
 
 def get_address(request,content='主页留言'):
-    content = content
     http_x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-    dd = request.META
+
     if http_x_forwarded_for:
         ip_addr = http_x_forwarded_for.split(',')[0]
+        save_address(ip = ip_addr,contentype =content)
+        #当前IP
     else:
-        ip_addr = request.META.get('REMOTE_ADDR')  # 这里获得代理ip
-    ip = ip_addr
-
+        ip_addr2 = request.META.get('REMOTE_ADDR')  # 这里获得代理ip
+        save_address(ip=ip_addr2,contentype =content)
+        #本机IP
+#save ip
+def save_address(ip,contentype):
     local_ip = '14.210.1.180'
     local_host = '127.0.0.1'
-    if str(ip) ==  local_ip or local_host:
-        address = Address.objects.create(ip=ip, content=content, country='本机', province='本机', city='本机',isp='本机')
+    if ip == local_ip or local_host:
+        address = Address.objects.create(ip=ip, content=contentype, country='本机访问', province='null', city='null',isp='null')
         address.save()
     else:
         token = '4120d93d1b807a778e37dd9b37c8d5d8'
@@ -89,8 +92,8 @@ def get_address(request,content='主页留言'):
         params = urlencode({'ip': ip, 'datatype': datatype, 'callback': 'find'})
         url = 'http://api.ip138.com/query/?' + params
         http = httplib2.Http()
-        response, content_type = http.request(url, 'GET', headers=headers)
-        result = content_type.decode("utf-8")
+        response, content = http.request(url, 'GET', headers=headers)
+        result = content.decode("utf-8")
         result_extract = result[5:]
         re = result_extract
         num = len(result_extract) - 1
@@ -104,5 +107,5 @@ def get_address(request,content='主页留言'):
         province = li['data'][1]
         city = li['data'][2]
         isp = li['data'][3]
-        address = Address.objects.create(ip=ip, content=content, country=country, province=province, city=city, isp=isp)
+        address = Address.objects.create(ip=ip, content=contentype, country=country, province=province, city=city, isp=isp)
         address.save()
