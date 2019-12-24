@@ -1,14 +1,23 @@
 {% extends 'cms/base.html' %}
+{% load news_utils %}
 
 {% block title %}{% endblock title %}
 
 {% block style %}
-    <link rel="stylesheet" href="{% static 'css/cms/news/news_pewview.css' %}">
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- 时间模块三兄弟 -->
+    <link rel="stylesheet" href="{% static 'adminlt/css/bootstrap-datepicker.min.css' %}">
+    <script src="{% static 'adminlt/js/bootstrap-datepicker.min.js' %}"></script>
+    <script src="{% static 'adminlt/js/bootstrap-datepicker.zh-CN.min.js' %}"></script>
+
+
+    <link rel="stylesheet" href="{% static 'css/cms/news/news_pewview.css' %}">
+    <script src="{% static 'js/cms/news_preview.js' %}"></script>
+
 {% endblock style %}
 
 {% block content %}
@@ -17,16 +26,16 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="form-inline">
+                    <form class="form-inline">
                         <div class="form-group left-interval">
                             <span for="time-start">开始：</span>
-                            <input class="form-control" type="text" id="time-start" disabled="disabled">&nbsp — &nbsp
+                            <input class="form-control start-time-input" type="text" id="time-start" placeholder="起始时间" readonly>&nbsp — &nbsp
                             <span for="time-end ">结束：</span>
-                            <input class="form-control" type="text" id="time-end" disabled="disabled">
+                            <input class="form-control end-time-input" type="text" id="time-end" placeholder="结束时间" readonly>
                         </div>
                         <div class="form-group left-interval">
                             <span for="search">分类：</span>
-                            <select name="category" id="select" class="form-control">
+                            <select name="category category-value" id="select" class="form-control">
                                 <option value="0">所有分类</option>
                                 <option value="1">最新</option>
                                 <option value="2">热点</option>
@@ -38,14 +47,14 @@
                             <input class="form-control" type="text" id="search"  placeholder="关键字">
                         </div>
                         <div class="form-group left-interval">
-                            <button class="btn btn-primary">
+                            <button class="btn btn-primary btn-send-query-data">
                                 查询
                             </button>
                         </div>
                         <div class="form-group left-interval">
                             <a href="#">清除查询</a>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -65,16 +74,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>钢铁是如何炼成</td>
-                                <td>桔柑要枯霜练练红民</td>
-                                <td>20191223</td>
-                                <td>习大在</td>
-                                <td>
-                                    <a href="#" class="btn btn-info btn-sm">编辑</a>
-                                    <a href="#" class="btn btn-danger btn-sm">删除</a>
-                                </td>
-                            </tr>
+                            {% for news in newses %}
+                                <tr>
+                                    <td>{{ news.title }}1</td>
+                                    <td>{{ news.content }}1</td>
+                                    <td>{{ news.pub_time|time_since }}</td>
+                                    <td>{{ news.author }}</td>
+                                    <td>
+                                        <a href="#" class="btn btn-info btn-sm">编辑</a>
+                                        <a href="#" class="btn btn-danger btn-sm">删除</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                     <div>

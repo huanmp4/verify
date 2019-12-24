@@ -1,15 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import View
-from ..news.models import News
 from utils import restful
 from .forms import CategoryForm,NewsForm,BannerForm
-from apps.news.models import Category,Banner
+from apps.news.models import Category,Banner,News,Discover
 import os,time
 from django.conf import settings
 from qiniu import Auth as qiniuAuth
 from apps.news.serializers import BannerSerializers
-from apps.news.models import Discover
 from apps.news.forms import DiscoverForm
 from apps.register.models import User
 from .models import Address
@@ -223,3 +221,34 @@ def demo_cms_delete_ip(request):
         return restful.ok()
     except:
         return restful.params_error('未查到该id')
+
+
+
+
+#新闻列表遍历
+def news_preview_cms_all(request):
+    newses = News.objects.all()
+    context = {'newses':newses}
+    print('=*30')
+    for i in newses:
+        print(i.title)
+    print('=*30')
+    return render(request,'cms/news/news_preview.html',context=context)
+
+
+
+from django.utils.timezone import make_aware
+from datetime import datetime
+def news_preview_cms_query(request):
+    start = request.Get.get('start')
+    print('web start time', start)
+    end = request.GET.get('end')
+    print('web start time', end)
+    category_id = request.GET.get('category_id')
+    title_icontainer = request.GET.get('title_icontainer')
+    if start or end :
+        start_format = datetime.strptime(start,'%y%m%d')
+        print('start_format time', start_format)
+    else:
+        pass
+    return restful.ok()

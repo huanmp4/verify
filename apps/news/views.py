@@ -12,7 +12,7 @@ from .serializers import NewsSerializers,NewDetailSerializers,CommentSerializers
 # Create your views here.
 
 def index(request):
-    newses = News.objects.all()[0:1]
+    newses = News.objects.all()[0:settings.PAGE_LOAD_NUM]
     banners = Banner.objects.all()
     context = {'newses':newses,'banners':banners}
     restful.get_address(request,'进入到主页')
