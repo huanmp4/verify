@@ -17,7 +17,6 @@ urlpatterns = [
     path('banner_cms_manager_add', views.banner_cms_manager_add, name='banner_cms_manager_add'),
     path('banner_cms_manager_edit', views.banner_cms_manager_edit, name='banner_cms_manager_edit'),
     path('banner_cms_manager_delete', views.banner_cms_manager_delete, name='banner_cms_manager_delete'),
-    path('news_preview', views.news_preview, name='news_preview'),
     path('lover_mumu', views.lover_mumu, name='lover_mumu'),
     path('Discover_Process', views.Discover_Process, name='Discover_Process'),
     path('demo_cms_address_ip', views.demo_cms_address_ip, name='demo_cms_address_ip'),

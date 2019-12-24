@@ -66,46 +66,43 @@ class FormError(object):
 
 def get_address(request,content='主页留言'):
     http_x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-
     if http_x_forwarded_for:
         ip_addr = http_x_forwarded_for.split(',')[0]
         save_address(ip = ip_addr,contentype =content)
         #当前IP
     else:
         ip_addr2 = request.META.get('REMOTE_ADDR')  # 这里获得代理ip
-        save_address(ip=ip_addr2,contentype =content)
+        address = Address.objects.create(ip=ip_addr2, content=content)
+        address.save()
         #本机IP
 #save ip
 def save_address(ip,contentype):
-    local_ip = '14.210.1.180'
-    local_host = '127.0.0.1'
-    if ip == local_ip or local_host:
-        address = Address.objects.create(ip=ip, content=contentype, country='本机访问', province='null', city='null',isp='null')
-        address.save()
-    else:
-        token = '4120d93d1b807a778e37dd9b37c8d5d8'
-        oid = 27558
-        mid = 89951
-        datatype = 'jsonp'
-        callback = 'find'
-        headers = {"token": token}
-        params = urlencode({'ip': ip, 'datatype': datatype, 'callback': 'find'})
-        url = 'http://api.ip138.com/query/?' + params
-        http = httplib2.Http()
-        response, content = http.request(url, 'GET', headers=headers)
-        result = content.decode("utf-8")
-        result_extract = result[5:]
-        re = result_extract
-        num = len(result_extract) - 1
-        list = []
-        for i in range(num):
-            list.append(result_extract[i])
-        list = ''.join(list)
-        li = json.loads(list)
-        ip = li['ip']
-        country = li['data'][0]
-        province = li['data'][1]
-        city = li['data'][2]
-        isp = li['data'][3]
+    token = '4120d93d1b807a778e37dd9b37c8d5d8'
+    oid = 27558
+    mid = 89951
+    datatype = 'jsonp'
+    callback = 'find'
+    headers = {"token": token}
+    params = urlencode({'ip': ip, 'datatype': datatype, 'callback': 'find'})
+    url = 'http://api.ip138.com/query/?' + params
+    http = httplib2.Http()
+    response, content = http.request(url, 'GET', headers=headers)
+    result = content.decode("utf-8")
+    result_extract = result[5:]
+    re = result_extract
+    num = len(result_extract) - 1
+    list = []
+    for i in range(num):
+        list.append(result_extract[i])
+    list = ''.join(list)
+    li = json.loads(list)
+    ip = li['ip']
+    country = li['data'][0]
+    province = li['data'][1]
+    city = li['data'][2]
+    isp = li['data'][3]
+    try:
         address = Address.objects.create(ip=ip, content=contentype, country=country, province=province, city=city, isp=isp)
         address.save()
+    except:
+        pass

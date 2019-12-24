@@ -26,7 +26,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <form class="form-inline">
+                    <form action="#" method="post" class="form-inline form-inline-data">
                         <div class="form-group left-interval">
                             <span for="time-start">开始：</span>
                             <input class="form-control start-time-input" type="text" id="time-start" placeholder="起始时间" readonly>&nbsp — &nbsp
@@ -34,10 +34,10 @@
                             <input class="form-control end-time-input" type="text" id="time-end" placeholder="结束时间" readonly>
                         </div>
                         <div class="form-group left-interval">
-                            <span for="search">分类：</span>
-                            <select name="category category-value" id="select" class="form-control">
-                                <option value="0">所有分类</option>
-                                <option value="1">最新</option>
+                            <span for="select1">分类：</span>
+                            <select class="form-control category-value" name="category" id="select1">
+                                <option value="0" data-selected-id="1234">所有分类</option>
+                                <option value="1" data-selected-id="1234">最新</option>
                                 <option value="2">热点</option>
                                 <option value="3">八卦</option>
                             </select>
@@ -47,7 +47,7 @@
                             <input class="form-control" type="text" id="search"  placeholder="关键字">
                         </div>
                         <div class="form-group left-interval">
-                            <button class="btn btn-primary btn-send-query-data">
+                            <button class="btn btn-primary btn-send-query-data" type="submit">
                                 查询
                             </button>
                         </div>
@@ -76,8 +76,8 @@
                         <tbody>
                             {% for news in newses %}
                                 <tr>
-                                    <td>{{ news.title }}1</td>
-                                    <td>{{ news.content }}1</td>
+                                    <td>{{ news.title }}</td>
+                                    <td>{{ news.title }}[0:6]</td>
                                     <td>{{ news.pub_time|time_since }}</td>
                                     <td>{{ news.author }}</td>
                                     <td>

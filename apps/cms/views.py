@@ -11,7 +11,8 @@ from apps.news.serializers import BannerSerializers
 from apps.news.forms import DiscoverForm
 from apps.register.models import User
 from .models import Address
-
+from django.utils.timezone import make_aware
+from datetime import datetime
 
 # Create your views here.
 def home(request):
@@ -19,9 +20,6 @@ def home(request):
 
 def news_release(request):
     return render(request,'cms/news/release.html')
-
-def news_preview(request):
-    return render(request,'cms/news/news_preview.html')
 
 class ReleaseNews(View):
     def get(self,request):
@@ -229,26 +227,27 @@ def demo_cms_delete_ip(request):
 def news_preview_cms_all(request):
     newses = News.objects.all()
     context = {'newses':newses}
-    print('=*30')
-    for i in newses:
-        print(i.title)
-    print('=*30')
+
     return render(request,'cms/news/news_preview.html',context=context)
 
 
 
-from django.utils.timezone import make_aware
-from datetime import datetime
+#新闻列表预览
 def news_preview_cms_query(request):
-    start = request.Get.get('start')
+    print('='*30)
+    print('走到这里了')
+    print('='*30)
+    start = request.POST.get('start')
     print('web start time', start)
-    end = request.GET.get('end')
+    end = request.POST.get('end')
     print('web start time', end)
-    category_id = request.GET.get('category_id')
-    title_icontainer = request.GET.get('title_icontainer')
+    category_id = request.POST.get('category_id')
+    title_icontainer = request.POST.get('title_icontainer')
     if start or end :
         start_format = datetime.strptime(start,'%y%m%d')
+        end_format = datetime.strptime(end,'%y%m%d')
         print('start_format time', start_format)
+        print('end_format time', end_format)
     else:
         pass
     return restful.ok()

@@ -1,7 +1,6 @@
 function NewsPreview() {
     this.time_start = $('#time-start');
     this.send_query_data = $('.btn-send-query-data');
-    this.form_inline = $('.form-inline');
 }
 
 
@@ -25,22 +24,18 @@ NewsPreview.prototype.listenTimedatePicker = function(){
 
 NewsPreview.prototype.sendQueryDataBtn = function(){
     var self = this;
-    self.send_query_data.click(function(){
-        var start_time = this.form_inline.find('.start-time-input').val();
-        var end_time = this.form_inline.find('.end-time-input').val();
-        var category_value = this.form_inline.find('.category-value');
-        yourajax.get({
-            'url':'news_preview_cms_query',
-            'data':{'start':start_time,'end':end_time,'category':category_value},
-            'success':function(result){
-                if (result['code'] === 200){
-                    window.messageBox.showSuccess('查询中')
-                }
-                else{
-                    window.messageBox.showError('查询失败');
-                }
-            }
-        })
+    var form_inline = $('.form-inline-data');
+    self.send_query_data.click(function(event){
+        event.preventDefault();
+        var start_time = form_inline.find('.start-time-input').val();
+        var end_time = form_inline.find('.end-time-input').val();
+        var category_value = form_inline.find('.category-value option:selected').val();
+        var title = form_inline.find('#search').val();
+        console.log('title',title);
+        console.log('category_value',category_value);
+        console.log('start_time',start_time);
+        console.log('end_time',end_time);
+        yourajax.post('')
     })
 };
 
