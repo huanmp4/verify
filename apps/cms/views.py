@@ -168,7 +168,7 @@ def banner_cms_manager_edit(request):
 
 #慕慕
 def lover_mumu(request):
-    restful.get_address(request,'慕慕blog访问')
+    restful.get_address_by_138ip(request,'慕慕blog访问')
     return render(request,'cms/banner/mumu.html')
 
 
@@ -176,7 +176,7 @@ def lover_mumu(request):
 def Discover_Process(request):
     count = settings.PAGE_LOAD_NUM
     if request.method == 'GET':
-        pp = restful.get_address(request=request)
+        pp = restful.get_address_by_138ip(request=request)
         print(pp)
         discover = Discover.objects.all().select_related('author')
         context = {'discover': discover}

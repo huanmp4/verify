@@ -64,19 +64,22 @@ class FormError(object):
             return '表单无验证无数据'
 
 
-def get_address(request,content='主页留言'):
+def get_address_by_138ip(request,content='主页留言'):
     http_x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
     if http_x_forwarded_for:
         ip_addr = http_x_forwarded_for.split(',')[0]
-        save_address(ip = ip_addr,contentype =content)
+        #斯洛文尼亚
+        save_address_by_138ip(ip = ip_addr,contentype =content)
         #当前IP
     else:
         ip_addr2 = request.META.get('REMOTE_ADDR')  # 这里获得代理ip
-        address = Address.objects.create(ip=ip_addr2, content=content)
-        address.save()
+        #法西兰
+        save_address_by_138ip(ip=ip_addr2, contentype=content)
+        # address = Address.objects.create(ip=ip_addr2, content=content)
+        # address.save()
         #本机IP
 #save ip
-def save_address(ip,contentype):
+def save_address_by_138ip(ip,contentype):
     token = '4120d93d1b807a778e37dd9b37c8d5d8'
     oid = 27558
     mid = 89951
