@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'apps.payinfo',
     'apps.search',
     'apps.ueditor',
-    'haystack',
     'apps.party',
     'django.contrib.admin',
     'django.contrib.auth',
