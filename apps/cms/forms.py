@@ -1,6 +1,7 @@
 from django import forms
 from utils.restful import FormError
 from utils import restful
+from apps.course.models import Course
 from apps.news.models import News,Banner
 
 
@@ -22,3 +23,10 @@ class BannerForm(forms.ModelForm,FormError):
     class Meta:
         model = Banner
         fields = '__all__'
+
+class PubCourseForm(forms.ModelForm,FormError):
+    category_id = forms.IntegerField()
+    teacher_id = forms.IntegerField()
+    class Meta:
+        model = Course
+        exclude = ("category",'teacher')

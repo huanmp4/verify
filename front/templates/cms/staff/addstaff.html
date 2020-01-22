@@ -1,0 +1,43 @@
+{% extends 'cms/base.html' %}
+
+{% block title %}{% endblock title %}
+
+{% block style %}{% endblock style %}
+
+{% block content %}
+    <div class="content-wrapper" style="min-height:813px">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <h1>添加权限</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <form class="form-group col-4" method="post">
+                        {% csrf_token %}
+                        <label for="form-username"><h4>用户名</h4></label>
+                        <input type="text" name="username" class="form-control" id="form-username" />
+                        <div style="margin-left: 20px">
+                            {% for group in groups %}
+                                <div style="margin-right: 30px;float:left;">
+                                    <label for="group-box-{{ group.pk }}"><h5>{{ group.name }}</h5></label>
+                                    <input type="checkbox" value="{{ group.pk }}" id="group-box-{{ group.pk }}" name="groups" />
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <button class="btn btn-primary">提交</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock content %}
+

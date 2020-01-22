@@ -26,6 +26,7 @@ urlpatterns = [
     path('pay/',include('apps.payinfo.urls')),
     path('search/',include('apps.search.urls')),
     path('ueditor/',include('apps.ueditor.urls')),
+    path('party/',include('apps.party.urls')),
     path('',views.index,name='index')
 ]
 

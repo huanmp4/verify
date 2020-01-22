@@ -55,7 +55,7 @@ Signin.prototype.listenSendMessageEvent = function(){
                 }
             },
             'fail':function(error){
-                console('错误',error)
+                console.log('错误',error)
             }
         })
     });

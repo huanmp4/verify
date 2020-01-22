@@ -1,6 +1,6 @@
 function NewsPreview() {
     this.time_start = $('#time-start');
-    this.send_query_data = $('.btn-send-query-data');
+    this.delete_news_btn = $('.btn-delete-news');
 }
 
 
@@ -22,27 +22,32 @@ NewsPreview.prototype.listenTimedatePicker = function(){
     time_end.datepicker(options);
 };
 
-NewsPreview.prototype.sendQueryDataBtn = function(){
+
+NewsPreview.prototype.listDeleteNewsBtn = function(){
     var self = this;
-    var form_inline = $('.form-inline-data');
-    self.send_query_data.click(function(event){
-        event.preventDefault();
-        var start_time = form_inline.find('.start-time-input').val();
-        var end_time = form_inline.find('.end-time-input').val();
-        var category_value = form_inline.find('.category-value option:selected').val();
-        var title = form_inline.find('#search').val();
-        console.log('title',title);
-        console.log('category_value',category_value);
-        console.log('start_time',start_time);
-        console.log('end_time',end_time);
-        yourajax.post('')
+    self.delete_news_btn.click(function(){
+        alertBox.alertConfirm({
+            'title':'确定要删除吗',
+            'confirmCallback':function(){
+                var news_id = self.delete_news_btn.attr('data-news-id');
+                console.log('news_id',news_id);
+                yourajax.post({
+                    'url':'news_preview_cms_delete',
+                    'data':{'news_id':news_id},
+                    'success':function(result){
+                        if (result['code'] === 200) {
+                            window.messageBox.showSuccess('删除成功')
+                        }
+                    }
+                })
+            }
+        });
     })
 };
 
-
 NewsPreview.prototype.Run = function(){
     this.listenTimedatePicker();
-    this.sendQueryDataBtn();
+    this.listDeleteNewsBtn();
 };
 
 $(function(){

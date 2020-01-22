@@ -18,7 +18,8 @@ CMS.prototype.listenReleaseBTN = function() {
     self.releaseNewsBtn.click(function (event) {
         event.preventDefault();
         var title = $('#title-news').val();
-        var category = $('#option-control').val();
+        var category = $('#option-control');
+        var category_val = category.val();
         var category_text = $('#option-control option[value="'+category+'"]').text();
         var content = window.ue.getContent();
         var thumbnail = CMS.thumbnail.val();
@@ -27,17 +28,25 @@ CMS.prototype.listenReleaseBTN = function() {
         console.log('category',category);
         console.log('content',content);
         console.log('thumbnail',thumbnail);
-        yourajax.post({
-            'url': '/cms/release_news',
-            'data': {'title': title, 'category':category, 'content': content,'thumbnail':thumbnail},
-            'success': function (result) {
-                if (result['code'] === 200) {
-                    alertBox.alertSuccess('已完成');
-                    console.log('成功', result);
-
+        var border_white={'border':'#ced4da solid 1px'};
+        var border_red={'border':'red solid 1px'};
+        category.css(border_white);category.css(border_white);
+        if (parseInt(category_val) === 404){
+            category.css(border_red);
+            window.messageBox.showError('请选择分类')
+        }
+        else {
+            yourajax.post({
+                'url': '/cms/release_news',
+                'data': {'title': title, 'category': category_val, 'content': content, 'thumbnail': thumbnail},
+                'success': function (result) {
+                    if (result['code'] === 200) {
+                        alertBox.alertSuccess('已完成');
+                        console.log('成功', result);
+                    }
                 }
-            }
-        })
+            })
+        }
     });
 };
 

@@ -91,37 +91,39 @@
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
-                                <p>新闻管理
-                                    <i class="right fa fa-angle-left"></i></p>
-                            </a>
-                            <ul class="nav nav-treeview" style="display:block">
-                                <li class="nav-item">
-                                    <a href="{% url 'cms:release_news' %}" class="nav-link">
-                                        <i class="fa fa-copy nav-icon"></i>
-                                        <p>新闻发布</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{% url 'cms:category' %}" class="nav-link">
-                                        <i class="fa fa-copy nav-icon"></i>
-                                        <p>新闻标签管理</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{% url 'cms:banner_control' %}" class="nav-link">
-                                        <i class="fa fa-copy nav-icon"></i>
-                                        <p>Banner管理</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{% url 'cms:news_preview_cms_all' %}" class="nav-link">
-                                        <i class="fa fa-copy nav-icon"></i>
-                                        <p>New预览编辑</p>
-                                    </a>
-                                </li>
-                            </ul>
+                            {% if perms.new.add_newscomment %}
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p>新闻管理
+                                        <i class="right fa fa-angle-left"></i></p>
+                                </a>
+                                    <ul class="nav nav-treeview" style="display:block">
+                                        <li class="nav-item">
+                                            <a href="{% url 'cms:release_news' %}" class="nav-link">
+                                                <i class="fa fa-copy nav-icon"></i>
+                                                <p>新闻发布</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{% url 'cms:category' %}" class="nav-link">
+                                                <i class="fa fa-copy nav-icon"></i>
+                                                <p>新闻标签管理</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{% url 'cms:banner_control' %}" class="nav-link">
+                                                <i class="fa fa-copy nav-icon"></i>
+                                                <p>Banner管理</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{% url 'cms:news_preview_cms_all' %}" class="nav-link">
+                                                <i class="fa fa-copy nav-icon"></i>
+                                                <p>New预览编辑</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                            {% endif %}
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
@@ -144,6 +146,24 @@
                                     </a>
                                 </li>
                             </ul>
+                            <li class="nav-item">
+                                <a href="{% url 'cms:course_cms_add' %}" class="nav-link">
+                                    <i class="fa fa-copy nav-icon"></i>
+                                    <p>课程管理</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'cms:write_cms_add' %}" class="nav-link">
+                                    <i class="fa fa-copy nav-icon"></i>
+                                    <p>Test</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'cms:staff' %}" class="nav-link">
+                                    <i class="fa fa-copy nav-icon"></i>
+                                    <p>员工管理</p>
+                                </a>
+                            </li>
                             {% endif %}
                         </li>
                     </ul>

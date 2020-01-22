@@ -1,6 +1,7 @@
 {% extends 'cms/base.html' %}
 {% load news_utils %}
 
+
 {% block title %}{% endblock title %}
 
 {% block style %}
@@ -26,25 +27,29 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <form action="#" method="post" class="form-inline form-inline-data">
+                    <form action="#" method="get" class="form-inline form-inline-data">
                         <div class="form-group left-interval">
                             <span for="time-start">开始：</span>
-                            <input class="form-control start-time-input" type="text" id="time-start" placeholder="起始时间" readonly>&nbsp — &nbsp
+                            <input class="form-control start-time-input" type="text" id="time-start" name="start" placeholder="起始时间" readonly>&nbsp — &nbsp
                             <span for="time-end ">结束：</span>
-                            <input class="form-control end-time-input" type="text" id="time-end" placeholder="结束时间" readonly>
+                            <input class="form-control end-time-input" type="text" id="time-end" name="end" placeholder="结束时间" readonly>
                         </div>
                         <div class="form-group left-interval">
                             <span for="select1">分类：</span>
                             <select class="form-control category-value" name="category" id="select1">
-                                <option value="0" data-selected-id="1234">所有分类</option>
-                                <option value="1" data-selected-id="1234">最新</option>
-                                <option value="2">热点</option>
-                                <option value="3">八卦</option>
+                                <option value="0">所有分类</option>
+                                {% for category in categorys %}
+                                    <option value="{{ category.id }}">{{ category.name }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                         <div class="form-group left-interval">
                             <span for="search ">标题：</span>
-                            <input class="form-control" type="text" id="search"  placeholder="关键字">
+                            <input class="form-control" type="text" id="search" name="news-title"  placeholder="关键字">
+                        </div>
+                        <div class="form-group left-interval">
+                            <span for="search-content">内容：</span>
+                            <input class="form-control" type="text" id="search-content" name="news-content"  placeholder="关键字">
                         </div>
                         <div class="form-group left-interval">
                             <button class="btn btn-primary btn-send-query-data" type="submit">
@@ -76,13 +81,13 @@
                         <tbody>
                             {% for news in newses %}
                                 <tr>
-                                    <td>{{ news.title }}</td>
-                                    <td>{{ news.title }}[0:6]</td>
+                                    <td><a href="{% url 'cms:news_preview_cms_edit' %}?news_id={{ news.id }}">{{ news.title }}</a></td>
+                                    <td><a href="{% url 'cms:news_preview_cms_edit' %}?news_id={{ news.id }}">{{ news.title }}[0:6]</a></td>
                                     <td>{{ news.pub_time|time_since }}</td>
                                     <td>{{ news.author }}</td>
                                     <td>
-                                        <a href="#" class="btn btn-info btn-sm">编辑</a>
-                                        <a href="#" class="btn btn-danger btn-sm">删除</a>
+                                        <a href="{% url 'cms:news_preview_cms_edit' %}?news_id={{ news.id }}" class="btn btn-info btn-sm">编辑</a>
+                                        <a href="javascript:void(0);" class="btn btn-danger btn-sm btn-delete-news" data-news-id="{{ news.id }}">删除</a>
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -90,23 +95,62 @@
                     </table>
                     <div>
                         <nav aria-label="Page navigation ">
-                            <span >第1页共2页</span>
-                            <ul class="pager">
-                                <li class="disabled">
-                                    <a href="#" aria-label="Previous" >
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li>
-                                    <a href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
+                            <span class="pull-right"><h4>第{{ page_current_previous }}页共{{ pagenums }}页</h4></span>
+                            <ul class="pagination">
+                             <!--左边left_has_more-->
+{#                                {% if left_has_more %}#}
+{#                                    <li><a href="?p_for_web={{ 1 }}{{ urlencode }}">< </a></li>#}
+{#                                {% endif %}#}
+                                {% if page_hasPrevious %}
+                                    <li>
+                                        <a href="?p_for_web={{ page_current.previous_page_number }}{{ urlencode }}" aria-label="Previous" >
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                {% else %}
+                                    <li class="disabled">
+                                        <a href="#" aria-label="Previous" >
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                {% endif %}
+
+
+                                <!--左边list-->
+                                {% for left_point in left_points %}
+                                    {% if left_point == page_current_previous %}
+                                        <li class="active"><a href="?p_for_web={{ left_point }}{{ urlencode }}">{{ left_point }}</a></li>
+                                    {% else %}
+                                        <li><a href="?p_for_web={{ left_point }}{{ urlencode }}">{{ left_point }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+
+                                <!-- 右边list -->
+                                {% for right_point in right_points %}
+                                    {% if right_point == page_current_previous %}
+                                        <li class="active"><a href="?p_for_web={{ right_point }}{{ urlencode }}">{{ right_point }}</a></li>
+                                    {% else %}
+                                        <li><a href="?p_for_web={{ right_point }}{{ urlencode }}">{{ right_point }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+
+                                {% if page_hasNext %}
+                                    <li>
+                                        <a href="?p_for_web={{ page_current.next_page_number }}{{ urlencode }}" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                {% else %}
+                                    <li class="disabled">
+                                        <a href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                {% endif %}
+                                <!--点击右边最后一页-->
+{#                                {% if right_has_more %}#}
+{#                                    <li><a href="?p_for_web={{ pagenums }}{{ urlencode }}"> > </a></li>#}
+{#                                {% endif %}#}
                             </ul>
                         </nav>
                     </div>

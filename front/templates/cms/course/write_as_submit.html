@@ -1,0 +1,36 @@
+
+{% extends 'cms/base.html' %}
+
+{% block title %}{% endblock title %}
+
+{% block style %}
+    <script src="{% static 'js/course.js' %}"></script>
+{% endblock style %}
+
+{% block content %}
+    <div class="content-wrapper">
+        <section class="content">
+            <div class="container-fluid">
+                <input id="InputBtn" type="text" class="InputBtn"/>
+                <p class="text-input"></p>
+                <div>
+                    姓名：<input type="text" id="uname" />
+                    <input type="button" onclick="check();" value="提交" />
+                    <script>
+                    function check(){
+                    if(!/^[\u4e00-\u9fa5]+$/gi.test(document.getElementById("uname").value))
+                    alert("只能输入汉字");
+                    else
+                    alert("提交成功");
+                    }
+                    </script>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+{% endblock content %}
+
+

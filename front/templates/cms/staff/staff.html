@@ -1,0 +1,62 @@
+{% extends 'cms/base.html' %}
+{% load news_utils %}
+{% block title %}{% endblock title %}
+
+{% block style %}{% endblock style %}
+
+{% block content %}
+    <div class="content-wrapper" style="min-height:813px">
+        <section class="content-header" >
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        员人管理
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr >
+                                    <th>用户名</th>
+                                    <th>手机</th>
+                                    <th>加入时间</th>
+                                    <th>权限组</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for staff in staffs %}
+                                <tr>
+                                    <td>{{ staff.username }}</td>
+                                    <td>{{ staff.telephone }}</td>
+                                    <td>{{ staff.joined_time|time_since }}</td>
+                                    {% if staff.is_superuser %}
+                                        <td>超级管理员</td>
+                                    {% else %}
+                                        <td>
+                                            {% for group in staff.groups.all %}
+                                                {{ group.name }}
+                                            {% endfor %}
+                                        </td>
+                                    {% endif %}
+
+
+                                    <td>
+                                        <a href="{% url 'cms:StaffAdd' %}" class="btn btn-primary">添加权限</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock content %}
+

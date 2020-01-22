@@ -1,0 +1,110 @@
+{% extends 'party/base.html' %}
+
+{% block content %}
+
+
+<div class="i_box gy">
+	<div class="title"><img src="/static/party/images/n_1.png" alt=""/></div>
+    <div class="gy_m">
+    	  <div id="featured-area">
+            <ul>
+                <li><a href=""><img src="/static/party/upload/pic4.jpg" alt=""/></a></li>
+            </ul>
+        </div>
+        <div class="gy_a"><span>{ 想来看看你 }</span></div>
+        <div class="gy_b">
+            <div class="line">&nbsp;</div>
+            <p>多年<br/>你还好吗</p>
+        </div>
+        <div class="gy_c">
+            <div class="gy_cm">有说有笑。</div>
+        </div>
+    </div>
+</div>
+
+<div class="jstore clearfix">
+    <div class="left">
+        <a href="#" class="call-me-in"><img src="{% static 'party/images/call_me_in.png' %}" alt=""></a>
+    </div>
+    <div class="right">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>姓名</th>
+                <th>手机</th>
+                <th>备注</th>
+                {% if user.username == '林朝欢' %}
+                    <th>other</th>
+                {% endif %}
+            </tr>
+            </thead>
+            <tbody>
+            {% for party in partys %}
+            <tr data-id="{{ party.pk }}">
+                <td><em class="red">{{ party.name }}</em></td>
+                <td><em class="red">{{ party.cellphone }}</em></td>
+                <td><em class="red">{{ party.memo }}</em></td>
+                {% if user.username == '林朝欢' %}
+                    <td><button class="btn delete-partyname">删除</button></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    共{{ count }}人
+    </div>
+</div>
+
+
+<div class="mask-wrapper mask-wrapper2">
+    <div class="auth-wrapper">
+        <div class="close-wrapper">
+            <span class="close-btn icon-close1 iconfont"></span>
+        </div>
+        <div class="auth-inner-wrapper">
+            <div class="scroll-wrapper">
+                <div class="signin-group auth-group">
+                    <span class="prompt-account">测试</span><br/>
+                    <span class="prompt-password"></span>
+                    <div class="top-group">
+                        <span class="title">请报名</span>
+                    </div>
+                    <div class="form-group party-memo">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="name" placeholder="姓名">
+                        </div>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="cellphone" placeholder="手机号码">
+                        </div>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="memo" placeholder="备注">
+                        </div>
+                        <div class="input-group">
+                            <input type="submit" class="submit-btn" id="submit-party" value="立即报名">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="space_hx">&nbsp;</div>
+{#<div class="i_box lx">#}
+{#	<div class="title"><img src="/static/party/images/n_5.png" alt=""/></div>#}
+{#    <div class="lx_m clearfix">#}
+{#    	<a href=""><img src="/static/party/images/icon6.png" alt=""/></a>#}
+{#        <p>加盟热线：0755-82369636</p>#}
+{#        <div class="if_nav">#}
+{#        	<a href="">关于我们</a>#}
+{#            <a href="">联系我们</a>#}
+{#            <a href="">在线留言</a>#}
+{#            <a href="">加入我们</a>#}
+{#            <a href="">门店资讯</a>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+
+{% endblock %}

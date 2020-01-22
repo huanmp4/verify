@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views
+from . import views,views2,views3
 from django.conf.urls.static import static
 from django.conf import settings
 app_name = 'cms'
@@ -22,6 +22,20 @@ urlpatterns = [
     path('demo_cms_address_ip', views.demo_cms_address_ip, name='demo_cms_address_ip'),
     path('demo_cms_manager_client', views.demo_cms_manager_client, name='demo_cms_manager_client'),
     path('demo_cms_delete_ip', views.demo_cms_delete_ip, name='demo_cms_delete_ip'),
-    path('news_preview_cms_all', views.news_preview_cms_all, name='news_preview_cms_all'),
-    path('news_preview_cms_query', views.news_preview_cms_query, name='news_preview_cms_query'),
+    path('news_preview_cms_all', views.News_preview_cms_all.as_view(), name='news_preview_cms_all'),
+    path('news_preview_cms_edit', views.news_preview_cms_edit, name='news_preview_cms_edit'),
+    path('news_preview_cms_delete', views.news_preview_cms_delete, name='news_preview_cms_delete'),
 ]+static(settings.CLIENTIMAGE_ROOT,document_root = settings.CLIENTIMAGE_ROOT)
+
+
+urlpatterns += [
+    path('course_cms_add',views2.PublishCourse.as_view(),name='course_cms_add'),
+    path('write_cms_add',views2.write_cms_add,name='write_cms_add'),
+]
+
+
+#管理员
+urlpatterns += [
+    path('staff',views3.staff,name='staff'),
+    path('StaffAdd',views3.StaffAdd.as_view(),name='StaffAdd'),
+]

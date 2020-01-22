@@ -13,14 +13,25 @@ from apps.register.models import User
 from .models import Address
 from django.utils.timezone import make_aware
 from datetime import datetime
+from django.core.paginator import Paginator
+from urllib import parse
+
+#权限访问装饰器
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import permission_required
+from django.contrib.admin.views.decorators import staff_member_required
 
 # Create your views here.
 def home(request):
     return render(request, 'cms/news/home.html')
 
+
+@staff_member_required(login_url='index')
 def news_release(request):
     return render(request,'cms/news/release.html')
 
+
+@method_decorator(permission_required(perm='news.add_news',login_url='/'),name='dispatch')
 class ReleaseNews(View):
     def get(self,request):
         category = Category.objects.all()
@@ -47,10 +58,10 @@ class ReleaseNews(View):
         return restful.params_error(message='G表单问题')
 #标签
 
-
+@method_decorator(permission_required(perm='category.add_category',login_url='/'),name='dispatch')
 def category(request):
     if request.method == 'GET':
-        categorys = Category.objects.all().order_by("-id")
+        categorys = Category.objects.prefetch_related('news_set').all().order_by("-id")
         content = {'categorys':categorys}
         return render(request,'cms/news/category.html',context=content)
     if request.method == 'POST':
@@ -74,6 +85,7 @@ def image_upload_to_local(request):
     print(url)
     return restful.result(data={'url':url})
 
+@method_decorator(permission_required(perm='category.change_category',login_url='/'),name='dispatch')
 def category_modify(request):
     form = CategoryForm(request.POST)
     if form.is_valid():
@@ -90,7 +102,7 @@ def category_modify(request):
     else:
         return restful.params_error(message=form.get_error())
 
-
+@method_decorator(permission_required(perm='category.delete_category',login_url='/'),name='dispatch')
 def category_delete(request):
     id = request.POST.get('id')
     print('id',id)
@@ -125,6 +137,7 @@ def banner_cms_manager_get(request):
     return restful.result(data=context)
 
 #添加banner
+@method_decorator(permission_required(perm='banner.add_banner',login_url='/'),name='dispatch')
 def banner_cms_manager_add(request):
     form = BannerForm(request.POST)
     if form.is_valid():
@@ -217,37 +230,136 @@ def demo_cms_delete_ip(request):
     try:
         Address.objects.get(pk=pk).delete()
         return restful.ok()
-    except:
+    except :
         return restful.params_error('未查到该id')
 
-
-
-
 #新闻列表遍历
-def news_preview_cms_all(request):
-    newses = News.objects.all()
-    context = {'newses':newses}
+class News_preview_cms_all(View):
+    def get(self,request):
 
-    return render(request,'cms/news/news_preview.html',context=context)
+        start = request.GET.get('start')
+        end = request.GET.get('end')
+        category = int(request.GET.get('category',0) or 0)
+        title = request.GET.get('news-title')
+        content = request.GET.get('news-content')
+        p_for_web = request.GET.get('p_for_web',1)
+        print('start',start)
+        print('end',end)
+        print('title', title)
+        print('content', content)
+        print('category', category)
+
+        newses = News.objects.select_related('category','author').all()
+
+        if start or end:
+            if start:
+                try :
+                    start = make_aware(datetime.strptime(start, '%Y/%m/%d'))
+                    print('start', start)
+                except ValueError :
+                    start = start
+            else:
+                start = datetime(year=2019, month=5, day=1)
+                print('start', start)
+            if end:
+                try:
+                    end = make_aware(datetime.strptime(end, '%Y/%m/%d'))
+                except ValueError :
+                    end = end
+            else:
+                end = datetime.now()
+                print('end', end)
+            newses = newses.filter(pub_time__range=(start, end))
+        if category:
+            newses = newses.filter(category=category)
+        if title:
+            newses = newses.filter(title__icontains=title)
+        if content:
+            newses = newses.filter(content__icontains=content)
+
+        #&start=20121111&start=20121112
+        urlencode = '&' + parse.urlencode({'start': start or '',
+                                           'end': end or '',
+                                           'category': category or '',
+                                           'news-title': title or '',
+                                           'news-content': content or ''
+                                           })
+        context = self.get_page(newses=newses,p_for_web=p_for_web)
+        # 加上额外的过滤
+        urlencode = {'urlencode': urlencode,}
+        context.update(urlencode)
+        return render(request,'cms/news/news_preview.html',context=context)
+
+
+    def get_page(self,newses,p_for_web):
+        p = Paginator(newses, 6)
+        page_current = p.page(p_for_web)
+        print('')
+        page_range = p.page_range
+        page_hasPrevious = page_current.has_previous()
+        page_hasNext = page_current.has_next()
+        print('p.page_range', p.page_range)
+        print('p.page(1)', p.page(p_for_web))
+        categorys = Category.objects.all()
+        # urlencode就相当于在每个字典前加个‘&’
+        # 如category=2&news_title='他'&news-content='我
+        # 计算出前面页数
+        current = page_current.number
+        # 计算出共有几页
+        score = p.num_pages
+        arround_range = 2
+
+
+        left_has_more = False
+        right_has_more = False
+        # 如果当前页数小于或等于4，那就range,且不显示小...
+        if current <= arround_range + 1:
+            left_point = range(1, current)
+        else:
+            left_has_more = True
+            # 如果前当页数大于等于4，左边当前页数-2，range面前页数,并显示小点点
+            left_point = range(current - arround_range, current)
+        # 如果前面页数 大于等于 所有的页数
+        if current >= score - arround_range - 1:
+            right_point = range(current , score + 1)
+        else:
+            right_point = range(current , current + arround_range + 1)
+
+        context = {
+            # 新闻列表
+            'newses': page_current.object_list,
+            # 当前获取页码的页面
+            'page_current': page_current,
+            # 当前页码的range
+            'page_range': page_range,
+            # 有上一页吗
+            'page_hasPrevious': page_hasPrevious,
+            # 有下一页吗
+            'page_hasNext': page_hasNext,
+            'categorys': categorys,
+            # 当前第几页
+            'page_current_previous': page_current.number,
+            # 共有几页
+            'pagenums': p.num_pages,
+            'left_points': left_point,
+            'right_points': right_point,
+            'left_has_more': left_has_more,
+            'right_has_more': right_has_more
+        }
+        return context
 
 
 
-#新闻列表预览
-def news_preview_cms_query(request):
-    print('='*30)
-    print('走到这里了')
-    print('='*30)
-    start = request.POST.get('start')
-    print('web start time', start)
-    end = request.POST.get('end')
-    print('web start time', end)
-    category_id = request.POST.get('category_id')
-    title_icontainer = request.POST.get('title_icontainer')
-    if start or end :
-        start_format = datetime.strptime(start,'%y%m%d')
-        end_format = datetime.strptime(end,'%y%m%d')
-        print('start_format time', start_format)
-        print('end_format time', end_format)
-    else:
-        pass
+#新闻编辑
+def news_preview_cms_edit(request):
+    news_id = request.GET.get('news_id')
+    news = News.objects.select_related('category').get(pk = news_id)
+    category = Category.objects.all()
+    return render(request,'cms/news/release.html',{'news':news,'category':category})
+
+#新闻删除
+def news_preview_cms_delete(request):
+    news_id = request.POST.get('news_id')
+    print('news_id',news_id)
+    News.objects.get(id=news_id).delete()
     return restful.ok()

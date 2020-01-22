@@ -3,13 +3,13 @@ from .FormMixin import FormMixin2
 from .models import User
 
 class LoginForm(forms.Form,FormMixin2):
-    username = forms.CharField(max_length=11,min_length=4,error_messages={'max_length':'帐号长度不能超过11位',"min_length":"帐号长度不能少于4位",'required':'请输入帐号'})
+    username = forms.CharField(max_length=11,min_length=2,error_messages={'max_length':'帐号长度不能超过11位',"min_length":"帐号长度不能少于2位",'required':'请输入帐号'})
     password = forms.CharField(max_length=11,min_length=4,error_messages={'max_length':'密码长度不能超过11位',"min_length":"密码长度不能少于4位",'required':'请输入密码'})
     remember = forms.IntegerField(required=False)
 
 class SignupForm(forms.Form,FormMixin2):
     telephone = forms.CharField(max_length=11,min_length=11,error_messages={'max_length':'手机必须11位数','min_length':'手机必须11位数'})
-    username = forms.CharField(max_length=20,min_length=4,error_messages={'max_length':'帐号机不能大于20位数','min_length':'帐号不能小于4数位'})
+    username = forms.CharField(max_length=20,min_length=2,error_messages={'max_length':'帐号机不能大于20位数','min_length':'帐号不能小于2数位'})
     password1 = forms.CharField(max_length=11,min_length=4,error_messages={'max_length':'密码长度不能超过11位',"min_length":"密码长度不能少于4位"})
     password2 = forms.CharField(max_length=11,min_length=4,error_messages={'max_length':'密码长度不能超过11位',"min_length":"密码长度不能少于4位"})
     telephone_code = forms.CharField(max_length=10)

@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'apps.payinfo',
     'apps.search',
     'apps.ueditor',
+    'haystack',
+    'apps.party',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -227,4 +229,27 @@ UEDITOR_CONFIG_PATH = os.path.join(BASE_DIR,'front','district','ueditor','config
 
 PAGE_LOAD_NUM = 1
 
+
+
+HAYSTACK_CONNECTIONS = {
+    'default':{
+        'ENGINE':'apps.news.whoosh_cn_backend.WhooshEngine',
+        'PATH':os.path.join(BASE_DIR,'whoosh_index')
+    }
+}
+#verify环境
+#1.pip install haystack
+#2.pip install whoosh
+#3.settings 添加HAYSTACK_CONNECTIONS,并在目录添加'whoosh_index'文件夹,用来存储缓存
+#4.在News 的app下创建search_indexes.py
+#5.在Search 的app下创建indexes文件夹
+#6.Search app的url更改为haystack include
+#7.html模板把newses数据改为result.object
+#8.python manage.py rebuild_index 把数据存储到缓存
+#9.把path('index',include('haystack.urls'),name='haysta') 加入url并和search搜索框同名
+#10.复制News app下的whoosh_cn_backend
+
+#11.增删改后自动创建索引
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+HAYSTACK_SEARCH_RESULTS_PER_PAGE = 3
 

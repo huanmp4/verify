@@ -17,7 +17,11 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>新闻发布</h1>
+                        {% if news %}
+                            <h1>编辑新闻</h1>
+                        {% else %}
+                            <h1>新闻发布</h1>
+                        {% endif %}
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -25,7 +29,11 @@
                                 <a href="">主页</a>
                             </li>
                             <li class="breadcrumb-item active">
-                                新闻发布
+                                {% if news %}
+                                    <h5>编辑新闻</h5>
+                                {% else %}
+                                    <h5>新闻发布</h5>
+                                {% endif %}
                             </li>
                         </ol>
                     </div>
@@ -38,22 +46,32 @@
                     <form class="col-12">
                         <div class="card card-success">
                             <div class="card-header">
-                                <h3 class="card-title">主题发布</h3>
+                                {% if news %}
+                                    <h3 class="card-title">编辑新闻</h3>
+                                {% else %}
+                                    <h3 class="card-title">主题发布</h3>
+                                {% endif %}
                             </div>
                             <div class="card-body">
                                 <label for="title-news">标题</label>
-                                <input class="form-control" type="text" placeholder=".input" id="title-news">
+                                <input class="form-control" type="text" placeholder=".input" id="title-news" value="{{ news.title }}">
                                 <br>
                                 <label for="option-control">分类</label>
+
                                 <select name="category" class="form-control" id="option-control">
+                                    <option value="404" >所有分类</option>
                                     {% for categorys in category %}
-                                        <option value="{{ categorys.id }}">{{ categorys.name }}在在</option>
+                                        {% if categorys.id == news.category.id %}
+                                            <option value="{{ categorys.id }}" selected>{{ categorys.name }}</option>
+                                        {% else %}
+                                            <option value="{{ categorys.id }}" >{{ categorys.name }}</option>
+                                        {% endif %}
                                     {% endfor %}
                                 </select>
                                 <br>
                                 <label for="picture">缩略图</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="picture">
+                                    <input type="text" class="form-control" id="picture" value="{{ news.thumbnail }}">
                                     <span class="form-group-append">
                                         <label for="thumbnail-btn" class="btn btn-default btn-file">上传图片
                                         <input type="file" hidden="hidden" id="thumbnail-btn"></label>
@@ -71,7 +89,9 @@
                                 <br>
                                 <div class="form-group">
                                     <label>文章内容</label>
-                                    <script id="editor" type="text/plain"></script>
+                                    <script id="editor" type="text/plain">
+                                        {{ news.content|safe }}
+                                    </script>
                                 </div>
                                 <br>
                                 <div class="col-2 fa-pull-right">

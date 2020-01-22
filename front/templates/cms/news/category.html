@@ -59,7 +59,7 @@
                                         <tr data-id="{{ category.id }}" data-name="{{ category.name }}">
                                             <td>{{ category.id }}</td>
                                             <td>{{ category.name }}</td>
-                                            <td>20</td>
+                                            <td>{{ category.news_set.count }}</td>
                                             <td>
                                                 <button class="btn btn-warning btn-xs btn-modify" >更改</button>
                                                 <button class="btn btn-info btn-xs btn-delete" >删除</button>
