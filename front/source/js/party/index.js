@@ -3,6 +3,7 @@ function Party() {
     this.mask_wrapper2 = $('.mask-wrapper2');
     this.sunmit_party = $('#submit-party');
     this.deleteName = $('.delete-partyname');
+    this.editName = $('.edit-partyname');
 }
 
 
@@ -59,10 +60,45 @@ Party.prototype.deleteNameEvent = function(){
     })
 };
 
+Party.prototype.editEvent = function(){
+    var self = this;
+    self.editName.click(function(event){
+        event.preventDefault();
+        var parent = $(this);
+        self.mask_wrapper2.show();
+        var id = parent.parent().parent().attr('data-id');
+        yourajax.get({
+            'url':'/party/edit',
+            'data':{'id':id},
+            'success':function(result){
+                if (result['code'] === 200){
+                    var data = result['data']['party'];
+                    console.log('data',data);
+                    var cellphone = data.cellphone;
+                    var name = data.name;
+                    console.log('name',name);
+                    console.log('name',data['name']);
+                    var memo = data.memo;
+                    var money = data.money;
+                    var memos = $('.party-memo');
+                    var name_v = memos.find('input[name="name"]');
+                    var cellphone_v = memos.find('input[name="cellphone"]');
+                    var memo_v = memos.find('input[name="memo"]');
+                    name_v.val(name);
+                    cellphone_v.val(cellphone);
+                    memo_v.val(memo);
+                }
+            }
+        })
+    })
+};
+
+
 Party.prototype.Run = function(){
     this.showCallmein();
     this.SubmitParty();
     this.deleteNameEvent();
+    this.editEvent();
 };
 
 $(function(){

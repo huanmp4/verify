@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from .models import Party
 from utils import restful
-
+from django.views import View
+from .serializers import PartySerializers
 
 def index(request):
     party = Party.objects.all()
@@ -16,7 +17,6 @@ def write(request):
     memo = request.GET.get('memo')
     cellphone = request.GET.get('cellphone')
     print('name',name)
-
     exists=Party.objects.filter(name=name).exists()
     if exists:
         return restful.result(code=400,message='姓名已存在')
@@ -29,3 +29,20 @@ def delete(request):
     id = request.GET.get('id')
     Party.objects.get(pk=id).delete()
     return restful.ok()
+
+class Edit(View):
+    def get(self,request):
+        id = request.GET.get('id')
+        print('到这了',id)
+        party = Party.objects.get(pk=id)
+        party2 = PartySerializers(party).data
+        return restful.result(data={'party':party2})
+    def post(self,request):
+        id = request.POST.get('id')
+        cellphone = request.POST.get('cellphone')
+        name = request.POST.get('name')
+        memo = request.POST.get('memo')
+        money = request.POST.get('money')
+        party = Party.objects.filter(pk = id)
+        party.update(cellphone=cellphone,name=name,memo=memo,money=money)
+        return restful.ok()

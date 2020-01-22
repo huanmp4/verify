@@ -7,4 +7,5 @@ urlpatterns = [
     path('comment',views.comment,name='comment'),
     path('write',views.write,name='write'),
     path('delete',views.delete,name='delete'),
+    path('edit',views.Edit.as_view(),name='edit'),
 ]

@@ -6,8 +6,10 @@
 <div class="i_box gy">
 	<div class="title"><img src="/static/party/images/n_1.png" alt=""/></div>
     <div style="font-size:25px;color:white;">
-        <div >时间：2020年1月23日</div>
-        <div>地址：廉江人民公园</div>
+        <div >时间：2020年1月27日(年初三)</div>
+        <div>地址：广东省湛江市花城大酒店</div>
+        <div>负责人：江小明，李大白</div>
+        <div>手机：1388888888，1300000000</div>
     </div>
 
     <div class="gy_m">
@@ -37,6 +39,7 @@
             <tr>
                 <th>姓名</th>
                 <th>手机</th>
+                <th>money</th>
                 <th>备注</th>
                 {% if user.username == '林朝欢' %}
                     <th>other</th>
@@ -48,9 +51,13 @@
             <tr data-id="{{ party.pk }}">
                 <td><em class="red">{{ party.name }}</em></td>
                 <td><em class="red">{{ party.cellphone }}</em></td>
+                <td><em class="red">{{ party.money }}</em></td>
                 <td><em class="red">{{ party.memo }}</em></td>
                 {% if user.username == '林朝欢' %}
-                    <td><button class="btn delete-partyname">删除</button></td>
+                    <td>
+                        <button class="btn delete-partyname">删除</button>
+                        <button class="btn edit-partyname">编辑</button>
+                    </td>
                 {% endif %}
             </tr>
             {% endfor %}
@@ -85,7 +92,11 @@
                             <input type="text" class="form-control" name="memo" placeholder="备注">
                         </div>
                         <div class="input-group">
+                            {% if party %}
                             <input type="submit" class="submit-btn" id="submit-party" value="立即报名">
+                            {% else %}
+                            <input type="submit" class="submit-btn" id="submit-party" value="立即报名">
+                            {% endif %}
                         </div>
                     </div>
                 </div>
