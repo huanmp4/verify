@@ -2,7 +2,6 @@ from django.shortcuts import render,redirect
 from apps.news.models import News
 from django.db.models import Q
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
-from haystack.views import SearchView
 from django.http import HttpResponse
 from django.views import View
 from xfz02 import settings
