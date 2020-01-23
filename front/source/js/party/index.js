@@ -1,9 +1,11 @@
 function Party() {
     this.call_me_in = $('.call-me-in');
     this.mask_wrapper2 = $('.mask-wrapper2');
+    this.mask_wrapper3 = $('.mask-wrapper3');
     this.sunmit_party = $('#submit-party');
     this.deleteName = $('.delete-partyname');
     this.editName = $('.edit-partyname');
+    this.submitedit = $('#submit-party-edit');
 }
 
 
@@ -65,8 +67,13 @@ Party.prototype.editEvent = function(){
     self.editName.click(function(event){
         event.preventDefault();
         var parent = $(this);
-        self.mask_wrapper2.show();
+        self.mask_wrapper3.show();
         var id = parent.parent().parent().attr('data-id');
+        var memos = $('.party-memo');
+        var name_v = memos.find('input[name="name"]');
+        var cellphone_v = memos.find('input[name="cellphone"]');
+        var memo_v = memos.find('input[name="memo"]');
+        var money_v = memos.find('input[name="money"]');
         yourajax.get({
             'url':'/party/edit',
             'data':{'id':id},
@@ -80,25 +87,50 @@ Party.prototype.editEvent = function(){
                     console.log('name',data['name']);
                     var memo = data.memo;
                     var money = data.money;
-                    var memos = $('.party-memo');
-                    var name_v = memos.find('input[name="name"]');
-                    var cellphone_v = memos.find('input[name="cellphone"]');
-                    var memo_v = memos.find('input[name="memo"]');
                     name_v.val(name);
                     cellphone_v.val(cellphone);
                     memo_v.val(memo);
+                    money_v.val(money);
                 }
             }
+        });
+        self.submitedit.click(function(){
+            console.log('post','id',id);
+            var memos_b = $(this).parent().parent();
+            var name_b = memos_b.find('input[name="name"]');
+            var cellphone_b = memos_b.find('input[name="cellphone"]');
+            var memo_b = memos_b.find('input[name="memo"]');
+            var money_b = memos_b.find('input[name="money"]');
+            yourajax.post({
+                'url':'/party/edit',
+                'data':{'id':id,'name':name_b.val(),'cellphone':cellphone_b.val(),'memo':memo_b.val(),'money':money_b.val()},
+                'success':function(result){
+                    if (result['code'] === 200){
+                        alertBox.alertSuccess('OK',function(){
+                            window.location.reload();
+                        })
+                    }
+                }
+            })
         })
     })
 };
 
+
+Party.prototype.editEventSubmit = function() {
+    var self = this;
+    self.submitedit.click(function(){
+
+    })
+
+};
 
 Party.prototype.Run = function(){
     this.showCallmein();
     this.SubmitParty();
     this.deleteNameEvent();
     this.editEvent();
+    this.editEventSubmit();
 };
 
 $(function(){

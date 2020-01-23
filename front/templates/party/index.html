@@ -1,15 +1,17 @@
 {% extends 'party/base.html' %}
 
 {% block content %}
-
+    <link rel="stylesheet" href="{% static 'css/sweetalert/sweetalert.css' %}">
+    <script src="{% static 'css/sweetalert/sweetalert.min.js' %}"></script>
+    <script src="{% static 'js/alert.js' %}"></script>
 
 <div class="i_box gy">
 	<div class="title"><img src="/static/party/images/n_1.png" alt=""/></div>
     <div style="font-size:25px;color:white;">
-        <div >时间：2020年1月27日(年初三)</div>
-        <div>地址：广东省湛江市花城大酒店</div>
-        <div>负责人：江小明，李大白</div>
-        <div>手机：1388888888，1300000000</div>
+        <div >时间：2020年1月25日晚(年初一)</div>
+        <div>地址：待定</div>
+        <div>组织人：梁宇进</div>
+        <div>手机：13826480251</div>
     </div>
 
     <div class="gy_m">
@@ -18,13 +20,13 @@
                 <li><a href=""><img src="/static/party/upload/pic4.jpg" alt=""/></a></li>
             </ul>
         </div>
-        <div class="gy_a"><span>{ 想来看看你 }</span></div>
+        <div class="gy_a"><span>{ 吃饭 }</span></div>
         <div class="gy_b">
             <div class="line">&nbsp;</div>
             <p>多年<br/>你还好吗</p>
         </div>
         <div class="gy_c">
-            <div class="gy_cm">有说有笑。</div>
+            <div class="gy_cm">喝酒。</div>
         </div>
     </div>
 </div>
@@ -37,23 +39,34 @@
         <table class="table">
             <thead>
             <tr>
+                <th>序列</th>
                 <th>姓名</th>
                 <th>手机</th>
-                <th>money</th>
                 <th>备注</th>
                 {% if user.username == '林朝欢' %}
-                    <th>other</th>
+                    <th>已收款</th>
+                    <th>管理员操作</th>
+                {% elif user.username == '梁宇进' %}
+                    <th>已收款</th>
+                    <th>管理员操作</th>
                 {% endif %}
             </tr>
             </thead>
             <tbody>
             {% for party in partys %}
             <tr data-id="{{ party.pk }}">
+                <td><em class="red">{{ forloop.counter }}</em></td>
                 <td><em class="red">{{ party.name }}</em></td>
                 <td><em class="red">{{ party.cellphone }}</em></td>
-                <td><em class="red">{{ party.money }}</em></td>
                 <td><em class="red">{{ party.memo }}</em></td>
                 {% if user.username == '林朝欢' %}
+                    <td><em class="red">{{ party.money }}</em></td>
+                    <td>
+                        <button class="btn delete-partyname">删除</button>
+                        <button class="btn edit-partyname">编辑</button>
+                    </td>
+                {% elif user.username == '梁宇进' %}
+                    <td><em class="red">{{ party.money }}</em></td>
                     <td>
                         <button class="btn delete-partyname">删除</button>
                         <button class="btn edit-partyname">编辑</button>
@@ -104,6 +117,53 @@
         </div>
     </div>
 </div>
+
+
+
+{#    编辑#}
+<div class="mask-wrapper mask-wrapper3">
+    <div class="auth-wrapper">
+        <div class="close-wrapper">
+            <span class="close-btn icon-close1 iconfont"></span>
+        </div>
+        <div class="auth-inner-wrapper">
+            <div class="scroll-wrapper">
+                <div class="signin-group auth-group">
+                    <span class="prompt-account">测试</span><br/>
+                    <span class="prompt-password"></span>
+                    <div class="top-group">
+                        <span class="title">编辑</span>
+                    </div>
+                    <div class="form-group party-memo">
+                        <div class="input-group">
+                            <label>姓名</label>
+                            <input type="text" class="form-control" name="name" placeholder="姓名">
+                        </div>
+                        <div class="input-group">
+                            <label>手机号码</label>
+                            <input type="text" class="form-control" name="cellphone" placeholder="手机号码">
+                        </div>
+
+                        <div class="input-group">
+                            <label>已收款</label>
+                            <input type="text" class="form-control" name="money" placeholder="money">
+                        </div>
+
+                        <div class="input-group">
+                            <label>备注</label>
+                            <input type="text" class="form-control" name="memo" placeholder="备注">
+                        </div>
+                        <div class="input-group">
+                            <input type="submit" class="submit-btn" id="submit-party-edit" value="立即编辑">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 
 

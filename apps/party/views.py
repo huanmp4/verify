@@ -33,16 +33,23 @@ def delete(request):
 class Edit(View):
     def get(self,request):
         id = request.GET.get('id')
-        print('到这了',id)
+        print('get到这了',id)
         party = Party.objects.get(pk=id)
         party2 = PartySerializers(party).data
         return restful.result(data={'party':party2})
     def post(self,request):
         id = request.POST.get('id')
         cellphone = request.POST.get('cellphone')
-        name = request.POST.get('name')
-        memo = request.POST.get('memo')
-        money = request.POST.get('money')
+        name = request.POST.get('name'or'')
+        memo = request.POST.get('memo'or'')
+        money = request.POST.get('money'or'')
+
+        print('POST,id到了！！！！！', id)
+        print('cellphone', cellphone)
+        print('name', name)
+        print('memo', memo)
+        print('money', money)
         party = Party.objects.filter(pk = id)
         party.update(cellphone=cellphone,name=name,memo=memo,money=money)
+
         return restful.ok()
