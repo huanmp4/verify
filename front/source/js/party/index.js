@@ -50,13 +50,16 @@ Party.prototype.deleteNameEvent = function(){
         var parent = $(this);
         var id = parent.parent().parent().attr('data-id');
         console.log('id',id);
-        yourajax.get({
-            'url':'/party/delete',
-            'data':{'id':id},
-            'success':function(result){
-                if (result['code'] === 200){
-                    window.location.reload()
-                }
+        alertBox.alertConfirm({'title':'确定删除吗','confirmCallback':function(){
+                yourajax.get({
+                    'url':'/party/delete',
+                    'data':{'id':id},
+                    'success':function(result){
+                        if (result['code'] === 200){
+                            window.location.reload()
+                        }
+                    }
+                })
             }
         })
     })
