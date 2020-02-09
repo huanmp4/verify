@@ -120,6 +120,8 @@ def save_address_by_138ip(ip,contentype):
 
 #当IP地址无效时：
 def invalid_save_address_by_138ip(ip,contentype):
+    ip = ip or '无'
+    print('ip:',ip)
     try:
         address = Address.objects.create(ip=ip, content=contentype, country='无', province='无', city='无', isp='无')
         address.save()
