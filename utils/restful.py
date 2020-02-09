@@ -69,16 +69,22 @@ def get_address_by_138ip(request,content='主页留言'):
     if http_x_forwarded_for:
         ip_addr = http_x_forwarded_for.split(',')[0]
         #斯洛文尼亚
-        save_address_by_138ip(ip = ip_addr,contentype =content)
+        invalid_save_address_by_138ip(ip = ip_addr,contentype =content)
         #当前IP
     else:
         ip_addr2 = request.META.get('REMOTE_ADDR')  # 这里获得代理ip
         #法西兰
-        save_address_by_138ip(ip=ip_addr2, contentype=content)
+        invalid_save_address_by_138ip(ip=ip_addr2, contentype=content)
         # address = Address.objects.create(ip=ip_addr2, content=content)
         # address.save()
         #本机IP
 #save ip
+
+
+
+
+
+#有效保存IP地址
 def save_address_by_138ip(ip,contentype):
     token = '4120d93d1b807a778e37dd9b37c8d5d8'
     oid = 27558
@@ -106,6 +112,16 @@ def save_address_by_138ip(ip,contentype):
     isp = li['data'][3]
     try:
         address = Address.objects.create(ip=ip, content=contentype, country=country, province=province, city=city, isp=isp)
+        address.save()
+    except:
+        pass
+
+
+
+#当IP地址无效时：
+def invalid_save_address_by_138ip(ip,contentype):
+    try:
+        address = Address.objects.create(ip=ip, content=contentype, country='无', province='无', city='无', isp='无')
         address.save()
     except:
         pass
