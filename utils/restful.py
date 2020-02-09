@@ -82,39 +82,39 @@ def get_address_by_138ip(request,content='主页留言'):
 
 
 
-
-
-#有效保存IP地址
-def save_address_by_138ip(ip,contentype):
-    token = '4120d93d1b807a778e37dd9b37c8d5d8'
-    oid = 27558
-    mid = 89951
-    datatype = 'jsonp'
-    callback = 'find'
-    headers = {"token": token}
-    params = urlencode({'ip': ip, 'datatype': datatype, 'callback': 'find'})
-    url = 'http://api.ip138.com/query/?' + params
-    http = httplib2.Http()
-    response, content = http.request(url, 'GET', headers=headers)
-    result = content.decode("utf-8")
-    result_extract = result[5:]
-    re = result_extract
-    num = len(result_extract) - 1
-    list = []
-    for i in range(num):
-        list.append(result_extract[i])
-    list = ''.join(list)
-    li = json.loads(list)
-    ip = li['ip']
-    country = li['data'][0]
-    province = li['data'][1]
-    city = li['data'][2]
-    isp = li['data'][3]
-    try:
-        address = Address.objects.create(ip=ip, content=contentype, country=country, province=province, city=city, isp=isp)
-        address.save()
-    except:
-        pass
+#
+#
+# #有效保存IP地址
+# def save_address_by_138ip(ip,contentype):
+#     token = '4120d93d1b807a778e37dd9b37c8d5d8'
+#     oid = 27558
+#     mid = 89951
+#     datatype = 'jsonp'
+#     callback = 'find'
+#     headers = {"token": token}
+#     params = urlencode({'ip': ip, 'datatype': datatype, 'callback': 'find'})
+#     url = 'http://api.ip138.com/query/?' + params
+#     http = httplib2.Http()
+#     response, content = http.request(url, 'GET', headers=headers)
+#     result = content.decode("utf-8")
+#     result_extract = result[5:]
+#     re = result_extract
+#     num = len(result_extract) - 1
+#     list = []
+#     for i in range(num):
+#         list.append(result_extract[i])
+#     list = ''.join(list)
+#     li = json.loads(list)
+#     ip = li['ip']
+#     country = li['data'][0]
+#     province = li['data'][1]
+#     city = li['data'][2]
+#     isp = li['data'][3]
+#     try:
+#         address = Address.objects.create(ip=ip, content=contentype, country=country, province=province, city=city, isp=isp)
+#         address.save()
+#     except:
+#         pass
 
 
 
