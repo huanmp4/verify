@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from apps.news import views
+from apps.legend import views as views_legend
 from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,7 +28,7 @@ urlpatterns = [
     path('search/',include('apps.search.urls')),
     path('ueditor/',include('apps.ueditor.urls')),
     path('party/',include('apps.party.urls')),
-    path('',views.index,name='index'),
+    path('',views_legend.index,name='index'),
     path('legend',include('apps.legend.urls')),
 ]
 
