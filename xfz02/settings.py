@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['122.114.157.40','192.168.1.106','sapphpire.natapp1.cc','127.0.
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.legend',
     'apps.testapp',
     'apps.register',
     'apps.news',
@@ -190,7 +191,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'front','district'),
-    os.path.join(BASE_DIR,'front','source')
+    os.path.join(BASE_DIR,'front','source'),
+    os.path.join(BASE_DIR,'front','templates')
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR,'static_dist')

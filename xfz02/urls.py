@@ -27,7 +27,8 @@ urlpatterns = [
     path('search/',include('apps.search.urls')),
     path('ueditor/',include('apps.ueditor.urls')),
     path('party/',include('apps.party.urls')),
-    path('',views.index,name='index')
+    path('',views.index,name='index'),
+    path('legend',include('apps.legend.urls')),
 ]
 
 
