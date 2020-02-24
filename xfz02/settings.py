@@ -25,7 +25,7 @@ SECRET_KEY = 's=rl3ghy&&txqbc5=6k+01&2nzl%6^9nzr(%)*7w7@oc89y_1u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['122.114.157.40','192.168.1.106','sapphpire.natapp1.cc','127.0.0.1']
+ALLOWED_HOSTS = ['122.114.157.40','106.13.7.98','127.0.0.1']
 
 
 # Application definition
