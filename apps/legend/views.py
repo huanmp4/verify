@@ -2,4 +2,4 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(request,'legend/index.htm')
+    return render(request,'legend/iisstart.htm')
