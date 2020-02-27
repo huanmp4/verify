@@ -43,6 +43,10 @@ CMS.prototype.listenReleaseBTN = function() {
                     if (result['code'] === 200) {
                         alertBox.alertSuccess('已完成');
                         console.log('成功', result);
+                        console.log('成功', result);
+                        console.log('成功', result);
+
+
                     }
                 }
             })

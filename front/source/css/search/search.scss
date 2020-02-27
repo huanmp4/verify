@@ -9,24 +9,21 @@
         .main-content-wrapper{
             background: #fff;
             box-sizing: border-box;
-
             .search-group{
-                width: 732px;
+                width: 832px;
                 height: 44px;
                 margin: 0 auto;
                 margin-top: 40px;
-                background: pink;
-                border: 1px solid $lineColor;
                 .search-input{
                     display: block;
                     float: left;
                     width: 612px;
                     height: 44px;
+                    border: 1px solid $lineColor;
                     box-sizing: border-box;
                     padding: 10px 20px;
                     font-size: 14px;
                     outline: none;
-                    border: none;
                 }
                 .search-btn{
                     float: left;

@@ -1,6 +1,10 @@
 @import "constants.scss";
 
 .footer{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
     font-size: 14px;
     color: #c9c9c9;
     padding-top: 20px;

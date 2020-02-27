@@ -8,19 +8,17 @@
     <div class="main">
         <div class="course-nav">
             <div class="nav-container">
-                <h3 class="title">在线课堂</h3>
+                <h3 class="title">在线视频</h3>
                 <ul class="nav-list">
-                    <li class="active"><a href="#">最新课堂</a></li>
-                    <li><a href="#">投资人说</a></li>
-                    <li><a href="#">明星案例</a></li>
-                    <li><a href="#">创业知识</a></li>
+                    <li class="active"><a href="#">最新视频</a></li>
+
                 </ul>
             </div>
         </div>
         <div class="wrapper">
             <ul class="course-list">
                 {% for course in courses %}
-                    <li>
+                    <li class="course-list-li" style="float:left">
                         <a href="#">
                             <div class="thumbnail-group">
                                 <a href="{% url 'course:course_detail' course.id %}"><img src="http://static-image.xfz.cn/1513577022_550.png" alt="" class="thumbnial"></a>
@@ -35,6 +33,21 @@
                         </a>
                     </li>
                 {% endfor %}
+                    <li class="course-list-li" style="float:left">
+                        <a href="#">
+                            <div class="thumbnail-group">
+                                <a href="#"><img src="http://static-image.xfz.cn/1513577022_550.png" alt="" class="thumbnial"></a>
+                            </div>
+                            <div class="course-info">
+                                <p class="title">2/p>
+                                <p class="author">知了课堂CEO</p>
+                                <p class="price-group">
+                                    <span class="pay">￥29.0</span>
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+
             </ul>
         </div>
     </div>

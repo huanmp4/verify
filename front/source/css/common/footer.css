@@ -50,7 +50,7 @@
                 .footer .top-group .top-inner-group .detail-group .line1 .about-us .social-group li .text {
                   margin-left: 24px; }
               .footer .top-group .top-inner-group .detail-group .line1 .about-us .social-group .weixin {
-                background: url("https://www.xfz.cn/static/build/images/wx-icon.png");
+                background: url("/front/source/images/112.jpg");
                 background-repeat: no-repeat;
                 background-size: 30%;
                 cursor: pointer; }
@@ -59,7 +59,7 @@
                 .footer .top-group .top-inner-group .detail-group .line1 .about-us .social-group .weixin .wx-qrcode {
                   width: 204px;
                   height: 204px;
-                  background: url("https://www.xfz.cn/static/build/images/wxQr.jpg");
+                  background: url("/front/source/images/112.jpg");
                   background-size: 100%;
                   position: absolute;
                   right: 360px;

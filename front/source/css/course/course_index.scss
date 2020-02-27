@@ -12,7 +12,7 @@
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: space-between;
+            align-content:start;
 
             li{
                 $courseItemHeight: 280px;
@@ -21,6 +21,7 @@
                 height: $courseItemHeight;
                 background: #fff;
                 margin-bottom: 20px;
+                margin-left:74px;
                 .thumbnail-group{
                     width: 100%;
                     height: $thumbnailHeight;
@@ -50,7 +51,6 @@
                         right: 16px;
                         bottom: 16px;
                         text-align: right;
-
                         .free{
                             color: rgb(126, 211, 33);
                         }

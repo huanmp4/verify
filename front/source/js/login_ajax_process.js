@@ -18,7 +18,34 @@ function Signin(){
     this.signupTelephone = this.signupGroup.find('input[name="telephone"]');
     this.msCaptcha = this.signupGroup.find('input[name="img-captcha-code"]');
     this.testNum = 'test1112';
+    this.nav = $('#nav-ul-bar li');
+    console.log('什么意思');
 }
+//登录hover more box
+Signin.prototype.listenMoreBoxHover = function(){
+    var authBox = $('.auth-box');
+    var authMoreBox = $('.auth-more-box');
+    authMoreBox.hide();
+    authBox.hover(function(){
+        authMoreBox.show();
+    },function(){
+        authMoreBox.hide();
+    })
+};
+
+
+
+
+//点击banner拦添加active
+Signin.prototype.navEvent = function(){
+    var self = this;
+    self.nav.click(function(){
+        console.log('run nav0');
+        console.log('run nav0',self.nav);
+        self.nav.removeClass("active");
+        $(this).addClass("active");
+    })
+};
 
 
 
@@ -221,10 +248,17 @@ Signin.prototype.ListenClick = function(){
     });
 };
 
+Signin.prototype.Run = function(){
+    var self = this;
+    self.navEvent();
+};
+
 $(function(){
     var signin = new Signin();
     signin.ListenClick();
     signin.Otherwise();
     signin.listenSendMessageEvent();
+    signin.Run();
+    signin.listenMoreBoxHover();
 
 });

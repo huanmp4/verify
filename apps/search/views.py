@@ -38,7 +38,10 @@ class SearchPagi(View):
         print('source_urlencode', source_urlencode)
         title_urlencode = '&'+parse.urlencode(source_urlencode3)
 
-        context = {'page':page,'p':p,'urlencode':urlencode,'each_page_urlencode':each_page_urlencode,'title_urlencode':title_urlencode}
+        #下面最新两条固定显示
+        news_fixed = News.objects.all().select_related('category','author').order_by('pub_time')[:2]
+
+        context = {'page':page,'p':p,'urlencode':urlencode,'each_page_urlencode':each_page_urlencode,'title_urlencode':title_urlencode,'news_fixed':news_fixed}
         return render(request,'search/search.html',context)
     def post(self,request):
         pass

@@ -75,6 +75,7 @@ Banner.prototype.animateEvent = function () {
     }else{
         index = self.index - 1;
     }
+    //eq() 选择器,如：选择哪个div
     self.pageControl.children('li').eq(index).addClass("active").siblings().removeClass('active');
 };
 
@@ -140,16 +141,6 @@ Banner.prototype.listenPageControl = function () {
     });
 };
 
-Banner.prototype.listenMoreBoxHover = function(){
-    var authBox = $('.auth-box');
-    var authMoreBox = $('.auth-more-box');
-    authMoreBox.hide();
-    authBox.hover(function(){
-        authMoreBox.show();
-    },function(){
-        authMoreBox.hide();
-    })
-};
 
 
 
@@ -161,7 +152,7 @@ Banner.prototype.run = function () {
     this.listenBannerHover();
     this.listenArrowClick();
     this.listenPageControl();
-    this.listenMoreBoxHover();
+
 };
 
 

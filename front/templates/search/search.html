@@ -2,6 +2,10 @@
 
 {% extends 'news/base.html' %}
 {% block body %}
+        <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap/css/bootstrap-theme.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap/css/bootstrap.min.css' %}">
+
     <link rel="stylesheet" href="{% static 'css/search/search.min.css' %}">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_681895_w5poic4qj6vfgvi.css">
     <div class="main">
@@ -10,9 +14,8 @@
                 <div class="search-group">
                     <form action="" method="get">
                         <input type="text" class="search-input" name="content" placeholder="请输入关键字">
-                        <input type="submit" class="search-btn" value="搜索">
+                        <button type="submit" class="search-btn" >搜索</button>
                     </form>
-                    <a href="?preview=preview">点一下</a>
                 </div>
                <div class="recommend-group">
                     <p class="recommend-title">热门推荐</p>
@@ -76,8 +79,9 @@
 
 
                 <div class="recommend-group">
-                    <p class="recommend-title">热门推荐</p>
+                    <p class="recommend-title">最新推荐</p>
                     <ul class="recommend-list">
+                        {% for news in news_fixed %}
                         <li>
                             <div class="thumbnail-group">
                                 <a href="#">
@@ -86,106 +90,24 @@
                             </div>
                             <div class="news-group">
                                 <p class="title">
-                                    <a href="#">王健林卖掉进军海外首个项目:17亿售伦敦ONE六成股权</a>
+                                    <a href="#">{{ news.title }}</a>
                                 </p>
                                 <p class="desc">
                                     外界关于万达要出售此前在海外投资项目的消息一直不断。
                                 </p>
                                 <p class="more">
-                                   <span class="category">深度报道</span>
-                                    <span class="pub-time">1小时前</span>
-                                    <span class="author">知了课堂</span>
+                                   <span class="category">{{ news.category.name }}</span>
+                                    <span class="pub-time">{{ news.pub_time|timesince }}</span>
+                                    <span class="author">{{ news.author.username }}</span>
                                 </p>
                             </div>
                         </li>
-                        <li>
-                            <div class="thumbnail-group">
-                                <a href="#">
-                                    <img src="http://static-image.xfz.cn/1516010894_546.jpg-website.news.list" alt="">
-                                </a>
-                            </div>
-                            <div class="news-group">
-                                <p class="title">
-                                    <a href="#">
-张小龙演讲全文：小程序、公众号将会有哪些变化？</a>
-                                </p>
-                                <p class="desc">
-                                    我认为探索线下的精彩生活，这是我们下一步想要尝试的一个方向。
-                                </p>
-                                <p class="more">
-                                   <span class="category">热点</span>
-                                    <span class="pub-time">2小时前</span>
-                                    <span class="author">知了课堂</span>
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="sidebar-wrapper">
-                <div class="title-group">
-                    <span class="title">在线课堂</span>
-                    <a class="more" href="#">更多</a>
-                </div>
-                <div class="advertise-group">
-                    <a href="#">
-                        <img src="http://www.xfz.cn/static/build/images/side-gift-banner.png" alt="">
-                    </a>
-                </div>
-                <div class="platform-group">
-                    <div class="title-group">
-                        <span class="title">关注小饭桌</span>
-                    </div>
-                    <div class="focus-group">
-                        <ul class="left-group">
-                           <li class="zhihu">
-                               <a href="#" target="_blank">小饭桌创业课堂</a>
-                           </li>
-                            <li class="weibo">
-                               <a href="#" target="_blank">小饭桌创业课堂</a>
-                           </li>
-                            <li class="toutiao">
-                               <a href="#" target="_blank">小饭桌</a>
-                           </li>
-                        </ul>
-                        <div class="right-group">
-                            <p class="desc">扫码关注小饭桌微信公众平台xfz008</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="hot-news-group">
-                    <div class="title-group">
-                        <span class="title">热门推荐</span>
-                    </div>
-                    <ul class="hot-list-group">
-                        <li>
-                            <div class="left-group">
-                                <p class="title">
-                                    <a href="#">王健林卖掉进军海外首个项目:17亿售伦敦ON...</a>
-                                </p>
-                                <p class="more">
-                                    <span class="category">深度报道</span>
-                                    <span class="pub-time">1小时前</span>
-                                </p>
-                            </div>
-                            <div class="right-group">
-                                <a href="#">
-                                    <img src="http://static-image.xfz.cn/1516169692_914.jpg-website.news.list" alt="">
-                                </a>
-                            </div>
-                        </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 {% endblock %}

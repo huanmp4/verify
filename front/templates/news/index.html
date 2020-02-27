@@ -32,10 +32,6 @@
                 <div class="list-outer-group">
                     <ul class="list-tab" >
                         <li class="active"><a href="#">最新资讯</a></li>
-                        <li><a href="#">热点</a></li>
-                        <li><a href="#">深度报道</a></li>
-                        <li><a href="#">干货分享</a></li>
-                        <li><a href="#">投资人说</a></li>
                     </ul>
                     <ul class="list-inner-group" >
                         {% for value in newses %}
@@ -63,6 +59,7 @@
                         <script id="template_each" type="text/html">
                             {% verbatim %}
                                 {{ each newses value num }}
+
                                     <li>
                                         <div class="thumbnail-group">
                                             <a href="#">
@@ -92,61 +89,62 @@
                     </div>
                 </div>
             </div>
-            <div class="sidebar-wrapper">
-                <div class="title-group">
-                    <span class="title">在线课堂</span>
-                    <a class="more" href="#">更多</a>
-                </div>
-                <div class="advertise-group">
-                    <a href="#">
-                        <img src="http://www.xfz.cn/static/build/images/side-gift-banner.png" alt="">
-                    </a>
-                </div>
-                <div class="platform-group">
-                    <div class="title-group">
-                        <span class="title">关注小饭桌</span>
-                    </div>
-                    <div class="focus-group">
-                        <ul class="left-group">
-                           <li class="zhihu">
-                               <a href="#" target="_blank">小饭桌创业课堂</a>
-                           </li>
-                            <li class="weibo">
-                               <a href="#" target="_blank">小饭桌创业课堂</a>
-                           </li>
-                            <li class="toutiao">
-                               <a href="#" target="_blank">小饭桌</a>
-                           </li>
-                        </ul>
-                        <div class="right-group">
-                            <p class="desc">扫码关注小饭桌微信公众平台xfz008</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="hot-news-group">
-                    <div class="title-group">
-                        <span class="title">热门推荐</span>
-                    </div>
-                    <ul class="hot-list-group">
-                        <li>
-                            <div class="left-group">
-                                <p class="title">
-                                    <a href="#">王健林卖掉进军海外首个项目:17亿售伦敦ON...</a>
-                                </p>
-                                <p class="more">
-                                    <span class="category">深度报道</span>
-                                    <span class="pub-time">1小时前</span>
-                                </p>
-                            </div>
-                            <div class="right-group">
-                                <a href="#">
-                                    <img src="http://static-image.xfz.cn/1516169692_914.jpg-website.news.list" alt="">
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+{#            侧边栏#}
+{#            <div class="sidebar-wrapper">#}
+{#                <div class="title-group">#}
+{#                    <span class="title">在线课堂</span>#}
+{#                    <a class="more" href="#">更多</a>#}
+{#                </div>#}
+{#                <div class="advertise-group">#}
+{#                    <a href="#">#}
+{#                        <img src="http://www.xfz.cn/static/build/images/side-gift-banner.png" alt="">#}
+{#                    </a>#}
+{#                </div>#}
+{#                <div class="platform-group">#}
+{#                    <div class="title-group">#}
+{#                        <span class="title">关注小饭桌</span>#}
+{#                    </div>#}
+{#                    <div class="focus-group">#}
+{#                        <ul class="left-group">#}
+{#                           <li class="zhihu">#}
+{#                               <a href="#" target="_blank">小饭桌创业课堂</a>#}
+{#                           </li>#}
+{#                            <li class="weibo">#}
+{#                               <a href="#" target="_blank">小饭桌创业课堂</a>#}
+{#                           </li>#}
+{#                            <li class="toutiao">#}
+{#                               <a href="#" target="_blank">小饭桌</a>#}
+{#                           </li>#}
+{#                        </ul>#}
+{#                        <div class="right-group">#}
+{#                            <p class="desc">扫码关注小饭桌微信公众平台xfz008</p>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="hot-news-group">#}
+{#                    <div class="title-group">#}
+{#                        <span class="title">热门推荐</span>#}
+{#                    </div>#}
+{#                    <ul class="hot-list-group">#}
+{#                        <li>#}
+{#                            <div class="left-group">#}
+{#                                <p class="title">#}
+{#                                    <a href="#"></a>#}
+{#                                </p>#}
+{#                                <p class="more">#}
+{#                                    <span class="category">深度报道</span>#}
+{#                                    <span class="pub-time">1小时前</span>#}
+{#                                </p>#}
+{#                            </div>#}
+{#                            <div class="right-group">#}
+{#                                <a href="#">#}
+{#                                    <img src="http://static-image.xfz.cn/1516169692_914.jpg-website.news.list" alt="">#}
+{#                                </a>#}
+{#                            </div>#}
+{#                        </li>#}
+{#                    </ul>#}
+{#                </div>#}
+{#            </div>#}
         </div>
     </div>
 {% endblock %}

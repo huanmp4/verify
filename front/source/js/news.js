@@ -1,6 +1,8 @@
 function News(){
     this.commentImmediately = $('#submit-immediately');
     this.loadMorBtnMS = $('#load-more-btn');
+
+
 }
 
 
@@ -39,9 +41,7 @@ News.prototype.getTimeEvent = function(){
         var dateSource = new Date(dateValue);
         var dateTimestamp = dateSource.getTime();
         var time = (new Date().getTime());
-        console.log('dateValue',dateValue);
-        console.log('dataSource',dateSource);
-        console.log('time',time);
+
         var date = (time - dateTimestamp) / 1000;
         console.log('date',date);
         if (date <= 60){
@@ -59,8 +59,8 @@ News.prototype.getTimeEvent = function(){
             year = dateSource.getFullYear();
             month = dateSource.getMonth();
             day = dateSource.getDay();
-            hour = dataSource.getHours();
-            minute = dataSource.getMinutes();
+            hour = dateSource.getHours();
+            minute = dateSource.getMinutes();
             wholeDate = (year + '/' + month + '/' + day + '/' + ' ' + hour + '时' + minute + '分');
             return wholeDate
         }
@@ -70,8 +70,8 @@ News.prototype.getTimeEvent = function(){
 
 News.prototype.listenMoreNewsBtnMs = function(){
     var self = this;
-    var listUrls = $('.list-inner-group');
     var pages = 1;
+
     console.log('跑过来');
     self.loadMorBtnMS.click(function(event){
         event.preventDefault();
@@ -81,8 +81,11 @@ News.prototype.listenMoreNewsBtnMs = function(){
             'success':function(result){
                 if (result['code'] === 200){
                     console.log('data.message',result.data.news);
+                    console.log('data.message',result.data.news);
                     var datas = result['data']['news'];
                     var temp = template('template_each',{'newses':datas});
+                    //listUrls要放在ajax中获取才有效
+                    var listUrls = $('.list-inner-group');
                     listUrls.append(temp);
                     pages += 1;
                 }

@@ -58,7 +58,7 @@ class ReleaseNews(View):
         return restful.params_error(message='G表单问题')
 #标签
 
-@method_decorator(permission_required(perm='category.add_category',login_url='/'),name='dispatch')
+
 def category(request):
     if request.method == 'GET':
         categorys = Category.objects.prefetch_related('news_set').all().order_by("-id")
@@ -236,7 +236,6 @@ def demo_cms_delete_ip(request):
 #新闻列表遍历
 class News_preview_cms_all(View):
     def get(self,request):
-
         start = request.GET.get('start')
         end = request.GET.get('end')
         category = int(request.GET.get('category',0) or 0)
@@ -289,7 +288,6 @@ class News_preview_cms_all(View):
         urlencode = {'urlencode': urlencode,}
         context.update(urlencode)
         return render(request,'cms/news/news_preview.html',context=context)
-
 
     def get_page(self,newses,p_for_web):
         p = Paginator(newses, 6)
