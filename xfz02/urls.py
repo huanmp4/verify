@@ -20,7 +20,7 @@ from apps.legend import views as views_legend
 from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('news/',include('apps.news.urls')),
+    path('',include('apps.news.urls')),
     path('cms/',include('apps.cms.urls')),
     path('register/',include('apps.register.urls')),
     path('course/',include('apps.course.urls')),

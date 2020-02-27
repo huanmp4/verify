@@ -31,6 +31,7 @@ def news_release(request):
     return render(request,'cms/news/release.html')
 
 
+#发布新闻
 @method_decorator(permission_required(perm='news.add_news',login_url='/'),name='dispatch')
 class ReleaseNews(View):
     def get(self,request):
@@ -55,7 +56,7 @@ class ReleaseNews(View):
             return restful.ok()
         print('表单错')
         print('form.get_errors',form.get_errors)
-        return restful.params_error(message='G表单问题')
+        return restful.params_error(message='表单提交有问题')
 #标签
 
 
@@ -77,7 +78,8 @@ def category(request):
 
 def image_upload_to_local(request):
     file = request.FILES.get('file')
-    file_name = file.name
+    file_name = file.name.split('.')[1]
+    file_name = str(int(time.time()*1000))+ '.' +file_name
     with open((os.path.join(settings.CLIENTIMAGE_ROOT,file_name)),'wb') as f:
         for chunk in file.chunks():
             f.write(chunk)

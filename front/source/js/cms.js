@@ -81,7 +81,33 @@ CMS.prototype.initUeditor = function(){
 //获取新闻发布
 
 
+//图片上传本地
+CMS.prototype.listThumbnailUploadToLocal = function(){
+    var self = this;
+    self.thumbnail.change(function(){
+        console.log('点击图片上传本地');
+        // var file = this.files[0];
+        // var key = new Date().getTime() + '.' +file.name.split('.')[1];
+        var file = self.thumbnail[0].files[0];
+        var formData = new FormData();
+        formData.append('file',file);
+        console.log('file',formData);
+        yourajax.post({
+            'url':'/cms/image_upload_to_local',
+            'processData':false,
+            'contentType':false,
+            'data':formData,
+            'success':function(event){
+                if (event["code"] === 200){
+                    var url = event['data']['url'];
+                    var picture = $('#picture');
+                    picture.val(url);
+                }
+            }
+        });
 
+    })
+};
 
 
 
@@ -181,7 +207,10 @@ CMS.prototype.handleFileComplete = function(response){
 
 
 CMS.prototype.Run = function(){
-    this.listenThumbnailUploadEvent();
+    //取消上传图到七牛去
+    // this.listenThumbnailUploadEvent();
+    //图上传本地
+    this.listThumbnailUploadToLocal();
     this.listenCancelsubscription();
     this.listenReleaseBTN();
     this.initUeditor();
