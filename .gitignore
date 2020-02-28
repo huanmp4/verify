@@ -1,2 +1,5 @@
 front/node_modules
 node_modules
+front/source/client_image
+front/source/adminLTE/dist/img
+front/source/adminLTE/plugins/fontawesome-free/webfonts
