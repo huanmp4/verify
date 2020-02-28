@@ -75,6 +75,7 @@ News.prototype.listenMoreNewsBtnMs = function(){
     console.log('跑过来');
     self.loadMorBtnMS.click(function(event){
         event.preventDefault();
+        console.log('2');
         yourajax.get({
             'url':'/news/news_list',
             'data':{'p':pages},
@@ -84,6 +85,7 @@ News.prototype.listenMoreNewsBtnMs = function(){
                     console.log('data.message',result.data.news);
                     var datas = result['data']['news'];
                     var temp = template('template_each',{'newses':datas});
+                    console.log('跑temp',temp);
                     //listUrls要放在ajax中获取才有效
                     var listUrls = $('.list-inner-group');
                     listUrls.append(temp);

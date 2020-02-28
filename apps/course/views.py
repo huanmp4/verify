@@ -24,17 +24,20 @@ def course_detail(request,course_id):
         return render(request, 'course/course_detail.html', {'course':course})
 
 
+
+#帐号ambulance120的token
 def course_token(request):
     import hmac, os
     import time, datetime
     import hashlib
     file = request.GET.get('video')
-    UserKey = 'c982d508182a4fb6'
+    UserKey = 'ac4a519dfad1447c'
     UserKey = UserKey.encode('utf-8')
-    userid = '9b594b02a300443eb23fdb723ef74f68'
-    mediald = 'http://jmrcwcw03u4rd6ptgzj.exp.bcevod.com/mda-jmssk05f5a834fdh/mda-jmssk05f5a834fdh.m3u8'
+    userid = 'c2875362cf39445ea4eb961a16fb1d7e'
+    mediald = 'http://kbtjft5vvp1adgpj9te.exp.bcevod.com/mda-kbtjh8jzvmkssziu/mda-kbtjh8jzvmkssziu.m3u8'
+    # mediald = 'http://jmrcwcw03u4rd6ptgzj.exp.bcevod.com/mda-jmssk05f5a834fdh/mda-jmssk05f5a834fdh.m3u8'
     extension = os.path.splitext(mediald)[1]
-    mediald = mediald.split('/')[-1].replace('.m3u8', '')
+    mediald = mediald.split('/')[-1].replace('.m3u8' or '.mp4', '')
     expiration = int(time.time()) + (60 * 60 * 2)
     media_and_time = '/{0}/{1}'.format(mediald, expiration).encode('utf-8')
     signature = hmac.new(UserKey, media_and_time, digestmod=hashlib.sha256).hexdigest()
@@ -45,6 +48,32 @@ def course_token(request):
     print('media_and_time', media_and_time)
     print('token', token)
     return restful.result(data={'token':token})
+
+
+
+
+#帐号13005611192的token
+# def course_token(request):
+#     import hmac, os
+#     import time, datetime
+#     import hashlib
+#     file = request.GET.get('video')
+#     UserKey = 'c982d508182a4fb6'
+#     UserKey = UserKey.encode('utf-8')
+#     userid = '9b594b02a300443eb23fdb723ef74f68'
+#     mediald = 'http://jmrcwcw03u4rd6ptgzj.exp.bcevod.com/mda-jmssk05f5a834fdh/mda-jmssk05f5a834fdh.m3u8'
+#     extension = os.path.splitext(mediald)[1]
+#     mediald = mediald.split('/')[-1].replace('.m3u8', '')
+#     expiration = int(time.time()) + (60 * 60 * 2)
+#     media_and_time = '/{0}/{1}'.format(mediald, expiration).encode('utf-8')
+#     signature = hmac.new(UserKey, media_and_time, digestmod=hashlib.sha256).hexdigest()
+#     token = '{0}_{1}_{2}'.format(signature, userid, expiration)
+#     print('signature', signature)
+#     print('mediald', mediald)
+#     print('extension', extension)
+#     print('media_and_time', media_and_time)
+#     print('token', token)
+#     return restful.result(data={'token':token})
 
 
 

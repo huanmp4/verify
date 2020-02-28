@@ -21,33 +21,18 @@
                     <li class="course-list-li" style="float:left">
                         <a href="#">
                             <div class="thumbnail-group">
-                                <a href="{% url 'course:course_detail' course.id %}"><img src="http://static-image.xfz.cn/1513577022_550.png" alt="" class="thumbnial"></a>
+                                <a href="{% url 'course:course_detail' course.id %}"><img src="{{ course.cover_url }}" alt="" class="thumbnial"></a>
                             </div>
                             <div class="course-info">
                                 <p class="title">{{ course.title }}/p>
-                                <p class="author">知了课堂CEO</p>
+                                <p class="author">{{ course.teacher }}</p>
                                 <p class="price-group">
-                                    <span class="pay">￥29.0</span>
+                                    <span class="pay">{{ course.price }}/span>
                                 </p>
                             </div>
                         </a>
                     </li>
                 {% endfor %}
-                    <li class="course-list-li" style="float:left">
-                        <a href="#">
-                            <div class="thumbnail-group">
-                                <a href="#"><img src="http://static-image.xfz.cn/1513577022_550.png" alt="" class="thumbnial"></a>
-                            </div>
-                            <div class="course-info">
-                                <p class="title">2/p>
-                                <p class="author">知了课堂CEO</p>
-                                <p class="price-group">
-                                    <span class="pay">￥29.0</span>
-                                </p>
-                            </div>
-                        </a>
-                    </li>
-
             </ul>
         </div>
     </div>

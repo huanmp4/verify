@@ -18,7 +18,9 @@
                     </form>
                 </div>
                <div class="recommend-group">
-                    <p class="recommend-title">热门推荐</p>
+                   {% if page %}
+                       <p class="recommend-title">搜索结果</p>
+                   {% endif %}
                     <ul class="recommend-list">
                         {% for result in page.object_list %}
                             {% with result as news %}
@@ -30,7 +32,7 @@
                                     </div>
                                     <div class="news-group">
                                         <p class="title">
-                                            <a href="#">{{ news.title }}</a>
+                                            <a href="/news/news_detail/{{ news.id }}">{{ news.title }}</a>
                                         </p>
                                         <p class="desc">
                                             {{ news.desc }}
@@ -90,7 +92,7 @@
                             </div>
                             <div class="news-group">
                                 <p class="title">
-                                    <a href="#">{{ news.title }}</a>
+                                    <a href="/news/news_detail/{{ news.id }}">{{ news.title }}</a>
                                 </p>
                                 <p class="desc">
                                     外界关于万达要出售此前在海外投资项目的消息一直不断。

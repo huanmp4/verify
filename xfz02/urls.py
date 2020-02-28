@@ -20,7 +20,8 @@ from apps.legend import views as views_legend
 from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('apps.news.urls')),
+    path('news/',include('apps.news.urls')),
+    path('',views.index,name='index'),
     path('cms/',include('apps.cms.urls')),
     path('register/',include('apps.register.urls')),
     path('course/',include('apps.course.urls')),
@@ -28,7 +29,7 @@ urlpatterns = [
     path('search/',include('apps.search.urls')),
     path('ueditor/',include('apps.ueditor.urls')),
     path('party/',include('apps.party.urls')),
-    path('legend',views_legend.index,name='index'),
+    path('legend',views_legend.index),
     path('legend',include('apps.legend.urls')),
 ]
 

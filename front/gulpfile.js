@@ -113,7 +113,7 @@ watcher.on('unlink',function(path,stats){
 // 换一个
 function bs_event(){
     bs.init({
-        'proxy':'http://127.0.0.1:8000/news/index'
+        'proxy':'http://127.0.0.1:8000/'
     });
 }
 //

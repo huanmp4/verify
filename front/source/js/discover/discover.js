@@ -19,7 +19,7 @@ Discover.prototype.formSubmission = function(){
         var content = self.ue.getContent();
         console.log('content',content);
         yourajax.post({
-            'url':'/news/discover',
+            'url':'/cms/Discover_Process',
             'data':{'content':content},
             'success':function(result){
                 if (result['code'] === 200){

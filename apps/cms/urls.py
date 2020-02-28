@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views,views2,views3
+from . import views,views_of_course,views_of_staff
 from django.conf.urls.static import static
 from django.conf import settings
 app_name = 'cms'
@@ -29,13 +29,13 @@ urlpatterns = [
 
 
 urlpatterns += [
-    path('course_cms_add',views2.PublishCourse.as_view(),name='course_cms_add'),
-    path('write_cms_add',views2.write_cms_add,name='write_cms_add'),
+    path('course_cms_add',views_of_course.PublishCourse.as_view(),name='course_cms_add'),
+    path('write_cms_add',views_of_course.write_cms_add,name='write_cms_add'),
 ]
 
 
 #管理员
 urlpatterns += [
-    path('staff',views3.staff,name='staff'),
-    path('StaffAdd',views3.StaffAdd.as_view(),name='StaffAdd'),
+    path('staff',views_of_staff.staff,name='staff'),
+    path('StaffAdd',views_of_staff.StaffAdd.as_view(),name='StaffAdd'),
 ]

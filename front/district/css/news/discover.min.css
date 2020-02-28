@@ -1,8 +1,1 @@
-.container {
-  margin-top: 100px; }
-  .container .leaveMessage {
-    z-index: 0; }
-    .container .leaveMessage .list-group-item {
-      z-index: 0; }
-  .container .ul-content li {
-    margin-top: 10px; }
+.container{margin-top:100px}.container .leaveMessage,.container .leaveMessage .list-group-item{z-index:0}.container .ul-content li{margin-top:10px}
