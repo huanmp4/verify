@@ -6,36 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="edc1a9fb-64dd-4ec4-b20a-4edbcfda3c4f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/apps/cms/urls.py" afterPath="$PROJECT_DIR$/apps/cms/urls.py" />
-      <change beforePath="$PROJECT_DIR$/apps/cms/views2.py" afterPath="$PROJECT_DIR$/apps/cms/views_of_course.py" />
-      <change beforePath="$PROJECT_DIR$/apps/cms/views3.py" afterPath="$PROJECT_DIR$/apps/cms/views_of_staff.py" />
-      <change beforePath="$PROJECT_DIR$/apps/course/views.py" afterPath="$PROJECT_DIR$/apps/course/views.py" />
-      <change beforePath="$PROJECT_DIR$/apps/news/urls.py" afterPath="$PROJECT_DIR$/apps/news/urls.py" />
-      <change beforePath="$PROJECT_DIR$/front/district/css/common/body.min.css" afterPath="$PROJECT_DIR$/front/district/css/common/body.min.css" />
-      <change beforePath="$PROJECT_DIR$/front/district/css/common/footer.min.css" afterPath="$PROJECT_DIR$/front/district/css/common/footer.min.css" />
-      <change beforePath="$PROJECT_DIR$/front/district/css/common/header.min.css" afterPath="$PROJECT_DIR$/front/district/css/common/header.min.css" />
-      <change beforePath="$PROJECT_DIR$/front/district/css/common/init.min.css" afterPath="$PROJECT_DIR$/front/district/css/common/init.min.css" />
-      <change beforePath="$PROJECT_DIR$/front/district/css/course/course_detail.min.css" afterPath="$PROJECT_DIR$/front/district/css/course/course_detail.min.css" />
-      <change beforePath="$PROJECT_DIR$/front/district/css/course/course_index.min.css" afterPath="$PROJECT_DIR$/front/district/css/course/course_index.min.css" />
-      <change beforePath="$PROJECT_DIR$/front/district/css/course/course_nav.min.css" afterPath="$PROJECT_DIR$/front/district/css/course/course_nav.min.css" />
-      <change beforePath="$PROJECT_DIR$/front/district/css/news/discover.min.css" afterPath="$PROJECT_DIR$/front/district/css/news/discover.min.css" />
-      <change beforePath="$PROJECT_DIR$/front/district/css/news/index.min.css" afterPath="$PROJECT_DIR$/front/district/css/news/index.min.css" />
-      <change beforePath="$PROJECT_DIR$/front/district/css/news/news_detail.min.css" afterPath="$PROJECT_DIR$/front/district/css/news/news_detail.min.css" />
-      <change beforePath="$PROJECT_DIR$/front/district/css/payinfo/payinfo.min.css" afterPath="$PROJECT_DIR$/front/district/css/payinfo/payinfo.min.css" />
-      <change beforePath="$PROJECT_DIR$/front/district/css/register/init.min.css" afterPath="$PROJECT_DIR$/front/district/css/register/init.min.css" />
-      <change beforePath="$PROJECT_DIR$/front/district/css/register/login.min.css" afterPath="$PROJECT_DIR$/front/district/css/register/login.min.css" />
-      <change beforePath="$PROJECT_DIR$/front/district/css/search/search.min.css" afterPath="$PROJECT_DIR$/front/district/css/search/search.min.css" />
-      <change beforePath="$PROJECT_DIR$/front/district/css/testapp/test2.min.css" afterPath="$PROJECT_DIR$/front/district/css/testapp/test2.min.css" />
-      <change beforePath="$PROJECT_DIR$/front/district/js/news.min.js" afterPath="$PROJECT_DIR$/front/district/js/news.min.js" />
-      <change beforePath="$PROJECT_DIR$/front/gulpfile.js" afterPath="$PROJECT_DIR$/front/gulpfile.js" />
-      <change beforePath="$PROJECT_DIR$/front/source/js/discover/discover.js" afterPath="$PROJECT_DIR$/front/source/js/discover/discover.js" />
-      <change beforePath="$PROJECT_DIR$/front/source/js/news.js" afterPath="$PROJECT_DIR$/front/source/js/news.js" />
-      <change beforePath="$PROJECT_DIR$/front/templates/course/course_index.html" afterPath="$PROJECT_DIR$/front/templates/course/course_index.html" />
-      <change beforePath="$PROJECT_DIR$/front/templates/news/base.html" afterPath="$PROJECT_DIR$/front/templates/news/base.html" />
-      <change beforePath="$PROJECT_DIR$/front/templates/news/discover.html" afterPath="$PROJECT_DIR$/front/templates/news/discover.html" />
-      <change beforePath="$PROJECT_DIR$/front/templates/news/index.html" afterPath="$PROJECT_DIR$/front/templates/news/index.html" />
-      <change beforePath="$PROJECT_DIR$/front/templates/search/search.html" afterPath="$PROJECT_DIR$/front/templates/search/search.html" />
-      <change beforePath="$PROJECT_DIR$/xfz02/urls.py" afterPath="$PROJECT_DIR$/xfz02/urls.py" />
+      <change beforePath="$PROJECT_DIR$/apps/cms/views.py" afterPath="$PROJECT_DIR$/apps/cms/views.py" />
+      <change beforePath="$PROJECT_DIR$/apps/news/models.py" afterPath="$PROJECT_DIR$/apps/news/models.py" />
     </list>
     <ignored path="$PROJECT_DIR$/front/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -78,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/front/source/js/cms/course_detail.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="532">
-              <caret line="34" column="14" lean-forward="true" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
+              <caret line="34" column="14" lean-forward="false" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -88,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/apps/course/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="513">
-              <caret line="31" column="18" lean-forward="true" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+              <caret line="31" column="18" lean-forward="false" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -98,17 +70,69 @@
         <entry file="file://$PROJECT_DIR$/front/templates/course/course_index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="551">
-              <caret line="29" column="78" lean-forward="true" selection-start-line="29" selection-start-column="78" selection-end-line="29" selection-end-column="78" />
+              <caret line="29" column="78" lean-forward="false" selection-start-line="29" selection-start-column="78" selection-end-line="29" selection-end-column="78" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/templates/news/base.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-171">
-              <caret line="27" column="36" lean-forward="true" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+              <caret line="27" column="36" lean-forward="false" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views_of_course.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/cms/views_of_course.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/apps/news/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="538">
+              <caret line="33" column="45" lean-forward="false" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/cms/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="146" column="50" lean-forward="false" selection-start-line="146" selection-start-column="50" selection-end-line="146" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/cms/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/cms/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -139,7 +163,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>box</find>
       <find>logo-box</find>
       <find>搜索</find>
       <find>addClass(</find>
@@ -169,6 +192,7 @@
       <find>btn-discover</find>
       <find>discover</find>
       <find>search-btn</find>
+      <find>banner</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -183,7 +207,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/front/source/js/party/login_process.js" />
         <option value="$PROJECT_DIR$/front/templates/party/base.html" />
         <option value="$PROJECT_DIR$/front/templates/party/index.html" />
         <option value="$PROJECT_DIR$/front/source/js/party/index.js" />
@@ -221,7 +244,6 @@
         <option value="$PROJECT_DIR$/front/source/css/common/footer.scss" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/front/source/js/cms.js" />
-        <option value="$PROJECT_DIR$/apps/cms/views.py" />
         <option value="$PROJECT_DIR$/front/gulpfile.js" />
         <option value="$PROJECT_DIR$/front/source/js/news.js" />
         <option value="$PROJECT_DIR$/apps/news/urls.py" />
@@ -234,6 +256,8 @@
         <option value="$PROJECT_DIR$/apps/course/views.py" />
         <option value="$PROJECT_DIR$/front/templates/course/course_index.html" />
         <option value="$PROJECT_DIR$/front/templates/news/base.html" />
+        <option value="$PROJECT_DIR$/apps/cms/views.py" />
+        <option value="$PROJECT_DIR$/apps/news/models.py" />
       </list>
     </option>
   </component>
@@ -292,6 +316,12 @@
               <item name="xfz01" type="b2602c69:ProjectViewProjectNode" />
               <item name="xfz01" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xfz01" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xfz01" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="cms" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xfz01" type="b2602c69:ProjectViewProjectNode" />
@@ -582,6 +612,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1014" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.097949885" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
@@ -589,7 +620,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.4914712" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946634" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14179105" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14179105" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -647,20 +678,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/front/district/css/course/course_index.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-532">
-          <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/templates/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/district/css/register/constants.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -816,14 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/news/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="26" column="54" lean-forward="false" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/templates/news/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="722">
@@ -935,7 +944,7 @@
         <state relative-caret-position="342">
           <caret line="18" column="53" lean-forward="false" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
           <folding>
-            <element signature="e#0#52#0" expanded="true" />
+            <element signature="e#0#52#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -956,32 +965,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/cms/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/cms/views_of_course.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/cms/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="33" column="1" lean-forward="true" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -997,7 +986,7 @@
     <entry file="file://$PROJECT_DIR$/front/source/js/cms/course_detail.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
-          <caret line="34" column="14" lean-forward="true" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
+          <caret line="34" column="14" lean-forward="false" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1005,7 +994,7 @@
     <entry file="file://$PROJECT_DIR$/apps/course/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
-          <caret line="31" column="18" lean-forward="true" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+          <caret line="31" column="18" lean-forward="false" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -1021,7 +1010,7 @@
     <entry file="file://$PROJECT_DIR$/front/templates/course/course_index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
-          <caret line="29" column="78" lean-forward="true" selection-start-line="29" selection-start-column="78" selection-end-line="29" selection-end-column="78" />
+          <caret line="29" column="78" lean-forward="false" selection-start-line="29" selection-start-column="78" selection-end-line="29" selection-end-column="78" />
           <folding />
         </state>
       </provider>
@@ -1029,7 +1018,49 @@
     <entry file="file://$PROJECT_DIR$/front/templates/news/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-171">
-          <caret line="27" column="36" lean-forward="true" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+          <caret line="27" column="36" lean-forward="false" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/cms/views_of_course.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/cms/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/cms/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="146" column="50" lean-forward="false" selection-start-line="146" selection-start-column="50" selection-end-line="146" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/cms/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/news/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="33" column="45" lean-forward="false" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
           <folding />
         </state>
       </provider>

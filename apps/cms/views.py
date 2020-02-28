@@ -139,7 +139,7 @@ def banner_cms_manager_get(request):
     return restful.result(data=context)
 
 #添加banner
-@method_decorator(permission_required(perm='banner.add_banner',login_url='/'),name='dispatch')
+
 def banner_cms_manager_add(request):
     form = BannerForm(request.POST)
     if form.is_valid():

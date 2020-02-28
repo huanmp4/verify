@@ -31,7 +31,7 @@ class NewsComment(models.Model):
 
 
 class Banner(models.Model):
-    link_to = models.URLField()
+    link_to = models.CharField(max_length=300)
     priority = models.IntegerField()
     image_url = models.URLField()
     pub_time = models.DateTimeField(auto_now_add=True)
