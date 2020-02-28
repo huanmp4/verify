@@ -24,10 +24,10 @@
                                 <a href="{% url 'course:course_detail' course.id %}"><img src="{{ course.cover_url }}" alt="" class="thumbnial"></a>
                             </div>
                             <div class="course-info">
-                                <p class="title">{{ course.title }}/p>
-                                <p class="author">{{ course.teacher }}</p>
+                                <p class="title">{{ course.title }}</p>
+                                <p class="author">{{ course.teacher.name }}</p>
                                 <p class="price-group">
-                                    <span class="pay">{{ course.price }}/span>
+                                    <span class="pay">{{ course.price }}</span>
                                 </p>
                             </div>
                         </a>
